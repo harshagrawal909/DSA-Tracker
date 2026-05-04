@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 255 255 255;
+  --surface-muted: 248 250 252;
+  --accent: 14 165 233;
+  --accent-soft: 224 242 254;
+}
+
+.dark {
+  --surface: 15 23 42;
+  --surface-muted: 30 41 59;
+  --accent: 56 189 248;
+  --accent-soft: 12 74 110;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100;
+  }
+}
