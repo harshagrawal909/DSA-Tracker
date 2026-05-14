@@ -9,5 +9,5 @@ export function generateStaticParams() {
 export default function DayPage({ params }) {
   const day = getDayById(params.id);
   if (!day) notFound();
-  return <DayView day={day} />;
+  return <DayView day={day} totalDays={61} />;
 }

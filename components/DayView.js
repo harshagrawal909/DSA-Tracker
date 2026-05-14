@@ -35,8 +35,10 @@ function normalizeProblem(p) {
   };
 }
 
-export function DayView({ day }) {
+export function DayView({ day, totalDays }) {
   const { day: dayNum, tasks, problems } = day;
+  const hasPrev = dayNum > 1;
+  const hasNext = totalDays == null || dayNum < totalDays;
   const [completions, setCompletions] = useState({});
   const [problemNotes, setProblemNotes] = useState({});
   const [ready, setReady] = useState(false);
@@ -121,54 +123,87 @@ export function DayView({ day }) {
   }
 
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+    <div className="space-y-6">
+      {/* Back to Dashboard */}
+      <div>
+        <Link
+          href="/"
+          className="text-sm font-medium text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
+        >
+          ← Dashboard
+        </Link>
+      </div>
+
+      {/* Day title + progress */}
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+          Day {dayNum}
+        </h1>
+        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+          {doneVideos}/{tasks.length} videos completed • {doneProblems}/
+          {problems.length} problems completed
+        </p>
+      </div>
+
+      {/* Navigation bar: Prev — Filter — Next */}
+      <div className="flex items-center justify-between gap-3">
+        {/* Prev Day */}
+        {hasPrev ? (
           <Link
-            href="/"
-            className="text-sm font-medium text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
+            href={`/day/${dayNum - 1}`}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-sky-600 dark:hover:text-sky-400"
           >
-            ← Dashboard
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5">
+              <path fillRule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z" clipRule="evenodd" />
+            </svg>
+            <span>Day {dayNum - 1}</span>
           </Link>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Day {dayNum}
-          </h1>
-          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-            {doneVideos}/{tasks.length} videos completed • {doneProblems}/
-            {problems.length} problems completed
-          </p>
+        ) : (
+          <div />
+        )}
+
+        {/* Filter toggle */}
+        <div className="inline-flex rounded-full border border-slate-200 bg-slate-100/80 p-0.5 dark:border-slate-700 dark:bg-slate-900">
+          <button
+            type="button"
+            onClick={() => setPendingOnly(false)}
+            className={[
+              "rounded-full px-3 py-1.5 text-sm font-medium transition",
+              !pendingOnly
+                ? "bg-white text-slate-900 shadow-sm dark:bg-slate-800 dark:text-white"
+                : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white",
+            ].join(" ")}
+          >
+            Show all
+          </button>
+          <button
+            type="button"
+            onClick={() => setPendingOnly(true)}
+            className={[
+              "rounded-full px-3 py-1.5 text-sm font-medium transition",
+              pendingOnly
+                ? "bg-white text-slate-900 shadow-sm dark:bg-slate-800 dark:text-white"
+                : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white",
+            ].join(" ")}
+          >
+            Pending
+          </button>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            Filter
-          </span>
-          <div className="inline-flex rounded-full border border-slate-200 bg-slate-100/80 p-0.5 dark:border-slate-700 dark:bg-slate-900">
-            <button
-              type="button"
-              onClick={() => setPendingOnly(false)}
-              className={[
-                "rounded-full px-3 py-1.5 text-sm font-medium transition",
-                !pendingOnly
-                  ? "bg-white text-slate-900 shadow-sm dark:bg-slate-800 dark:text-white"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white",
-              ].join(" ")}
-            >
-              Show all
-            </button>
-            <button
-              type="button"
-              onClick={() => setPendingOnly(true)}
-              className={[
-                "rounded-full px-3 py-1.5 text-sm font-medium transition",
-                pendingOnly
-                  ? "bg-white text-slate-900 shadow-sm dark:bg-slate-800 dark:text-white"
-                  : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white",
-              ].join(" ")}
-            >
-              Pending only
-            </button>
-          </div>
-        </div>
+
+        {/* Next Day */}
+        {hasNext ? (
+          <Link
+            href={`/day/${dayNum + 1}`}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-sky-600 dark:hover:text-sky-400"
+          >
+            <span>Day {dayNum + 1}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5">
+              <path fillRule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06L7.28 11.78a.75.75 0 0 1-1.06-1.06L10.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+            </svg>
+          </Link>
+        ) : (
+          <div />
+        )}
       </div>
 
       <section className="space-y-4">

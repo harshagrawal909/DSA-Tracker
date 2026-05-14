@@ -1,4 +1,3 @@
-/** Auto-generated from Strivers_A2Z_DSA_Schedule.xlsx — run npm run data:import */
 export const MAX_DAY = 61;
 
 export const dsaData = [
@@ -32,18 +31,30 @@ export const dsaData = [
         "title": "Two Sum",
         "difficulty": "Easy",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/two-sum/"
+      },
+      {
+        "probId": "GFG",
+        "title": "Key Pair (Two Sum)",
+        "difficulty": "Easy",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/key-pair5616/1"
       },
       {
         "probId": "#242",
         "title": "Valid Anagram",
         "difficulty": "Easy",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/valid-anagram/"
+      },
+      {
+        "probId": "GFG",
+        "title": "Anagram",
+        "difficulty": "Easy",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/anagram-1587115620/1"
       }
-    ]
+  ]
   },
   {
     "day": 2,
@@ -60,16 +71,21 @@ export const dsaData = [
         "title": "Reverse a Number",
         "difficulty": "Easy",
         "platform": "GFG",
-        "approach": "",
-        "link": ""
+        "link": "https://practice.geeksforgeeks.org/problems/reverse-a-number/1"
       },
       {
         "probId": "GFG",
         "title": "Number Triangle Pattern",
         "difficulty": "Easy",
         "platform": "GFG",
-        "approach": "",
-        "link": ""
+        "link": "https://practice.geeksforgeeks.org/problems/triangle-pattern-1662280490/1"
+      },
+      {
+        "probId": "Extra",
+        "title": "Palindrome Number",
+        "difficulty": "Easy",
+        "platform": "LeetCode",
+        "link": "https://leetcode.com/problems/palindrome-number/"
       }
     ]
   },
@@ -91,18 +107,26 @@ export const dsaData = [
       {
         "probId": "#217",
         "title": "Contains Duplicate",
-        "difficulty": "Easy",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/contains-duplicate/"
+      },
+      {
+        "probId": "GFG",
+        "title": "Check if array contains duplicates",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/check-if-array-contains-duplicates/1"
       },
       {
         "probId": "#49",
         "title": "Group Anagrams",
-        "difficulty": "Medium",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/group-anagrams/"
+      },
+      {
+        "probId": "Extra",
+        "title": "GCD of two numbers",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1"
       }
     ]
   },
@@ -172,18 +196,26 @@ export const dsaData = [
       {
         "probId": "#238",
         "title": "Product of Array Except Self",
-        "difficulty": "Medium",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/product-of-array-except-self/"
+      },
+      {
+        "probId": "GFG",
+        "title": "Product array puzzle",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/product-array-puzzle4525/1"
       },
       {
         "probId": "#152",
         "title": "Maximum Product Subarray",
-        "difficulty": "Medium",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/maximum-product-subarray/"
+      },
+      {
+        "probId": "Extra",
+        "title": "Sort an array of 0s,1s,2s",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4211/1"
       }
     ]
   },
@@ -210,18 +242,26 @@ export const dsaData = [
       {
         "probId": "#153",
         "title": "Find Min in Rotated Sorted Array",
-        "difficulty": "Medium",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/find-min-in-rotated-sorted-array/"
+      },
+      {
+        "probId": "GFG",
+        "title": "Minimum in rotated sorted array",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/minimum-element-in-a-sorted-and-rotated-array3611/1"
       },
       {
         "probId": "#33",
         "title": "Search in Rotated Sorted Array",
-        "difficulty": "Medium",
         "platform": "LeetCode",
-        "approach": "",
         "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+      },
+      {
+        "probId": "Extra",
+        "title": "Second Largest Element",
+        "platform": "GFG",
+        "link": "https://practice.geeksforgeeks.org/problems/second-largest3735/1"
       }
     ]
   },
