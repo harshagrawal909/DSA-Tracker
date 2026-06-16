@@ -4218,3 +4218,9 @@ export const dsaData = [
     ]
   }
 ];
+
+export function getDayById(id) {
+  const n = Number(id);
+  if (!Number.isInteger(n) || n < 1 || n > MAX_DAY) return null;
+  return dsaData.find((d) => d.day === n) ?? null;
+}
