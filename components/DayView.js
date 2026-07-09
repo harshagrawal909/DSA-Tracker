@@ -35,7 +35,7 @@ function normalizeProblem(p) {
   };
 }
 
-export function DayView({ day, totalDays }) {
+export function DayView({ day, totalDays, basePath = "/day" }) {
   const { day: dayNum, tasks, problems } = day;
   const hasPrev = dayNum > 1;
   const hasNext = totalDays == null || dayNum < totalDays;
@@ -44,10 +44,47 @@ export function DayView({ day, totalDays }) {
   const [ready, setReady] = useState(false);
   const [pendingOnly, setPendingOnly] = useState(false);
 
+  const syncToCloud = useCallback(async (completionsUpdate, notesUpdate) => {
+    try {
+      const payload = {};
+      if (completionsUpdate) payload.completions = completionsUpdate;
+      if (notesUpdate) payload.problemNotes = notesUpdate;
+      await fetch("/api/users/me", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.error("Cloud sync failed:", err);
+    }
+  }, []);
+
   useEffect(() => {
-    setCompletions(readCompletions());
-    setProblemNotes(readProblemNotes());
+    // 1. Initial load from local storage
+    const localCompletions = readCompletions();
+    const localNotes = readProblemNotes();
+    setCompletions(localCompletions);
+    setProblemNotes(localNotes);
     setReady(true);
+
+    // 2. Fetch fresh updates from Firestore cloud
+    fetch("/api/users/me")
+      .then((res) => {
+        if (res.ok) return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          if (data.completions) {
+            setCompletions(data.completions);
+            writeCompletions(data.completions);
+          }
+          if (data.problemNotes) {
+            setProblemNotes(data.problemNotes);
+            writeProblemNotes(data.problemNotes);
+          }
+        }
+      })
+      .catch((err) => console.error("Error refreshing day data:", err));
   }, []);
 
   const toggleTask = useCallback(
@@ -56,10 +93,11 @@ export function DayView({ day, totalDays }) {
       setCompletions((prev) => {
         const next = { ...prev, [key]: !prev[key] };
         writeCompletions(next);
+        syncToCloud(next, null);
         return next;
       });
     },
-    [dayNum]
+    [dayNum, syncToCloud]
   );
 
   const toggleProblem = useCallback(
@@ -68,10 +106,11 @@ export function DayView({ day, totalDays }) {
       setCompletions((prev) => {
         const next = { ...prev, [key]: !prev[key] };
         writeCompletions(next);
+        syncToCloud(next, null);
         return next;
       });
     },
-    [dayNum]
+    [dayNum, syncToCloud]
   );
 
   const updateProblemNote = useCallback(
@@ -80,10 +119,11 @@ export function DayView({ day, totalDays }) {
       setProblemNotes((prev) => {
         const next = { ...prev, [key]: value };
         writeProblemNotes(next);
+        syncToCloud(null, next);
         return next;
       });
     },
-    [dayNum]
+    [dayNum, syncToCloud]
   );
 
   const normalizedProblems = useMemo(
@@ -127,7 +167,7 @@ export function DayView({ day, totalDays }) {
       {/* Back to Dashboard */}
       <div>
         <Link
-          href="/"
+          href={basePath === "/dashboard/day" ? "/dashboard" : "/"}
           className="text-sm font-medium text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
         >
           ← Dashboard
@@ -150,7 +190,7 @@ export function DayView({ day, totalDays }) {
         {/* Prev Day */}
         {hasPrev ? (
           <Link
-            href={`/day/${dayNum - 1}`}
+            href={`${basePath}/${dayNum - 1}`}
             className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-sky-600 dark:hover:text-sky-400"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5">
@@ -193,7 +233,7 @@ export function DayView({ day, totalDays }) {
         {/* Next Day */}
         {hasNext ? (
           <Link
-            href={`/day/${dayNum + 1}`}
+            href={`${basePath}/${dayNum + 1}`}
             className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-sky-600 dark:hover:text-sky-400"
           >
             <span>Day {dayNum + 1}</span>

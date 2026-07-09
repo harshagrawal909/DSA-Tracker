@@ -6,12 +6,12 @@ export function generateStaticParams() {
   return Array.from({ length: MAX_DAY }, (_, i) => ({ id: String(i + 1) }));
 }
 
-export default function DayPage({ params }) {
+export default function DashboardDayPage({ params }) {
   const day = getDayById(params.id);
   if (!day) notFound();
   return (
     <div className="dayview-container">
-      <DayView day={day} totalDays={61} />
+      <DayView day={day} totalDays={MAX_DAY} basePath="/dashboard/day" />
     </div>
   );
 }
