@@ -10,7 +10,10 @@ export default withAuth(
     if (pathname.startsWith("/dashboard")) {
       const isPaid = token?.isPaid;
       const isAdmin = token?.role === "admin";
-      if (!isPaid && !isAdmin) {
+      // Fallback: check email directly in case JWT role hasn't synced yet
+      const adminEmails = ["harshagrawal4256@gmail.com"];
+      const isAdminByEmail = token?.email ? adminEmails.includes(token.email.toLowerCase()) : false;
+      if (!isPaid && !isAdmin && !isAdminByEmail) {
         return NextResponse.redirect(new URL("/?showPayment=1", req.url));
       }
     }

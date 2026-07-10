@@ -71,9 +71,10 @@ export function LandingPage({ onPaymentRequired }) {
   const [c3, r3] = useCounter(1200);
 
   useEffect(() => {
-    if (status === "authenticated" && session?.user?.id) {
-      const isPaid = session.user.isPaid || session.user.role === "admin";
-      if (isPaid || hasUserPaid(session.user.id)) {
+    if (status === "authenticated" && session?.user) {
+      const isAdmin = session.user.role === "admin";
+      const isPaid = session.user.isPaid;
+      if (isAdmin || isPaid || hasUserPaid(session.user.id)) {
         router.push("/dashboard");
       }
     }
@@ -97,7 +98,7 @@ export function LandingPage({ onPaymentRequired }) {
   const handleConsentAccepted = async () => {
     setShowConsentModal(false);
     setLoading(true);
-    await signIn("google", { callbackUrl: "/?showPayment=1" });
+    await signIn("google", { callbackUrl: "/dashboard" });
   };
 
   return (
