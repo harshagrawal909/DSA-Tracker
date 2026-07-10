@@ -194,9 +194,19 @@ export function LandingPage({ onPaymentRequired }) {
                 <span>🚀 Get Lifetime Access – ₹149</span>
               )}
             </button>
-            <p className="hero-cta-sub">
+            <p className="hero-cta-sub" style={{ marginBottom: "0.75rem" }}>
               One-time payment • No subscription • Instant access
             </p>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "0.4rem 1rem", borderRadius: "9999px", marginTop: "0.5rem" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" style={{ width: "20px", height: "20px", borderRadius: "50%", border: "2px solid #030712" }} />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" style={{ width: "20px", height: "20px", borderRadius: "50%", border: "2px solid #030712", marginLeft: "-8px" }} />
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80" style={{ width: "20px", height: "20px", borderRadius: "50%", border: "2px solid #030712", marginLeft: "-8px" }} />
+              </div>
+              <span style={{ fontSize: "0.8rem", color: "#e2e8f0", fontWeight: "600" }}>
+                ⭐ Joined by <span style={{ color: "#a78bfa" }}>1,000+ students</span> preparing for top tech roles!
+              </span>
+            </div>
           </div>
 
           {/* Code window */}
@@ -258,6 +268,10 @@ export function LandingPage({ onPaymentRequired }) {
             <div className="stat-card" ref={r3}>
               <div className="stat-number gradient-text">{c3}+</div>
               <div className="stat-label">Minutes of Content</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-number gradient-text">1,000+</div>
+              <div className="stat-label">Students Joined</div>
             </div>
           </div>
         </div>
