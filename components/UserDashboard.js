@@ -21,6 +21,14 @@ import {
   formatDate,
   SCHEDULE_OPTIONS,
 } from "@/lib/schedule";
+import {
+  getPlanId,
+  getPlanMaxDay,
+  getPlanDay,
+  getPlanProgress,
+  getCalendarDayForContentDay,
+} from "@/planData";
+
 
 /* ─── Helpers ────────────────────────────────────────────── */
 function getFocusDay(data, completions) {
@@ -91,9 +99,9 @@ function StreakHeatmap({ completions, expectedDay }) {
 }
 
 /* ─── Schedule Banner ────────────────────────────────────── */
-function ScheduleBanner({ schedule, onChangeSchedule }) {
+function ScheduleBanner({ schedule, expectedCalendarDay, onChangeSchedule }) {
   const opt = getScheduleOption(schedule.type);
-  const { expectedDay, projectedFinish, calendarDaysElapsed } =
+  const { projectedFinish, calendarDaysElapsed } =
     computeScheduleProgress(schedule, MAX_DAY);
 
   return (
@@ -110,7 +118,7 @@ function ScheduleBanner({ schedule, onChangeSchedule }) {
       </div>
       <div className="schedule-banner-right">
         <div className="sched-target">
-          Target today: <strong>Day {expectedDay}</strong>
+          Target today: <strong>Day {expectedCalendarDay}</strong>
         </div>
         <button className="btn-change-sched" onClick={onChangeSchedule}>
           Change Pace
@@ -242,6 +250,27 @@ export function UserDashboard() {
     return computeScheduleProgress(schedule, MAX_DAY);
   }, [schedule]);
 
+  const planId = useMemo(() => getPlanId(schedule?.type), [schedule]);
+  const totalCalendarDays = useMemo(() => getPlanMaxDay(planId), [planId]);
+
+  const focusCalendarDay = useMemo(() => {
+    if (!planId) return 1;
+    return getCalendarDayForContentDay(planId, focusDay);
+  }, [planId, focusDay]);
+
+  const expectedContentDay = useMemo(() => {
+    return scheduleProgress?.expectedDay ?? focusDay;
+  }, [scheduleProgress, focusDay]);
+
+  const expectedCalendarDay = useMemo(() => {
+    if (!scheduleProgress || !planId) return 1;
+    return getCalendarDayForContentDay(planId, scheduleProgress.expectedDay);
+  }, [scheduleProgress, planId]);
+
+  const calendarDays = useMemo(() => {
+    return Array.from({ length: totalCalendarDays }, (_, i) => i + 1);
+  }, [totalCalendarDays]);
+
   const handleReset = useCallback(() => {
     if (
       typeof window !== "undefined" &&
@@ -304,6 +333,7 @@ export function UserDashboard() {
       {/* ── Schedule Banner ────────────────────────── */}
       <ScheduleBanner
         schedule={schedule}
+        expectedCalendarDay={expectedCalendarDay}
         onChangeSchedule={() => setShowChangeSchedule(true)}
       />
 
@@ -363,10 +393,10 @@ export function UserDashboard() {
           <p className="db-card-label">Progress Heatmap — {MAX_DAY} Days</p>
           <span className="heatmap-today-legend">
             <span className="heatmap-cell today-cell" style={{ display: "inline-block", verticalAlign: "middle" }} />
-            {" "}= Today&apos;s target (Day {expectedDay})
+            {" "}= Today&apos;s target (Day {expectedCalendarDay})
           </span>
         </div>
-        <StreakHeatmap completions={completions} expectedDay={expectedDay} />
+        <StreakHeatmap completions={completions} expectedDay={expectedContentDay} />
         <div className="heatmap-legend">
           <span>Less</span>
           <div className="heatmap-cell level-0" />
@@ -382,15 +412,15 @@ export function UserDashboard() {
         <div>
           <h2 className="db-day-title">Day-wise Plan</h2>
           <p className="db-day-sub">
-            Jump to any day (1–{MAX_DAY}). 🎯 = today&apos;s target · ✅ = completed
+            Jump to any day (1–{totalCalendarDays}). 🎯 = today&apos;s target · ✅ = completed
           </p>
         </div>
         <div className="db-day-actions">
           <Link
-            href={`/dashboard/day/${focusDay}`}
+            href={`/dashboard/day/${focusCalendarDay}`}
             className="btn-primary btn-sm"
           >
-            Resume Day {focusDay} →
+            Resume Day {focusCalendarDay} →
           </Link>
           <button type="button" onClick={handleReset} className="btn-danger btn-sm">
             Reset
@@ -400,19 +430,62 @@ export function UserDashboard() {
 
       {/* ── Day Cards ─────────────────────────────── */}
       <div className="day-cards-grid">
-        {dsaData.map(({ day, tasks, problems }) => {
-          const done =
-            tasks.filter((_, i) => completions[taskKey(day, i)]).length +
-            problems.filter((_, i) => completions[problemKey(day, i)]).length;
-          const total = tasks.length + problems.length;
+        {calendarDays.map((dayNum) => {
+          const calendarDay = getPlanDay(planId, dayNum);
+          if (!calendarDay) return null;
+
+          const isTarget = dayNum === expectedCalendarDay;
+          const isFocus = dayNum === focusCalendarDay;
+
+          if (calendarDay.type === "rest") {
+            return (
+              <div
+                key={dayNum}
+                className="day-card-link rest-day-card"
+              >
+                <div
+                  className={[
+                    "day-card-inner-new rest",
+                    isFocus ? "focus" : "",
+                    isTarget ? "target" : "",
+                  ].join(" ")}
+                  style={{
+                    background: "rgba(30, 41, 59, 0.4)",
+                    border: "1px dashed rgba(148, 163, 184, 0.2)",
+                    opacity: 0.85
+                  }}
+                >
+                  <div className="day-card-header">
+                    <span className="day-card-title" style={{ color: "#94a3b8" }}>Day {dayNum}</span>
+                    <span className="status-badge rest" style={{ background: "rgba(100, 116, 139, 0.2)", color: "#94a3b8" }}>☕ Rest Day</span>
+                  </div>
+                  <div className="day-card-stats-row" style={{ color: "#64748b", fontSize: "0.75rem", marginTop: "0.5rem" }}>
+                    <span>Take a break and recharge!</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // Study day: calculate completions across merged contentDays
+          let total = 0;
+          let done = 0;
+          
+          if (calendarDay.tasks) {
+            total += calendarDay.tasks.length;
+            done += calendarDay.tasks.filter((t) => completions[taskKey(t.contentDay, t.originalIndex)]).length;
+          }
+          if (calendarDay.problems) {
+            total += calendarDay.problems.length;
+            done += calendarDay.problems.filter((p) => completions[problemKey(p.contentDay, p.originalIndex)]).length;
+          }
+
           const isCompleted = done === total && total > 0;
-          const isFocus = day === focusDay;
-          const isTarget = day === expectedDay;
 
           return (
             <Link
-              key={day}
-              href={`/dashboard/day/${day}`}
+              key={dayNum}
+              href={`/dashboard/day/${dayNum}`}
               className="day-card-link"
             >
               <div
@@ -424,7 +497,7 @@ export function UserDashboard() {
                 ].join(" ")}
               >
                 <div className="day-card-header">
-                  <span className="day-card-title">Day {day}</span>
+                  <span className="day-card-title">Day {dayNum}</span>
                   {isCompleted && <span className="status-badge success">✅ Done</span>}
                   {!isCompleted && isFocus && <span className="status-badge focus">▶ Active</span>}
                   {!isCompleted && isTarget && !isFocus && <span className="status-badge target">🎯 Target</span>}
