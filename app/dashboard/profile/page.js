@@ -166,8 +166,7 @@ export default async function ProfilePage() {
               <div className="invoice-container">
                 <div className="invoice-header">
                   <div className="invoice-logo">
-                    <span className="logo-icon">🚀</span>
-                    <span className="logo-text">DSA Tracker Pro</span>
+                    <img src="/logo.png" alt="AlgoPath" style={{ height: "24px", width: "auto", objectFit: "contain" }} />
                   </div>
                   <div className="invoice-status-paid">PAID IN FULL</div>
                 </div>
@@ -202,7 +201,7 @@ export default async function ProfilePage() {
                   <tbody>
                     <tr>
                       <td style={{ textAlign: "left" }}>
-                        <span className="bold">DSA Tracker Pro Lifetime Access</span>
+                        <span className="bold">AlgoPath Lifetime Access</span>
                         <p className="desc-sub">Complete 60-day interactive path with paced scheduling and community mentorship group access.</p>
                       </td>
                       <td style={{ textAlign: "right" }}>1</td>
@@ -244,7 +243,7 @@ export default async function ProfilePage() {
                 <div className="invoice-divider" />
 
                 <div className="invoice-footer">
-                  <p>Thank you for purchasing DSA Tracker Pro! Let&apos;s excel in coding interviews together.</p>
+                  <p>Thank you for purchasing AlgoPath! Let&apos;s excel in coding interviews together.</p>
                   <p style={{ marginTop: "0.5rem" }} className="no-print">
                     <PrintButton />
                   </p>

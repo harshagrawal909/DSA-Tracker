@@ -72,7 +72,7 @@ export function PaymentModal({ onClose, userName }) {
         key: data.key_id,
         amount: data.amount,
         currency: data.currency,
-        name: "DSA Tracker Pro",
+        name: "AlgoPath",
         description: "Lifetime Access",
         order_id: data.order_id,
         prefill: {

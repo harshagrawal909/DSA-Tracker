@@ -13,7 +13,7 @@ export function Header() {
         className="group inline-flex items-baseline gap-2 transition-opacity hover:opacity-90"
       >
         <span className="text-xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
-          DSA Tracker
+          AlgoPath
         </span>
         <span className="text-sm font-medium text-sky-600 opacity-0 transition-opacity group-hover:opacity-100 dark:text-sky-400">
           Home

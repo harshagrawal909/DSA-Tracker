@@ -46,7 +46,7 @@ const FEATURES = [
 const FAQS = [
   { q: "Is this a subscription or one-time payment?", a: "100% one-time payment. Pay once, access forever. No hidden charges, no renewals." },
   { q: "Can I choose my study speed?", a: "Yes! After joining you choose from 4 pace options: 1 month (intensive), 2 months (fast), 3 months (balanced), or 6 months (relaxed). You can switch anytime from your dashboard." },
-  { q: "What do I get after paying?", a: "Instant access to the full DSA Tracker dashboard + access to our WhatsApp study group where you can discuss problems and get help." },
+  { q: "What do I get after paying?", a: "Instant access to the full AlgoPath dashboard + access to our WhatsApp study group where you can discuss problems and get help." },
   { q: "How do I pay?", a: "Scan the UPI QR code shown after login. Pay via any UPI app (GPay, PhonePe, Paytm, etc.) and click 'I've Paid'. Access is granted immediately." },
   { q: "What if I lose my progress?", a: "Your progress is saved per device. We recommend using the same browser consistently." },
   { q: "Is this based on any specific DSA course?", a: "Yes! The tracker follows Striver's A2Z DSA Sheet — one of the most popular and comprehensive DSA roadmaps for cracking coding interviews." },
@@ -118,8 +118,7 @@ export function LandingPage({ onPaymentRequired }) {
       <nav className="landing-nav">
         <div className="nav-inner">
           <div className="nav-logo">
-            <span className="logo-icon">⚡</span>
-            <span className="logo-text">DSA Tracker Pro</span>
+            <img src="/logo.png" alt="AlgoPath" style={{ height: "32px", width: "auto", objectFit: "contain" }} />
           </div>
           <div className="nav-actions">
             {status === "authenticated" ? (
@@ -406,7 +405,10 @@ export function LandingPage({ onPaymentRequired }) {
       {/* ── Footer ──────────────────────────── */}
       <footer className="landing-footer">
         <div className="footer-inner">
-          <div className="footer-logo">⚡ DSA Tracker Pro</div>
+          <div className="footer-logo">
+            <img src="/icon.png" alt="AlgoPath" style={{ height: "28px", width: "28px", borderRadius: "6px", marginRight: "8px", verticalAlign: "middle" }} />
+            <span style={{ verticalAlign: "middle", fontWeight: 700 }}>AlgoPath</span>
+          </div>
 
           <div className="footer-links" style={{ display: "flex", gap: "1rem", margin: "1rem 0", fontSize: "0.85rem", justifyContent: "center" }}>
             <button 
@@ -433,7 +435,7 @@ export function LandingPage({ onPaymentRequired }) {
           </div>
 
           <p className="footer-copy">
-            © {new Date().getFullYear()} DSA Tracker Pro. Built with ❤️ for DSA enthusiasts.
+            © {new Date().getFullYear()} AlgoPath. Built with ❤️ for DSA enthusiasts.
           </p>
         </div>
       </footer>
@@ -490,7 +492,7 @@ function TermsConsentModal({ onClose, onAgree, onlyTerms, onlyPrivacy, isReviewe
           {(!onlyPrivacy) && (
             <>
               <h3>1. Terms of Service</h3>
-              <p>Welcome to DSA Tracker Pro. By creating an account and subscribing, you agree to comply with and be bound by the following terms and conditions:</p>
+              <p>Welcome to AlgoPath. By creating an account and subscribing, you agree to comply with and be bound by the following terms and conditions:</p>
               <ul>
                 <li><strong>Access License:</strong> We grant you a personal, non-exclusive, non-transferable, and limited license to access our curated tracker, problem links, and community features.</li>
                 <li><strong>Lifetime Access:</strong> Lifetime access refers to one-time payment for the lifetime of this specific application. No subscription renewals or monthly bills are charged.</li>

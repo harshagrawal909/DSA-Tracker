@@ -68,7 +68,7 @@ export default function PaymentSuccessPage() {
         <div style={{ fontSize: "4rem", marginBottom: "1rem" }}>🎉</div>
         <h1 style={{ fontSize: "1.75rem", fontWeight: "900", marginBottom: "0.5rem" }}>Payment Successful!</h1>
         <p style={{ color: "#94a3b8", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1.75rem" }}>
-          Thank you for upgrading! You now have lifetime access to DSA Tracker Pro. Your default 3-month schedule is ready.
+          Thank you for upgrading! You now have lifetime access to AlgoPath. Your default 3-month schedule is ready.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1.5rem" }}>

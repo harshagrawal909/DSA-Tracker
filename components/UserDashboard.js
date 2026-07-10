@@ -271,8 +271,7 @@ export function UserDashboard() {
       {/* ── Top Header Navigation ──────────────────── */}
       <header className="db-top-nav-bar">
         <div className="db-nav-brand">
-          <span className="db-nav-icon">🚀</span>
-          <span className="db-nav-title">DSA Tracker Pro</span>
+          <img src="/logo.png" alt="AlgoPath" style={{ height: "28px", width: "auto", objectFit: "contain" }} />
         </div>
         <div className="db-nav-actions">
           {user && (
