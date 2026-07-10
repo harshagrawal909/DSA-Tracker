@@ -24,8 +24,48 @@ export default function AdminPage() {
         return;
       }
       fetchUsers();
+      fetchConfig();
     }
   }, [status, session, router]);
+
+  const [whatsappLink, setWhatsappLink] = useState("");
+  const [savingLink, setSavingLink] = useState(false);
+
+  const fetchConfig = async () => {
+    try {
+      const res = await fetch("/api/config");
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.whatsappLink) {
+          setWhatsappLink(data.whatsappLink);
+        }
+      }
+    } catch (err) {
+      console.error("Error loading config:", err);
+    }
+  };
+
+  const handleSaveLink = async (e) => {
+    e.preventDefault();
+    setSavingLink(true);
+    try {
+      const res = await fetch("/api/config", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ whatsappLink }),
+      });
+      if (res.ok) {
+        alert("WhatsApp Group Link updated successfully!");
+      } else {
+        alert("Failed to update WhatsApp Group Link.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error saving WhatsApp link.");
+    } finally {
+      setSavingLink(false);
+    }
+  };
 
   const fetchUsers = async () => {
     try {
@@ -116,6 +156,52 @@ export default function AdminPage() {
           <Link href="/dashboard" className="btn-primary btn-sm" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff" }}>
             ← Back to Dashboard
           </Link>
+        </div>
+
+        {/* WhatsApp Link Config Card */}
+        <div style={{ background: "#0f172a", border: "1px solid rgba(37, 211, 102, 0.2)", padding: "1.25rem", borderRadius: "1rem", marginBottom: "2rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+            <span>💬 WhatsApp Group Link Manager</span>
+          </h2>
+          <p style={{ color: "#94a3b8", fontSize: "0.85rem", marginBottom: "1rem" }}>This link is dynamically displayed to paid users on their profile page and post-payment success page.</p>
+          <form onSubmit={handleSaveLink} style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <input
+              type="url"
+              value={whatsappLink}
+              onChange={(e) => setWhatsappLink(e.target.value)}
+              placeholder="Enter WhatsApp Group Link (e.g. https://chat.whatsapp.com/...)"
+              required
+              style={{
+                flex: "1",
+                minWidth: "280px",
+                background: "rgba(0,0,0,0.2)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: "0.5rem",
+                padding: "0.6rem 0.8rem",
+                color: "#fff",
+                fontSize: "0.9rem"
+              }}
+            />
+            <button
+              type="submit"
+              disabled={savingLink}
+              style={{
+                background: "#25d366",
+                color: "#fff",
+                border: "none",
+                fontWeight: "700",
+                fontSize: "0.85rem",
+                padding: "0.6rem 1.25rem",
+                borderRadius: "0.5rem",
+                cursor: "pointer",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              {savingLink ? "Saving..." : "Update Link"}
+            </button>
+          </form>
         </div>
 
         {/* Stats Grid */}

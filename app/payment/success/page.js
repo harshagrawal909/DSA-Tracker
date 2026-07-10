@@ -11,6 +11,20 @@ export default function PaymentSuccessPage() {
   const { update } = useSession();
   const [countdown, setCountdown] = useState(5);
   const [confetti, setConfetti] = useState([]);
+  const [whatsappLink, setWhatsappLink] = useState("https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK");
+
+  useEffect(() => {
+    fetch("/api/config")
+      .then((res) => {
+        if (res.ok) return res.json();
+      })
+      .then((data) => {
+        if (data && data.whatsappLink) {
+          setWhatsappLink(data.whatsappLink);
+        }
+      })
+      .catch((err) => console.error("Error loading whatsapp link:", err));
+  }, []);
 
   useEffect(() => {
     const particles = Array.from({ length: 60 }, (_, i) => ({
@@ -73,7 +87,7 @@ export default function PaymentSuccessPage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1.5rem" }}>
           <a
-            href={WHATSAPP_LINK}
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"

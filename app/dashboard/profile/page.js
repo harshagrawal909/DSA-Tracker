@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
-import { getUsersCollection } from "@/lib/db";
+import { getUsersCollection, getDb } from "@/lib/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,6 +60,16 @@ export default async function ProfilePage() {
   const paymentDate = userDetails.paidAt
     ? new Date(userDetails.paidAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })
     : null;
+
+  let whatsappLink = "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK";
+  try {
+    const db = await getDb();
+    const configCol = db.collection("config");
+    const linkDoc = await configCol.findOne({ _id: "whatsapp_link" });
+    if (linkDoc) whatsappLink = linkDoc.value;
+  } catch (error) {
+    console.error("Error loading config:", error);
+  }
 
   return (
     <main className="profile-page-wrapper">
@@ -122,6 +132,28 @@ export default async function ProfilePage() {
                 </div>
               </div>
             </div>
+
+            {/* WhatsApp Study Group Card for paid/admin users */}
+            {(userDetails.isPaid || userDetails.role === "admin") && (
+              <div className="profile-card" style={{ border: "1px solid rgba(37, 211, 102, 0.3)", background: "rgba(37, 211, 102, 0.03)" }}>
+                <h2 className="profile-card-title" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <span>💬 Join Study Group</span>
+                  <span style={{ fontSize: "0.75rem", background: "rgba(37, 211, 102, 0.15)", color: "#25d366", padding: "0.2rem 0.5rem", borderRadius: "9999px" }}>Active</span>
+                </h2>
+                <p className="desc-sub" style={{ marginBottom: "1rem", lineHeight: "1.4" }}>
+                  Connect with fellow AlgoPath members, discuss daily problems, and stay consistent.
+                </p>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp"
+                  style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", padding: "0.65rem 1.25rem", borderRadius: "0.5rem", fontSize: "0.85rem", fontWeight: "700", background: "#25d366", color: "#fff", textDecoration: "none", width: "100%" }}
+                >
+                  💬 Join WhatsApp Group
+                </a>
+              </div>
+            )}
 
             {/* Legal Accordion Card */}
             <div className="profile-card">

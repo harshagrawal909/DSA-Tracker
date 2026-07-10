@@ -1816,3 +1816,35 @@
   color: rgba(255, 255, 255, 0.2) !important;
   cursor: not-allowed !important;
 }
+
+@media (max-width: 600px) {
+  .db-top-nav-bar {
+    padding: 0.5rem 0.75rem !important;
+    gap: 0.5rem !important;
+    border-radius: 0.75rem !important;
+  }
+  .db-nav-brand {
+    gap: 0.25rem !important;
+  }
+  .db-nav-title {
+    font-size: 1rem !important;
+  }
+  .db-nav-actions {
+    gap: 0.4rem !important;
+  }
+  .db-nav-username {
+    display: none !important;
+  }
+  .db-nav-profile-btn {
+    padding: 0.2rem !important;
+  }
+  .db-nav-admin-btn {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+  .db-nav-signout {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.35rem !important;
+  }
+}
+
