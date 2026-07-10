@@ -1498,6 +1498,8 @@
   animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   color: #fff;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .consent-modal-header {
@@ -1740,4 +1742,77 @@
   color: #e5e7eb;
   line-height: 1.5;
   white-space: pre-wrap;
+}
+
+/* Reviewer Credentials Form Styles */
+.reviewer-login-box {
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px dashed rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.reviewer-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.reviewer-desc-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.reviewer-input {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+  color: #fff !important;
+  font-size: 0.85rem !important;
+  width: 100% !important;
+  transition: all 0.2s !important;
+  outline: none !important;
+}
+
+.reviewer-input:focus {
+  border-color: var(--purple) !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.15);
+}
+
+.reviewer-error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.btn-reviewer-login {
+  background: var(--purple) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  padding: 0.75rem 1.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.25s !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.875rem !important;
+}
+
+.btn-reviewer-login:hover:not(:disabled) {
+  background: #7c3aed !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.btn-reviewer-login:disabled {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.2) !important;
+  cursor: not-allowed !important;
 }

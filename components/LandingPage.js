@@ -1,7 +1,7 @@
 "use client";
 
 import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { hasUserPaid } from "@/lib/payment";
@@ -56,6 +56,9 @@ const FAQS = [
 export function LandingPage({ onPaymentRequired }) {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const isReviewerMode = searchParams ? searchParams.get("reviewer") === "true" : false;
+
   const [openFaq, setOpenFaq] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -433,6 +436,7 @@ export function LandingPage({ onPaymentRequired }) {
           onAgree={handleConsentAccepted}
           onlyTerms={modalOnlyTerms}
           onlyPrivacy={modalOnlyPrivacy}
+          isReviewerMode={isReviewerMode}
         />
       )}
     </div>
@@ -440,9 +444,13 @@ export function LandingPage({ onPaymentRequired }) {
 }
 
 /* ── Terms Consent Modal ─────────────────────────────────── */
-function TermsConsentModal({ onClose, onAgree, onlyTerms, onlyPrivacy }) {
+function TermsConsentModal({ onClose, onAgree, onlyTerms, onlyPrivacy, isReviewerMode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [agreed, setAgreed] = useState(false);
+
+  const [demoUser, setDemoUser] = useState("");
+  const [demoPass, setDemoPass] = useState("");
+  const [demoError, setDemoError] = useState(null);
 
   const handleScroll = (e) => {
     if (onlyTerms || onlyPrivacy) return;
@@ -543,6 +551,58 @@ function TermsConsentModal({ onClose, onAgree, onlyTerms, onlyPrivacy }) {
               </svg>
               Sign in with Google &amp; Pay
             </button>
+
+            {/* Razorpay Compliance Review Login Form */}
+            {isReviewerMode && (
+              <div className="reviewer-login-box">
+                <form 
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    if (!agreed) {
+                      setDemoError("Please scroll down and agree to the Terms & Privacy checkbox first.");
+                      return;
+                    }
+                    setDemoError(null);
+                    const res = await signIn("credentials", {
+                      username: demoUser,
+                      password: demoPass,
+                      redirect: false
+                    });
+                    if (res?.error) {
+                      setDemoError("Invalid reviewer credentials.");
+                    } else {
+                      window.location.reload();
+                    }
+                  }}
+                  className="reviewer-form-layout"
+                >
+                  <p className="reviewer-desc-text">Enter test account credentials requested by Razorpay Verification Form:</p>
+                  <input 
+                    type="text" 
+                    placeholder="Test Email / Username"
+                    value={demoUser}
+                    onChange={(e) => setDemoUser(e.target.value)}
+                    className="reviewer-input"
+                    required
+                  />
+                  <input 
+                    type="password" 
+                    placeholder="Test Password"
+                    value={demoPass}
+                    onChange={(e) => setDemoPass(e.target.value)}
+                    className="reviewer-input"
+                    required
+                  />
+                  {demoError && <p className="reviewer-error-text">{demoError}</p>}
+                  <button 
+                    type="submit" 
+                    className="btn-reviewer-login"
+                  >
+                    Log In as Reviewer
+                  </button>
+                </form>
+              </div>
+            )}
           </>
         )}
       </div>
