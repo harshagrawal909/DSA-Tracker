@@ -71,6 +71,7 @@ export function LandingPage({ onPaymentRequired }) {
   const [c3, r3] = useCounter(1200);
 
   useEffect(() => {
+    // If user is already authenticated and has access, redirect to dashboard
     if (status === "authenticated" && session?.user) {
       const adminEmails = ["harshagrawal4256@gmail.com"];
       const isAdminByEmail = session.user.email
@@ -79,11 +80,10 @@ export function LandingPage({ onPaymentRequired }) {
       const isAdmin = session.user.role === "admin" || isAdminByEmail;
       const isPaid = session.user.isPaid;
       if (isAdmin || isPaid) {
-        // Use full page navigation so cookies are sent properly to middleware
-        window.location.href = "/dashboard";
+        router.push("/dashboard");
       }
     }
-  }, [status, session]);
+  }, [status, session, router]);
 
   const handleGetAccess = async () => {
     if (status === "authenticated") {
