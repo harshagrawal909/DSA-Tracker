@@ -11,7 +11,7 @@ export async function middleware(req) {
       secret: process.env.NEXTAUTH_SECRET,
     });
 
-    const adminEmails = ["harshagrawal4256@gmail.com"];
+    const adminEmails = ["harshagrawal4256@gmail.com", "aadilmittal62@gmail.com"];
     const isAdminByEmail = token?.email
       ? adminEmails.includes(token.email.toLowerCase())
       : false;

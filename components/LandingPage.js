@@ -73,7 +73,7 @@ export function LandingPage({ onPaymentRequired }) {
   useEffect(() => {
     // If user is already authenticated and has access, redirect to dashboard
     if (status === "authenticated" && session?.user) {
-      const adminEmails = ["harshagrawal4256@gmail.com"];
+      const adminEmails = ["harshagrawal4256@gmail.com", "aadilmittal62@gmail.com"];
       const isAdminByEmail = session.user.email
         ? adminEmails.includes(session.user.email.toLowerCase())
         : false;
@@ -87,7 +87,7 @@ export function LandingPage({ onPaymentRequired }) {
 
   const handleGetAccess = async () => {
     if (status === "authenticated") {
-      const adminEmails = ["harshagrawal4256@gmail.com"];
+      const adminEmails = ["harshagrawal4256@gmail.com", "aadilmittal62@gmail.com"];
       const isAdminByEmail = session?.user?.email
         ? adminEmails.includes(session.user.email.toLowerCase())
         : false;

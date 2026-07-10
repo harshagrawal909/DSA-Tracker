@@ -9,7 +9,7 @@ export default function DashboardPage() {
   const { data: session, status } = useSession();
   const [hasSchedule, setHasSchedule] = useState(null);
 
-  const adminEmails = ["harshagrawal4256@gmail.com"];
+  const adminEmails = ["harshagrawal4256@gmail.com", "aadilmittal62@gmail.com"];
 
   useEffect(() => {
     // Auth check: redirect to home if not logged in or not paid/admin
