@@ -1,43 +1,44 @@
-import { withAuth } from "next-auth/middleware";
+import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
-export default withAuth(
-  function middleware(req) {
-    const { pathname } = req.nextUrl;
-    const token = req.nextauth.token;
+export async function middleware(req) {
+  const { pathname } = req.nextUrl;
 
-    // If user is trying to access dashboard but hasn't paid, redirect to landing page
-    if (pathname.startsWith("/dashboard")) {
-      const isPaid = token?.isPaid;
-      const isAdmin = token?.role === "admin";
-      // Fallback: check email directly in case JWT role hasn't synced yet
-      const adminEmails = ["harshagrawal4256@gmail.com"];
-      const isAdminByEmail = token?.email ? adminEmails.includes(token.email.toLowerCase()) : false;
-      if (!isPaid && !isAdmin && !isAdminByEmail) {
-        return NextResponse.redirect(new URL("/?showPayment=1", req.url));
-      }
+  // Get the JWT token directly using the secret
+  const token = await getToken({
+    req,
+    secret: process.env.NEXTAUTH_SECRET,
+  });
+
+  // Admin email whitelist - checked directly on token payload
+  const adminEmails = ["harshagrawal4256@gmail.com"];
+  const isAdminByEmail = token?.email
+    ? adminEmails.includes(token.email.toLowerCase())
+    : false;
+  const isAdmin = token?.role === "admin" || isAdminByEmail;
+  const isPaid = token?.isPaid;
+
+  // Dashboard protection
+  if (pathname.startsWith("/dashboard")) {
+    if (!token) {
+      // Not logged in at all - redirect to home
+      return NextResponse.redirect(new URL("/", req.url));
     }
-
-    // Admin-only route protection
-    if (pathname.startsWith("/admin")) {
-      const role = token?.role;
-      if (role !== "admin") {
-        return NextResponse.redirect(new URL("/dashboard", req.url));
-      }
+    if (!isPaid && !isAdmin) {
+      // Logged in but not paid and not admin
+      return NextResponse.redirect(new URL("/?showPayment=1", req.url));
     }
-
-    return NextResponse.next();
-  },
-  {
-    callbacks: {
-      authorized: ({ token, req }) => {
-        const { pathname } = req.nextUrl;
-        if (!pathname.startsWith("/dashboard") && !pathname.startsWith("/admin")) return true;
-        return !!token;
-      },
-    },
   }
-);
+
+  // Admin-only route protection
+  if (pathname.startsWith("/admin")) {
+    if (!token || !isAdmin) {
+      return NextResponse.redirect(new URL("/dashboard", req.url));
+    }
+  }
+
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: ["/dashboard/:path*", "/admin/:path*"],

@@ -73,23 +73,28 @@ export function LandingPage({ onPaymentRequired }) {
   useEffect(() => {
     if (status === "authenticated" && session?.user) {
       const adminEmails = ["harshagrawal4256@gmail.com"];
-      const isAdminByEmail = session.user.email ? adminEmails.includes(session.user.email.toLowerCase()) : false;
+      const isAdminByEmail = session.user.email
+        ? adminEmails.includes(session.user.email.toLowerCase())
+        : false;
       const isAdmin = session.user.role === "admin" || isAdminByEmail;
       const isPaid = session.user.isPaid;
       if (isAdmin || isPaid) {
-        router.push("/dashboard");
+        // Use full page navigation so cookies are sent properly to middleware
+        window.location.href = "/dashboard";
       }
     }
-  }, [status, session, router]);
+  }, [status, session]);
 
   const handleGetAccess = async () => {
     if (status === "authenticated") {
       const adminEmails = ["harshagrawal4256@gmail.com"];
-      const isAdminByEmail = session?.user?.email ? adminEmails.includes(session.user.email.toLowerCase()) : false;
+      const isAdminByEmail = session?.user?.email
+        ? adminEmails.includes(session.user.email.toLowerCase())
+        : false;
       const isAdmin = session?.user?.role === "admin" || isAdminByEmail;
       const isPaid = session?.user?.isPaid;
       if (isAdmin || isPaid) {
-        router.push("/dashboard");
+        window.location.href = "/dashboard";
         return;
       }
       onPaymentRequired();
