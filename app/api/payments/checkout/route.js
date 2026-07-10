@@ -1,6 +1,5 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
-import { adminDb } from "@/lib/firebase-admin";
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
 
@@ -13,8 +12,8 @@ export async function POST() {
   }
 
   const userId = session.user.id;
-  if (!userId || !adminDb) {
-    return NextResponse.json({ error: "Invalid state" }, { status: 400 });
+  if (!userId) {
+    return NextResponse.json({ error: "Invalid session" }, { status: 400 });
   }
 
   const keyId = process.env.RAZORPAY_KEY_ID;

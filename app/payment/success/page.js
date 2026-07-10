@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const WHATSAPP_LINK = "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK";
 
 export default function PaymentSuccessPage() {
   const router = useRouter();
+  const { update } = useSession();
   const [countdown, setCountdown] = useState(5);
   const [confetti, setConfetti] = useState([]);
 
@@ -24,6 +26,9 @@ export default function PaymentSuccessPage() {
     }));
     setConfetti(particles);
 
+    // Force session refresh so isPaid is true before going to dashboard
+    update();
+
     const interval = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -36,7 +41,8 @@ export default function PaymentSuccessPage() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [router]);
+  }, [router, update]);
+
 
   return (
     <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", color: "#fff", padding: "1.5rem" }}>
