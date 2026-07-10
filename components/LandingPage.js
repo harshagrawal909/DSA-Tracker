@@ -72,9 +72,11 @@ export function LandingPage({ onPaymentRequired }) {
 
   useEffect(() => {
     if (status === "authenticated" && session?.user) {
-      const isAdmin = session.user.role === "admin";
+      const adminEmails = ["harshagrawal4256@gmail.com"];
+      const isAdminByEmail = session.user.email ? adminEmails.includes(session.user.email.toLowerCase()) : false;
+      const isAdmin = session.user.role === "admin" || isAdminByEmail;
       const isPaid = session.user.isPaid;
-      if (isAdmin || isPaid || hasUserPaid(session.user.id)) {
+      if (isAdmin || isPaid) {
         router.push("/dashboard");
       }
     }
@@ -82,8 +84,11 @@ export function LandingPage({ onPaymentRequired }) {
 
   const handleGetAccess = async () => {
     if (status === "authenticated") {
-      const isAdmin = session?.user?.role === "admin";
-      if (isAdmin) {
+      const adminEmails = ["harshagrawal4256@gmail.com"];
+      const isAdminByEmail = session?.user?.email ? adminEmails.includes(session.user.email.toLowerCase()) : false;
+      const isAdmin = session?.user?.role === "admin" || isAdminByEmail;
+      const isPaid = session?.user?.isPaid;
+      if (isAdmin || isPaid) {
         router.push("/dashboard");
         return;
       }
@@ -98,7 +103,8 @@ export function LandingPage({ onPaymentRequired }) {
   const handleConsentAccepted = async () => {
     setShowConsentModal(false);
     setLoading(true);
-    await signIn("google", { callbackUrl: "/dashboard" });
+    // Redirect to / first so session fully hydrates before middleware runs on /dashboard
+    await signIn("google", { callbackUrl: "/" });
   };
 
   return (
