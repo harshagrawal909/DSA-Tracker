@@ -72,25 +72,57 @@ function getStreak(completions) {
 }
 
 /* ─── Streak Heatmap ─────────────────────────────────────── */
-function StreakHeatmap({ completions, expectedDay }) {
+function StreakHeatmap({ planId, completions, expectedCalendarDay }) {
+  const totalCalendarDays = getPlanMaxDay(planId);
+  const calendarDays = useMemo(() => {
+    return Array.from({ length: totalCalendarDays }, (_, i) => i + 1);
+  }, [totalCalendarDays]);
+
   return (
     <div className="heatmap-grid">
-      {dsaData.map(({ day, tasks, problems }) => {
-        const done =
-          tasks.filter((_, i) => completions[taskKey(day, i)]).length +
-          problems.filter((_, i) => completions[problemKey(day, i)]).length;
-        const total = tasks.length + problems.length;
+      {calendarDays.map((dayNum) => {
+        const calendarDay = getPlanDay(planId, dayNum);
+        if (!calendarDay) return null;
+
+        const isToday = dayNum === expectedCalendarDay;
+
+        if (calendarDay.type === "rest") {
+          const isPast = dayNum < expectedCalendarDay;
+          return (
+            <div
+              key={dayNum}
+              className={`heatmap-cell rest-cell ${isPast ? "rest-done" : ""}${isToday ? " today-cell" : ""}`}
+              title={`Day ${dayNum} (Rest Day)${isToday ? " ← Today's target" : ""}`}
+              style={{
+                backgroundColor: isPast ? "rgba(16, 185, 129, 0.4)" : "rgba(100, 116, 139, 0.15)",
+                border: isToday ? "2px solid #8b5cf6" : "1px dashed rgba(148, 163, 184, 0.25)"
+              }}
+            />
+          );
+        }
+
+        let total = 0;
+        let done = 0;
+        if (calendarDay.tasks) {
+          total += calendarDay.tasks.length;
+          done += calendarDay.tasks.filter((t) => completions[taskKey(t.contentDay, t.originalIndex)]).length;
+        }
+        if (calendarDay.problems) {
+          total += calendarDay.problems.length;
+          done += calendarDay.problems.filter((p) => completions[problemKey(p.contentDay, p.originalIndex)]).length;
+        }
+
         const pct = total === 0 ? 0 : done / total;
         let level = 0;
         if (pct > 0) level = 1;
         if (pct >= 0.5) level = 2;
         if (pct >= 1) level = 3;
-        const isToday = day === expectedDay;
+
         return (
           <div
-            key={day}
+            key={dayNum}
             className={`heatmap-cell level-${level}${isToday ? " today-cell" : ""}`}
-            title={`Day ${day}: ${done}/${total} done${isToday ? " ← Today's target" : ""}`}
+            title={`Day ${dayNum}: ${done}/${total} done${isToday ? " ← Today's target" : ""}`}
           />
         );
       })}
@@ -390,13 +422,13 @@ export function UserDashboard() {
       {/* ── Heatmap ──────────────────────────────── */}
       <div className="db-card">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
-          <p className="db-card-label">Progress Heatmap — {MAX_DAY} Days</p>
+          <p className="db-card-label">Progress Heatmap — {totalCalendarDays} Days</p>
           <span className="heatmap-today-legend">
             <span className="heatmap-cell today-cell" style={{ display: "inline-block", verticalAlign: "middle" }} />
             {" "}= Today&apos;s target (Day {expectedCalendarDay})
           </span>
         </div>
-        <StreakHeatmap completions={completions} expectedDay={expectedContentDay} />
+        <StreakHeatmap planId={planId} completions={completions} expectedCalendarDay={expectedCalendarDay} />
         <div className="heatmap-legend">
           <span>Less</span>
           <div className="heatmap-cell level-0" />

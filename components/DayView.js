@@ -143,8 +143,8 @@ export function DayView({ dayNum, basePath = "/dashboard/day" }) {
     [syncToCloud]
   );
 
-  const tasks = resolvedDay?.tasks || [];
-  const problems = resolvedDay?.problems || [];
+  const tasks = useMemo(() => resolvedDay?.tasks || [], [resolvedDay]);
+  const problems = useMemo(() => resolvedDay?.problems || [], [resolvedDay]);
 
   const normalizedProblems = useMemo(
     () => problems.map((p) => ({ ...normalizeProblem(p), contentDay: p.contentDay, originalIndex: p.originalIndex })),
@@ -167,8 +167,8 @@ export function DayView({ dayNum, basePath = "/dashboard/day" }) {
       });
   }, [normalizedProblems, pendingOnly, completions]);
 
-  const doneVideos = tasks.filter((t) => completions[taskKey(t.contentDay, t.originalIndex)]).length;
-  const doneProblems = problems.filter((p) => completions[problemKey(p.contentDay, p.originalIndex)]).length;
+  const doneVideos = useMemo(() => tasks.filter((t) => completions[taskKey(t.contentDay, t.originalIndex)]).length, [tasks, completions]);
+  const doneProblems = useMemo(() => problems.filter((p) => completions[problemKey(p.contentDay, p.originalIndex)]).length, [problems, completions]);
 
   if (!ready || !schedule || !resolvedDay) {
     return (
@@ -322,7 +322,7 @@ export function DayView({ dayNum, basePath = "/dashboard/day" }) {
               </p>
             ) : (
               <ul className="mt-4 space-y-3">
-                {visibleProblemEntries.map(({ problem }) => {
+                {visibleProblemEntries.map((problem) => {
                   const nKey = problemNotesKey(problem.contentDay, problem.originalIndex);
                   return (
                     <li key={`${problem.title}-${problem.contentDay}-${problem.originalIndex}`}>
