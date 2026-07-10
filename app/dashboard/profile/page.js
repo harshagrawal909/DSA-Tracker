@@ -166,7 +166,7 @@ export default async function ProfilePage() {
               <div className="invoice-container">
                 <div className="invoice-header">
                   <div className="invoice-logo">
-                    <img src="/logo.png" alt="AlgoPath" style={{ height: "24px", width: "auto", objectFit: "contain" }} />
+                    <img src="/logo.png" alt="AlgoPath" style={{ height: "42px", width: "auto", objectFit: "contain" }} />
                   </div>
                   <div className="invoice-status-paid">PAID IN FULL</div>
                 </div>

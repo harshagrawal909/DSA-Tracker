@@ -270,8 +270,9 @@ export function UserDashboard() {
     <div className="user-dashboard">
       {/* ── Top Header Navigation ──────────────────── */}
       <header className="db-top-nav-bar">
-        <div className="db-nav-brand">
-          <img src="/logo.png" alt="AlgoPath" style={{ height: "28px", width: "auto", objectFit: "contain" }} />
+        <div className="db-nav-brand" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <img src="/icon.png" alt="AlgoPath" style={{ height: "26px", width: "26px", borderRadius: "6px" }} />
+          <span className="db-nav-title" style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff" }}>AlgoPath</span>
         </div>
         <div className="db-nav-actions">
           {user && (
