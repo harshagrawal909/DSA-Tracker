@@ -15,6 +15,11 @@ export async function GET(request) {
         whatsappLink: settingsDoc.whatsappLink || "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK",
         basePrice: settingsDoc.basePrice ?? 799,
         surveyDiscount: settingsDoc.surveyDiscount ?? 200,
+        campaignActive: settingsDoc.campaignActive ?? false,
+        campaignTitle: settingsDoc.campaignTitle || "",
+        campaignMessage: settingsDoc.campaignMessage || "",
+        campaignDiscountType: settingsDoc.campaignDiscountType || "percent",
+        campaignDiscountValue: settingsDoc.campaignDiscountValue ?? 0,
       });
     }
 
@@ -25,6 +30,11 @@ export async function GET(request) {
       whatsappLink: legacyLink,
       basePrice: 799,
       surveyDiscount: 200,
+      campaignActive: false,
+      campaignTitle: "",
+      campaignMessage: "",
+      campaignDiscountType: "percent",
+      campaignDiscountValue: 0,
     });
   } catch (error) {
     console.error("Error fetching config:", error);
@@ -40,7 +50,16 @@ export async function PUT(request) {
 
   try {
     const body = await request.json();
-    const { whatsappLink, basePrice, surveyDiscount } = body;
+    const { 
+      whatsappLink, 
+      basePrice, 
+      surveyDiscount, 
+      campaignActive, 
+      campaignTitle, 
+      campaignMessage, 
+      campaignDiscountType, 
+      campaignDiscountValue 
+    } = body;
 
     const db = await getDb();
     const configCol = db.collection("config");
@@ -60,6 +79,11 @@ export async function PUT(request) {
       whatsappLink: whatsappLink !== undefined ? whatsappLink : (existing.whatsappLink || ""),
       basePrice: basePrice !== undefined ? Number(basePrice) : (existing.basePrice ?? 799),
       surveyDiscount: surveyDiscount !== undefined ? Number(surveyDiscount) : (existing.surveyDiscount ?? 200),
+      campaignActive: campaignActive !== undefined ? Boolean(campaignActive) : (existing.campaignActive ?? false),
+      campaignTitle: campaignTitle !== undefined ? String(campaignTitle) : (existing.campaignTitle || ""),
+      campaignMessage: campaignMessage !== undefined ? String(campaignMessage) : (existing.campaignMessage || ""),
+      campaignDiscountType: campaignDiscountType !== undefined ? String(campaignDiscountType) : (existing.campaignDiscountType || "percent"),
+      campaignDiscountValue: campaignDiscountValue !== undefined ? Number(campaignDiscountValue) : (existing.campaignDiscountValue ?? 0),
     };
 
     await configCol.updateOne(

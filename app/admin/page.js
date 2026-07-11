@@ -33,6 +33,14 @@ export default function AdminPage() {
   const [surveyDiscount, setSurveyDiscount] = useState("200");
   const [savingSettings, setSavingSettings] = useState(false);
 
+  // Global campaign settings state
+  const [campaignActive, setCampaignActive] = useState(false);
+  const [campaignTitle, setCampaignTitle] = useState("");
+  const [campaignMessage, setCampaignMessage] = useState("");
+  const [campaignDiscountType, setCampaignDiscountType] = useState("percent");
+  const [campaignDiscountValue, setCampaignDiscountValue] = useState("0");
+  const [savingCampaign, setSavingCampaign] = useState(false);
+
   const fetchConfig = async () => {
     try {
       const res = await fetch("/api/config");
@@ -42,6 +50,11 @@ export default function AdminPage() {
           if (data.whatsappLink) setWhatsappLink(data.whatsappLink);
           if (data.basePrice !== undefined) setBasePrice(String(data.basePrice));
           if (data.surveyDiscount !== undefined) setSurveyDiscount(String(data.surveyDiscount));
+          if (data.campaignActive !== undefined) setCampaignActive(Boolean(data.campaignActive));
+          if (data.campaignTitle !== undefined) setCampaignTitle(data.campaignTitle);
+          if (data.campaignMessage !== undefined) setCampaignMessage(data.campaignMessage);
+          if (data.campaignDiscountType !== undefined) setCampaignDiscountType(data.campaignDiscountType);
+          if (data.campaignDiscountValue !== undefined) setCampaignDiscountValue(String(data.campaignDiscountValue));
         }
       }
     } catch (err) {
@@ -72,6 +85,34 @@ export default function AdminPage() {
       alert("Error saving settings.");
     } finally {
       setSavingSettings(false);
+    }
+  };
+
+  const handleSaveCampaign = async (e) => {
+    e.preventDefault();
+    setSavingCampaign(true);
+    try {
+      const res = await fetch("/api/config", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          campaignActive,
+          campaignTitle,
+          campaignMessage,
+          campaignDiscountType,
+          campaignDiscountValue: Number(campaignDiscountValue),
+        }),
+      });
+      if (res.ok) {
+        alert("Global campaign settings updated successfully!");
+      } else {
+        alert("Failed to update campaign settings.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error saving campaign settings.");
+    } finally {
+      setSavingCampaign(false);
     }
   };
 
@@ -360,6 +401,117 @@ export default function AdminPage() {
                 }}
               >
                 {savingSettings ? "Saving Settings..." : "Save Platform Settings"}
+              </button>
+            </div>
+          </form>
+        </div>
+
+        {/* Global Campaign Manager Card */}
+        <div style={{ background: "#0f172a", border: "1px solid rgba(251, 191, 36, 0.2)", padding: "1.5rem", borderRadius: "1rem", marginBottom: "2rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+            <span>📢 Global Flash Sale Campaign Manager</span>
+          </h2>
+          <p style={{ color: "#94a3b8", fontSize: "0.85rem", marginBottom: "1rem" }}>
+            Override the base price with a site-wide discount event. When active, it displays a top banner on the home page and slashes the checkout price automatically.
+          </p>
+          <form onSubmit={handleSaveCampaign} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            
+            {/* Active Toggle & Basic Fields */}
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              
+              {/* Campaign Status Toggle */}
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.6rem 1rem", minWidth: "160px" }}>
+                <input
+                  type="checkbox"
+                  id="campaignActive"
+                  checked={campaignActive}
+                  onChange={(e) => setCampaignActive(e.target.checked)}
+                  style={{ cursor: "pointer", width: "16px", height: "16px" }}
+                />
+                <label htmlFor="campaignActive" style={{ fontSize: "0.85rem", color: "#cbd5e1", fontWeight: "600", cursor: "pointer" }}>
+                  Campaign Active
+                </label>
+              </div>
+
+              {/* Discount Type */}
+              <div style={{ minWidth: "120px" }}>
+                <select
+                  value={campaignDiscountType}
+                  onChange={(e) => setCampaignDiscountType(e.target.value)}
+                  style={{ width: "100%", background: "#0a0f1d", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.6rem 0.8rem", color: "#fff", fontSize: "0.9rem", height: "100%" }}
+                >
+                  <option value="percent">Percentage (%) Off</option>
+                  <option value="fixed">Fixed Amount (₹) Off</option>
+                </select>
+              </div>
+
+              {/* Discount Value */}
+              <div style={{ flex: "1", minWidth: "120px" }}>
+                <input
+                  type="number"
+                  value={campaignDiscountValue}
+                  onChange={(e) => setCampaignDiscountValue(e.target.value)}
+                  placeholder="Discount value"
+                  required
+                  min="0"
+                  style={{ width: "100%", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.6rem 0.8rem", color: "#fff", fontSize: "0.9rem" }}
+                />
+              </div>
+            </div>
+
+            {/* Campaign Text Fields */}
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              {/* Campaign Title */}
+              <div style={{ flex: "1", minWidth: "240px" }}>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "#94a3b8", fontWeight: "600", marginBottom: "0.4rem" }}>
+                  Campaign Title / Reason
+                </label>
+                <input
+                  type="text"
+                  value={campaignTitle}
+                  onChange={(e) => setCampaignTitle(e.target.value)}
+                  placeholder="e.g. Placement Season Special!"
+                  required={campaignActive}
+                  style={{ width: "100%", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.6rem 0.8rem", color: "#fff", fontSize: "0.9rem" }}
+                />
+              </div>
+
+              {/* Campaign Message */}
+              <div style={{ flex: "2", minWidth: "300px" }}>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "#94a3b8", fontWeight: "600", marginBottom: "0.4rem" }}>
+                  Campaign Message / Subtext
+                </label>
+                <input
+                  type="text"
+                  value={campaignMessage}
+                  onChange={(e) => setCampaignMessage(e.target.value)}
+                  placeholder="e.g. Get 50% off. Limited time offer, grab immediately!"
+                  required={campaignActive}
+                  style={{ width: "100%", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.6rem 0.8rem", color: "#fff", fontSize: "0.9rem" }}
+                />
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                disabled={savingCampaign}
+                style={{
+                  background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+                  color: "#fff",
+                  border: "none",
+                  fontWeight: "700",
+                  fontSize: "0.85rem",
+                  padding: "0.65rem 1.5rem",
+                  borderRadius: "0.5rem",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 12px rgba(245, 158, 11, 0.2)"
+                }}
+              >
+                {savingCampaign ? "Saving Settings..." : "Save Campaign Settings"}
               </button>
             </div>
           </form>

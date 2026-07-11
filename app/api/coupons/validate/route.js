@@ -16,9 +16,20 @@ export async function POST(request) {
       return NextResponse.json({ error: "Coupon code is required" }, { status: 400 });
     }
 
-    const normalizedCode = code.trim().toUpperCase();
-
     const db = await getDb();
+
+    // Check if site-wide campaign is active
+    try {
+      const configCol = db.collection("config");
+      const settingsDoc = await configCol.findOne({ _id: "global_settings" });
+      if (settingsDoc && settingsDoc.campaignActive) {
+        return NextResponse.json({ valid: false, message: "Coupon codes cannot be combined with site-wide sales." });
+      }
+    } catch (err) {
+      console.error("Error checking campaign status during validation:", err);
+    }
+
+    const normalizedCode = code.trim().toUpperCase();
     const couponsCol = db.collection("coupons");
     const coupon = await couponsCol.findOne({ _id: normalizedCode });
 

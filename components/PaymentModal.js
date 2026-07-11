@@ -26,34 +26,54 @@ export function PaymentModal({ onClose, userName }) {
   // Pricing configuration state
   const [basePrice, setBasePrice] = useState(799);
 
+  // Campaign states
+  const [campaignActive, setCampaignActive] = useState(false);
+  const [campaignTitle, setCampaignTitle] = useState("");
+  const [campaignDiscountType, setCampaignDiscountType] = useState("percent");
+  const [campaignDiscountValue, setCampaignDiscountValue] = useState(0);
+
   // Coupon state
   const [couponInput, setCouponInput] = useState("");
   const [couponLoading, setCouponLoading] = useState(false);
   const [appliedCoupon, setAppliedCoupon] = useState(null); // { code, finalPrice, message }
   const [couponError, setCouponError] = useState(null);
 
-  const displayPrice = appliedCoupon ? appliedCoupon.finalPrice : basePrice;
+  const salePrice = campaignActive
+    ? (campaignDiscountType === "fixed"
+        ? Math.max(0, basePrice - campaignDiscountValue)
+        : Math.max(0, Math.round(basePrice * (1 - campaignDiscountValue / 100))))
+    : basePrice;
+
+  const displayPrice = campaignActive
+    ? salePrice
+    : (appliedCoupon ? appliedCoupon.finalPrice : basePrice);
 
   useEffect(() => {
     loadRazorpayScript();
 
     const initializePayment = async () => {
       let currentBase = 799;
-      // 1. Fetch dynamic base price
+      // 1. Fetch dynamic base price & campaign configurations
       try {
         const res = await fetch("/api/config");
         if (res.ok) {
           const configData = await res.json();
-          if (configData && configData.basePrice !== undefined) {
-            currentBase = Number(configData.basePrice);
-            setBasePrice(currentBase);
+          if (configData) {
+            if (configData.basePrice !== undefined) {
+              currentBase = Number(configData.basePrice);
+              setBasePrice(currentBase);
+            }
+            if (configData.campaignActive !== undefined) setCampaignActive(configData.campaignActive);
+            if (configData.campaignTitle !== undefined) setCampaignTitle(configData.campaignTitle);
+            if (configData.campaignDiscountType !== undefined) setCampaignDiscountType(configData.campaignDiscountType);
+            if (configData.campaignDiscountValue !== undefined) setCampaignDiscountValue(configData.campaignDiscountValue);
           }
         }
       } catch (err) {
         console.error("Error loading config base price:", err);
       }
 
-      // 2. Check for active survey coupon linked to user's email
+      // 2. Check for active survey coupon linked to user's email (only if no site-wide campaign is active)
       const userEmail = session?.user?.email;
       if (userEmail) {
         try {
@@ -289,7 +309,19 @@ export function PaymentModal({ onClose, userName }) {
               marginBottom: "1rem"
             }}
           >
-            {appliedCoupon ? (
+            {campaignActive ? (
+              <>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+                  <span style={{ fontSize: "1rem", fontWeight: "600", color: "#64748b", textDecoration: "line-through" }}>₹{basePrice}</span>
+                  <span style={{ fontSize: "1.75rem", fontWeight: "900", color: salePrice === 0 ? "#34d399" : "#fff" }}>
+                    {salePrice === 0 ? "FREE" : `₹${salePrice}`}
+                  </span>
+                </div>
+                <span style={{ fontSize: "0.75rem", color: "#fbbf24", fontWeight: "700", display: "block", marginTop: "0.25rem" }}>
+                  🔥 {campaignTitle} Active!
+                </span>
+              </>
+            ) : appliedCoupon ? (
               <>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
                   <span style={{ fontSize: "1rem", fontWeight: "600", color: "#64748b", textDecoration: "line-through" }}>₹{basePrice}</span>
@@ -313,7 +345,14 @@ export function PaymentModal({ onClose, userName }) {
 
           {/* Coupon Input */}
           <div style={{ marginBottom: "1.25rem" }}>
-            {appliedCoupon ? (
+            {campaignActive ? (
+              <div style={{
+                background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)",
+                borderRadius: "0.5rem", padding: "0.6rem 0.75rem", fontSize: "0.75rem", color: "#fbbf24", fontWeight: "600"
+              }}>
+                ℹ️ Coupons are disabled during the site-wide sale.
+              </div>
+            ) : appliedCoupon ? (
               <div style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
                 background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.2)",

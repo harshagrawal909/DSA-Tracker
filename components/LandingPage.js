@@ -70,6 +70,13 @@ export function LandingPage({ onPaymentRequired }) {
   const [basePrice, setBasePrice] = useState(799);
   const [surveyDiscount, setSurveyDiscount] = useState(200);
 
+  // Campaign states
+  const [campaignActive, setCampaignActive] = useState(false);
+  const [campaignTitle, setCampaignTitle] = useState("");
+  const [campaignMessage, setCampaignMessage] = useState("");
+  const [campaignDiscountType, setCampaignDiscountType] = useState("percent");
+  const [campaignDiscountValue, setCampaignDiscountValue] = useState(0);
+
   useEffect(() => {
     fetch("/api/config")
       .then((res) => { if (res.ok) return res.json(); })
@@ -78,10 +85,21 @@ export function LandingPage({ onPaymentRequired }) {
           if (data.whatsappLink) setWhatsappLink(data.whatsappLink);
           if (data.basePrice !== undefined) setBasePrice(data.basePrice);
           if (data.surveyDiscount !== undefined) setSurveyDiscount(data.surveyDiscount);
+          if (data.campaignActive !== undefined) setCampaignActive(data.campaignActive);
+          if (data.campaignTitle !== undefined) setCampaignTitle(data.campaignTitle);
+          if (data.campaignMessage !== undefined) setCampaignMessage(data.campaignMessage);
+          if (data.campaignDiscountType !== undefined) setCampaignDiscountType(data.campaignDiscountType);
+          if (data.campaignDiscountValue !== undefined) setCampaignDiscountValue(data.campaignDiscountValue);
         }
       })
       .catch((err) => console.error("Error loading config:", err));
   }, []);
+
+  const salePrice = campaignActive
+    ? (campaignDiscountType === "fixed"
+        ? Math.max(0, basePrice - campaignDiscountValue)
+        : Math.max(0, Math.round(basePrice * (1 - campaignDiscountValue / 100))))
+    : basePrice;
 
   // Auto-prompt login modal if redirected from survey with showPayment parameter
   useEffect(() => {
@@ -140,6 +158,43 @@ export function LandingPage({ onPaymentRequired }) {
 
   return (
     <div className="landing-root">
+      {/* ── Site-wide Sale Banner ───────────── */}
+      {campaignActive && (
+        <div style={{
+          background: "linear-gradient(90deg, #f59e0b 0%, #d97706 100%)",
+          color: "#030712",
+          textAlign: "center",
+          padding: "0.5rem 1rem",
+          fontSize: "0.85rem",
+          fontWeight: "700",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "0.5rem",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
+          position: "relative",
+          zIndex: 101,
+          animation: "slideDown 0.3s ease"
+        }}>
+          <span>🔥 <strong>{campaignTitle}:</strong> {campaignMessage}</span>
+          <a
+            href="#pricing"
+            style={{
+              background: "#030712",
+              color: "#f59e0b",
+              padding: "0.2rem 0.6rem",
+              borderRadius: "0.25rem",
+              fontSize: "0.75rem",
+              fontWeight: "800",
+              textDecoration: "none",
+              cursor: "pointer"
+            }}
+          >
+            Claim Offer →
+          </a>
+        </div>
+      )}
+
       {/* ── Navbar ─────────────────────────── */}
       <nav className="landing-nav">
         <div className="nav-inner">
@@ -259,7 +314,14 @@ export function LandingPage({ onPaymentRequired }) {
               {loading ? (
                 <span className="btn-spinner" />
               ) : (
-                <span>🚀 Get Lifetime Access – ₹{basePrice}</span>
+                campaignActive ? (
+                  <span>
+                    🚀 Get Lifetime Access – <span style={{ textDecoration: "line-through", opacity: 0.6 }}>₹{basePrice}</span> &nbsp;
+                    <span style={{ color: "#34d399", fontWeight: "800" }}>₹{salePrice}</span>
+                  </span>
+                ) : (
+                  <span>🚀 Get Lifetime Access – ₹{basePrice}</span>
+                )
               )}
             </button>
             <p className="hero-cta-sub" style={{ marginBottom: "0.75rem" }}>
@@ -462,11 +524,24 @@ export function LandingPage({ onPaymentRequired }) {
             <div className="pricing-card">
               <div className="pricing-badge">🏆 Most Popular</div>
               <div className="pricing-name">Lifetime Access</div>
-              <div className="pricing-amount">
-                <span className="pricing-currency">₹</span>
-                <span className="pricing-price">{basePrice}</span>
-              </div>
-              <div className="pricing-original">₹1,999 value</div>
+              {campaignActive ? (
+                <>
+                  <div className="pricing-amount" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+                    <span style={{ fontSize: "1.5rem", color: "#64748b", textDecoration: "line-through", fontWeight: "600" }}>₹{basePrice}</span>
+                    <span className="pricing-currency" style={{ fontSize: "1.5rem", color: "#34d399" }}>₹</span>
+                    <span className="pricing-price" style={{ color: "#34d399" }}>{salePrice}</span>
+                  </div>
+                  <div className="pricing-original" style={{ color: "#f59e0b", fontWeight: "700" }}>🔥 {campaignTitle} Active!</div>
+                </>
+              ) : (
+                <>
+                  <div className="pricing-amount">
+                    <span className="pricing-currency">₹</span>
+                    <span className="pricing-price">{basePrice}</span>
+                  </div>
+                  <div className="pricing-original">₹1,999 value</div>
+                </>
+              )}
               <ul className="pricing-features">
                 <li>✅ All 4 schedule options (1/2/3/6 months)</li>
                 <li>✅ Switch pace anytime, no re-payment</li>

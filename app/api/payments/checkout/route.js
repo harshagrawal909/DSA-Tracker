@@ -19,51 +19,69 @@ export async function POST(request) {
 
   let couponCode = null;
   let basePrice = 799;
+  let campaignActive = false;
+  let campaignDiscountType = "percent";
+  let campaignDiscountValue = 0;
 
-  // Retrieve base price from configuration
+  // Retrieve base price and campaign configuration
   try {
     const db = await getDb();
     const configCol = db.collection("config");
     const settingsDoc = await configCol.findOne({ _id: "global_settings" });
-    if (settingsDoc && settingsDoc.basePrice !== undefined) {
-      basePrice = Number(settingsDoc.basePrice);
+    if (settingsDoc) {
+      if (settingsDoc.basePrice !== undefined) {
+        basePrice = Number(settingsDoc.basePrice);
+      }
+      campaignActive = !!settingsDoc.campaignActive;
+      campaignDiscountType = settingsDoc.campaignDiscountType || "percent";
+      campaignDiscountValue = Number(settingsDoc.campaignDiscountValue || 0);
     }
   } catch (err) {
-    console.error("Error fetching base price:", err);
+    console.error("Error fetching global settings for checkout:", err);
   }
 
   let finalPriceRupees = basePrice;
 
-  try {
-    const body = await request.json().catch(() => ({}));
-    couponCode = body.couponCode ? body.couponCode.trim().toUpperCase() : null;
-  } catch {
-    // No body or invalid JSON — proceed without coupon
-  }
-
-  // Validate coupon if provided
-  if (couponCode) {
+  if (campaignActive) {
+    if (campaignDiscountType === "fixed") {
+      finalPriceRupees = Math.max(0, basePrice - campaignDiscountValue);
+    } else if (campaignDiscountType === "percent") {
+      finalPriceRupees = Math.max(0, Math.round(basePrice * (1 - campaignDiscountValue / 100)));
+    }
+    // Force coupon code to null during site-wide sales
+    couponCode = null;
+  } else {
     try {
-      const db = await getDb();
-      const couponsCol = db.collection("coupons");
-      const coupon = await couponsCol.findOne({ _id: couponCode });
+      const body = await request.json().catch(() => ({}));
+      couponCode = body.couponCode ? body.couponCode.trim().toUpperCase() : null;
+    } catch {
+      // No body or invalid JSON — proceed without coupon
+    }
 
-      if (!coupon || !coupon.isActive) {
-        return NextResponse.json({ error: "Invalid or inactive coupon code" }, { status: 400 });
-      }
+    // Validate coupon if provided
+    if (couponCode) {
+      try {
+        const db = await getDb();
+        const couponsCol = db.collection("coupons");
+        const coupon = await couponsCol.findOne({ _id: couponCode });
 
-      if (coupon.maxUses && coupon.usedCount >= coupon.maxUses) {
-        return NextResponse.json({ error: "This coupon has been fully redeemed" }, { status: 400 });
-      }
+        if (!coupon || !coupon.isActive) {
+          return NextResponse.json({ error: "Invalid or inactive coupon code" }, { status: 400 });
+        }
 
-      if (coupon.discountType === "fixed") {
-        finalPriceRupees = Math.max(0, basePrice - coupon.discountValue);
-      } else if (coupon.discountType === "percent") {
-        finalPriceRupees = Math.max(0, Math.round(basePrice * (1 - coupon.discountValue / 100)));
+        if (coupon.maxUses && coupon.usedCount >= coupon.maxUses) {
+          return NextResponse.json({ error: "This coupon has been fully redeemed" }, { status: 400 });
+        }
+
+        if (coupon.discountType === "fixed") {
+          finalPriceRupees = Math.max(0, basePrice - coupon.discountValue);
+        } else if (coupon.discountType === "percent") {
+          finalPriceRupees = Math.max(0, Math.round(basePrice * (1 - coupon.discountValue / 100)));
+        }
+      } catch (error) {
+        console.error("Coupon validation error during checkout:", error);
+        return NextResponse.json({ error: "Error validating coupon" }, { status: 500 });
       }
-    } catch (error) {
-      console.error("Coupon validation error during checkout:", error);
-      return NextResponse.json({ error: "Error validating coupon" }, { status: 500 });
     }
   }
 
