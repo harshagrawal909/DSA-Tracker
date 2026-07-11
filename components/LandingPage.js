@@ -65,6 +65,14 @@ export function LandingPage({ onPaymentRequired }) {
   const [showConsentModal, setShowConsentModal] = useState(false);
   const [modalOnlyTerms, setModalOnlyTerms] = useState(false);
   const [modalOnlyPrivacy, setModalOnlyPrivacy] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState("");
+
+  useEffect(() => {
+    fetch("/api/config")
+      .then((res) => { if (res.ok) return res.json(); })
+      .then((data) => { if (data && data.whatsappLink) setWhatsappLink(data.whatsappLink); })
+      .catch((err) => console.error("Error loading whatsapp link:", err));
+  }, []);
 
   const [c1, r1] = useCounter(450);
   const [c2, r2] = useCounter(61);
@@ -224,6 +232,41 @@ export function LandingPage({ onPaymentRequired }) {
                 ⭐ Joined by <span style={{ color: "#a78bfa" }}>1,000+ students</span> preparing for top tech roles!
               </span>
             </div>
+
+            {whatsappLink && (
+              <div style={{ marginTop: "1.25rem" }}>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    background: "rgba(37, 211, 102, 0.12)",
+                    border: "1px solid rgba(37, 211, 102, 0.25)",
+                    padding: "0.5rem 1.25rem",
+                    borderRadius: "0.75rem",
+                    color: "#25d366",
+                    fontWeight: "700",
+                    fontSize: "0.85rem",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    transition: "all 0.2s"
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.background = "rgba(37, 211, 102, 0.2)"}
+                  onMouseOut={(e) => e.currentTarget.style.background = "rgba(37, 211, 102, 0.12)"}
+                >
+                  <svg
+                    style={{ width: "1.1rem", height: "1.1rem", fill: "currentColor" }}
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.284 1.488 4.908 1.489 5.426 0 9.842-4.412 9.845-9.84.001-2.63-1.019-5.1-2.871-6.956-1.854-1.854-4.321-2.875-6.953-2.876-5.432 0-9.849 4.412-9.853 9.843-.001 1.748.461 3.454 1.337 4.975l-.982 3.585 3.668-.962zm11.371-6.725c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z" />
+                  </svg>
+                  Join Public WhatsApp Community
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Code window */}

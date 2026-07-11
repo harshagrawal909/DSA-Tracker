@@ -4,17 +4,6 @@ import { authOptions } from "@/lib/auth";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const session = await getServerSession(authOptions);
-  if (!session || !session.user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  const isAdmin = session.user.role === "admin";
-  const isPaid = session.user.isPaid;
-  if (!isAdmin && !isPaid) {
-    return NextResponse.json({ error: "Access denied" }, { status: 403 });
-  }
-
   try {
     const db = await getDb();
     const configCol = db.collection("config");
