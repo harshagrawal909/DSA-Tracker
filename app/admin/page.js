@@ -398,7 +398,7 @@ export default function AdminPage() {
               placeholder={couponForm.discountType === "fixed" ? "Amount (₹)" : "Percent (%)"}
               required
               min="1"
-              max={couponForm.discountType === "percent" ? "100" : "799"}
+              max={couponForm.discountType === "percent" ? "100" : String(basePrice)}
               style={{ width: "110px", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.5rem 0.6rem", color: "#fff", fontSize: "0.85rem" }}
             />
             <input
@@ -461,15 +461,16 @@ export default function AdminPage() {
               }}>
                 {(() => {
                   const coupon = newlyCreatedCoupon;
+                  const currentBase = Number(basePrice) || 799;
                   const discountText = coupon.discountType === "fixed"
                     ? `₹${coupon.discountValue} FLAT discount`
                     : `${coupon.discountValue}% discount`;
                   const finalPrice = coupon.discountType === "fixed"
-                    ? Math.max(0, 799 - coupon.discountValue)
-                    : Math.max(0, Math.round(799 * (1 - coupon.discountValue / 100)));
+                    ? Math.max(0, currentBase - coupon.discountValue)
+                    : Math.max(0, Math.round(currentBase * (1 - coupon.discountValue / 100)));
                   const priceText = finalPrice === 0 
                     ? "FREE lifetime access" 
-                    : `lifetime access for just *₹${finalPrice}* (originally ₹799)`;
+                    : `lifetime access for just *₹${finalPrice}* (originally ₹${currentBase})`;
                   const origin = typeof window !== "undefined" ? window.location.origin : "https://algopath.vercel.app";
                   return `🚀 *AlgoPath Pro Lifetime Access Offer!* 🎯\n\nHey study group! Master Data Structures & Algorithms with interactive trackers, custom schedules, and progress sheets.\n\nUse coupon code *${coupon._id}* to get **${discountText}** and get ${priceText}! ✨\n\n👉 Join now: ${origin}\n\n*Limited to first ${coupon.maxUses || "few"} students. Consistent prep starts here!* 💻`;
                 })()}
@@ -478,15 +479,16 @@ export default function AdminPage() {
               <button
                 onClick={() => {
                   const coupon = newlyCreatedCoupon;
+                  const currentBase = Number(basePrice) || 799;
                   const discountText = coupon.discountType === "fixed"
                     ? `₹${coupon.discountValue} FLAT discount`
                     : `${coupon.discountValue}% discount`;
                   const finalPrice = coupon.discountType === "fixed"
-                    ? Math.max(0, 799 - coupon.discountValue)
-                    : Math.max(0, Math.round(799 * (1 - coupon.discountValue / 100)));
+                    ? Math.max(0, currentBase - coupon.discountValue)
+                    : Math.max(0, Math.round(currentBase * (1 - coupon.discountValue / 100)));
                   const priceText = finalPrice === 0 
                     ? "FREE lifetime access" 
-                    : `lifetime access for just *₹${finalPrice}* (originally ₹799)`;
+                    : `lifetime access for just *₹${finalPrice}* (originally ₹${currentBase})`;
                   const origin = typeof window !== "undefined" ? window.location.origin : "https://algopath.vercel.app";
                   const shareMsg = `🚀 *AlgoPath Pro Lifetime Access Offer!* 🎯\n\nHey study group! Master Data Structures & Algorithms with interactive trackers, custom schedules, and progress sheets.\n\nUse coupon code *${coupon._id}* to get **${discountText}** and get ${priceText}! ✨\n\n👉 Join now: ${origin}\n\n*Limited to first ${coupon.maxUses || "few"} students. Consistent prep starts here!* 💻`;
                   navigator.clipboard.writeText(shareMsg);
@@ -518,9 +520,10 @@ export default function AdminPage() {
                 </thead>
                 <tbody>
                   {coupons.map((c) => {
+                    const currentBase = Number(basePrice) || 799;
                     const fp = c.discountType === "fixed"
-                      ? Math.max(0, 799 - c.discountValue)
-                      : Math.max(0, Math.round(799 * (1 - c.discountValue / 100)));
+                      ? Math.max(0, currentBase - c.discountValue)
+                      : Math.max(0, Math.round(currentBase * (1 - c.discountValue / 100)));
                     return (
                       <tr key={c._id} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                         <td style={{ padding: "0.6rem 0.5rem", fontWeight: "700", color: "#fff", letterSpacing: "0.05em" }}>{c._id}</td>
