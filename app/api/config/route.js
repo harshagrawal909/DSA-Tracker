@@ -7,9 +7,25 @@ export async function GET(request) {
   try {
     const db = await getDb();
     const configCol = db.collection("config");
+    
+    // Check for the unified global settings doc
+    const settingsDoc = await configCol.findOne({ _id: "global_settings" });
+    if (settingsDoc) {
+      return NextResponse.json({
+        whatsappLink: settingsDoc.whatsappLink || "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK",
+        basePrice: settingsDoc.basePrice ?? 799,
+        surveyDiscount: settingsDoc.surveyDiscount ?? 200,
+      });
+    }
+
+    // Fallback: check legacy single-value document
     const linkDoc = await configCol.findOne({ _id: "whatsapp_link" });
-    const value = linkDoc ? linkDoc.value : "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK";
-    return NextResponse.json({ whatsappLink: value });
+    const legacyLink = linkDoc ? linkDoc.value : "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK";
+    return NextResponse.json({
+      whatsappLink: legacyLink,
+      basePrice: 799,
+      surveyDiscount: 200,
+    });
   } catch (error) {
     console.error("Error fetching config:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
@@ -23,20 +39,45 @@ export async function PUT(request) {
   }
 
   try {
-    const { whatsappLink } = await request.json();
-    if (!whatsappLink) {
-      return NextResponse.json({ error: "Link is required" }, { status: 400 });
-    }
+    const body = await request.json();
+    const { whatsappLink, basePrice, surveyDiscount } = body;
 
     const db = await getDb();
     const configCol = db.collection("config");
+
+    // Fetch existing settings to merge updates
+    const existing = await configCol.findOne({ _id: "global_settings" }) || {};
+    
+    // Fallback migration check if global_settings didn't exist yet but whatsapp_link did
+    if (!existing.whatsappLink) {
+      const legacyLinkDoc = await configCol.findOne({ _id: "whatsapp_link" });
+      if (legacyLinkDoc) {
+        existing.whatsappLink = legacyLinkDoc.value;
+      }
+    }
+
+    const updatedSettings = {
+      whatsappLink: whatsappLink !== undefined ? whatsappLink : (existing.whatsappLink || ""),
+      basePrice: basePrice !== undefined ? Number(basePrice) : (existing.basePrice ?? 799),
+      surveyDiscount: surveyDiscount !== undefined ? Number(surveyDiscount) : (existing.surveyDiscount ?? 200),
+    };
+
     await configCol.updateOne(
-      { _id: "whatsapp_link" },
-      { $set: { value: whatsappLink } },
+      { _id: "global_settings" },
+      { $set: updatedSettings },
       { upsert: true }
     );
 
-    return NextResponse.json({ success: true });
+    // Also update legacy document for safety & backward compatibility
+    if (whatsappLink !== undefined) {
+      await configCol.updateOne(
+        { _id: "whatsapp_link" },
+        { $set: { value: whatsappLink } },
+        { upsert: true }
+      );
+    }
+
+    return NextResponse.json({ success: true, ...updatedSettings });
   } catch (error) {
     console.error("Error saving config:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

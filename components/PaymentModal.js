@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
-const BASE_PRICE = 799;
+import { useSession } from "next-auth/react";
 
 const loadRazorpayScript = () => {
   return new Promise((resolve) => {
@@ -19,9 +18,13 @@ const loadRazorpayScript = () => {
 };
 
 export function PaymentModal({ onClose, userName }) {
+  const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const router = useRouter();
+
+  // Pricing configuration state
+  const [basePrice, setBasePrice] = useState(799);
 
   // Coupon state
   const [couponInput, setCouponInput] = useState("");
@@ -29,11 +32,54 @@ export function PaymentModal({ onClose, userName }) {
   const [appliedCoupon, setAppliedCoupon] = useState(null); // { code, finalPrice, message }
   const [couponError, setCouponError] = useState(null);
 
-  const displayPrice = appliedCoupon ? appliedCoupon.finalPrice : BASE_PRICE;
+  const displayPrice = appliedCoupon ? appliedCoupon.finalPrice : basePrice;
 
   useEffect(() => {
     loadRazorpayScript();
-  }, []);
+
+    const initializePayment = async () => {
+      let currentBase = 799;
+      // 1. Fetch dynamic base price
+      try {
+        const res = await fetch("/api/config");
+        if (res.ok) {
+          const configData = await res.json();
+          if (configData && configData.basePrice !== undefined) {
+            currentBase = Number(configData.basePrice);
+            setBasePrice(currentBase);
+          }
+        }
+      } catch (err) {
+        console.error("Error loading config base price:", err);
+      }
+
+      // 2. Check for active survey coupon linked to user's email
+      const userEmail = session?.user?.email;
+      if (userEmail) {
+        try {
+          const checkRes = await fetch(`/api/coupons/check-email?email=${encodeURIComponent(userEmail)}`);
+          if (checkRes.ok) {
+            const checkData = await checkRes.json();
+            if (checkData && checkData.valid) {
+              const finalPrice = checkData.discountType === "percent"
+                ? Math.max(0, Math.round(currentBase * (1 - checkData.discountValue / 100)))
+                : Math.max(0, currentBase - checkData.discountValue);
+
+              setAppliedCoupon({
+                code: checkData.couponCode,
+                finalPrice,
+                message: `🎉 Survey coupon auto-applied! You save ₹${currentBase - finalPrice}`
+              });
+            }
+          }
+        } catch (err) {
+          console.error("Error checking user survey coupon:", err);
+        }
+      }
+    };
+
+    initializePayment();
+  }, [session]);
 
   const handleApplyCoupon = async () => {
     const code = couponInput.trim().toUpperCase();
@@ -246,7 +292,7 @@ export function PaymentModal({ onClose, userName }) {
             {appliedCoupon ? (
               <>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
-                  <span style={{ fontSize: "1rem", fontWeight: "600", color: "#64748b", textDecoration: "line-through" }}>₹{BASE_PRICE}</span>
+                  <span style={{ fontSize: "1rem", fontWeight: "600", color: "#64748b", textDecoration: "line-through" }}>₹{basePrice}</span>
                   <span style={{ fontSize: "1.75rem", fontWeight: "900", color: appliedCoupon.finalPrice === 0 ? "#34d399" : "#fff" }}>
                     {appliedCoupon.finalPrice === 0 ? "FREE" : `₹${appliedCoupon.finalPrice}`}
                   </span>
@@ -257,7 +303,7 @@ export function PaymentModal({ onClose, userName }) {
               </>
             ) : (
               <>
-                <span style={{ fontSize: "1.75rem", fontWeight: "900", display: "block" }}>₹{BASE_PRICE}</span>
+                <span style={{ fontSize: "1.75rem", fontWeight: "900", display: "block" }}>₹{basePrice}</span>
                 <span style={{ fontSize: "0.7rem", color: "#a78bfa", fontWeight: "600" }}>
                   One-time Payment • Lifetime Access
                 </span>

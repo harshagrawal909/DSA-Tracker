@@ -23,7 +23,19 @@ export async function POST(request) {
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
     const isMockMode = isMock || !keySecret || keySecret === "xxxxxx";
 
+    const db = await getDb();
     const usersCol = await getUsersCollection();
+
+    // Fetch dynamic basePrice
+    let basePrice = 799;
+    try {
+      const settingsDoc = await db.collection("config").findOne({ _id: "global_settings" });
+      if (settingsDoc && settingsDoc.basePrice !== undefined) {
+        basePrice = Number(settingsDoc.basePrice);
+      }
+    } catch (err) {
+      console.error("Error fetching config base price on verification:", err);
+    }
 
     const paymentFields = {
       isPaid: true,
@@ -37,7 +49,7 @@ export async function POST(request) {
     if (couponCode) paymentFields.couponCode = couponCode;
     if (amountPaid !== undefined) {
       paymentFields.amountPaid = amountPaid;
-      paymentFields.discountAmount = Math.max(0, 799 - amountPaid);
+      paymentFields.discountAmount = Math.max(0, basePrice - amountPaid);
     }
 
     if (isMockMode) {
@@ -49,8 +61,15 @@ export async function POST(request) {
 
       // Increment coupon usage
       if (couponCode) {
-        const db = await getDb();
         await db.collection("coupons").updateOne({ _id: couponCode }, { $inc: { usedCount: 1 } });
+      }
+
+      // Mark survey coupon as used for this email
+      if (session.user.email) {
+        await db.collection("surveyCoupons").updateOne(
+          { email: session.user.email.toLowerCase().trim() },
+          { $set: { used: true, usedAt: new Date().toISOString() } }
+        );
       }
 
       return NextResponse.json({ success: true });
@@ -72,8 +91,15 @@ export async function POST(request) {
 
     // Increment coupon usage on successful payment
     if (couponCode) {
-      const db = await getDb();
       await db.collection("coupons").updateOne({ _id: couponCode }, { $inc: { usedCount: 1 } });
+    }
+
+    // Mark survey coupon as used for this email
+    if (session.user.email) {
+      await db.collection("surveyCoupons").updateOne(
+        { email: session.user.email.toLowerCase().trim() },
+        { $set: { used: true, usedAt: new Date().toISOString() } }
+      );
     }
 
     return NextResponse.json({ success: true });

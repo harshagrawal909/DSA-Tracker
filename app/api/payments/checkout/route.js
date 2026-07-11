@@ -6,8 +6,6 @@ import Razorpay from "razorpay";
 
 export const dynamic = "force-dynamic";
 
-const BASE_PRICE = 799; // ₹799 in rupees
-
 export async function POST(request) {
   const session = await getServerSession(authOptions);
   if (!session || !session.user) {
@@ -20,7 +18,21 @@ export async function POST(request) {
   }
 
   let couponCode = null;
-  let finalPriceRupees = BASE_PRICE;
+  let basePrice = 799;
+
+  // Retrieve base price from configuration
+  try {
+    const db = await getDb();
+    const configCol = db.collection("config");
+    const settingsDoc = await configCol.findOne({ _id: "global_settings" });
+    if (settingsDoc && settingsDoc.basePrice !== undefined) {
+      basePrice = Number(settingsDoc.basePrice);
+    }
+  } catch (err) {
+    console.error("Error fetching base price:", err);
+  }
+
+  let finalPriceRupees = basePrice;
 
   try {
     const body = await request.json().catch(() => ({}));
@@ -45,15 +57,16 @@ export async function POST(request) {
       }
 
       if (coupon.discountType === "fixed") {
-        finalPriceRupees = Math.max(0, BASE_PRICE - coupon.discountValue);
+        finalPriceRupees = Math.max(0, basePrice - coupon.discountValue);
       } else if (coupon.discountType === "percent") {
-        finalPriceRupees = Math.max(0, Math.round(BASE_PRICE * (1 - coupon.discountValue / 100)));
+        finalPriceRupees = Math.max(0, Math.round(basePrice * (1 - coupon.discountValue / 100)));
       }
     } catch (error) {
       console.error("Coupon validation error during checkout:", error);
       return NextResponse.json({ error: "Error validating coupon" }, { status: 500 });
     }
   }
+
 
   // If coupon gives 100% discount — grant free access directly
   if (finalPriceRupees === 0) {
@@ -69,7 +82,7 @@ export async function POST(request) {
             orderId: `free_coupon_${couponCode}`,
             couponCode: couponCode,
             amountPaid: 0,
-            discountAmount: 799,
+            discountAmount: basePrice,
             schedule: { type: "3month", startDate: new Date().toISOString().split("T")[0] }
           }
         },
@@ -79,6 +92,13 @@ export async function POST(request) {
       // Increment coupon usage
       const db = await getDb();
       await db.collection("coupons").updateOne({ _id: couponCode }, { $inc: { usedCount: 1 } });
+
+      if (session.user.email) {
+        await db.collection("surveyCoupons").updateOne(
+          { email: session.user.email.toLowerCase().trim() },
+          { $set: { used: true, usedAt: new Date().toISOString() } }
+        );
+      }
 
       return NextResponse.json({
         isMock: false,

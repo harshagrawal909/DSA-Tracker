@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { hasUserPaid } from "@/lib/payment";
 import { SCHEDULE_OPTIONS } from "@/lib/schedule";
 
@@ -66,13 +67,28 @@ export function LandingPage({ onPaymentRequired }) {
   const [modalOnlyTerms, setModalOnlyTerms] = useState(false);
   const [modalOnlyPrivacy, setModalOnlyPrivacy] = useState(false);
   const [whatsappLink, setWhatsappLink] = useState("");
+  const [basePrice, setBasePrice] = useState(799);
+  const [surveyDiscount, setSurveyDiscount] = useState(200);
 
   useEffect(() => {
     fetch("/api/config")
       .then((res) => { if (res.ok) return res.json(); })
-      .then((data) => { if (data && data.whatsappLink) setWhatsappLink(data.whatsappLink); })
-      .catch((err) => console.error("Error loading whatsapp link:", err));
+      .then((data) => {
+        if (data) {
+          if (data.whatsappLink) setWhatsappLink(data.whatsappLink);
+          if (data.basePrice !== undefined) setBasePrice(data.basePrice);
+          if (data.surveyDiscount !== undefined) setSurveyDiscount(data.surveyDiscount);
+        }
+      })
+      .catch((err) => console.error("Error loading config:", err));
   }, []);
+
+  // Auto-prompt login modal if redirected from survey with showPayment parameter
+  useEffect(() => {
+    if (status === "unauthenticated" && searchParams && searchParams.get("showPayment") === "1") {
+      setShowConsentModal(true);
+    }
+  }, [status, searchParams]);
 
   const [c1, r1] = useCounter(450);
   const [c2, r2] = useCounter(61);
@@ -116,8 +132,10 @@ export function LandingPage({ onPaymentRequired }) {
   const handleConsentAccepted = async () => {
     setShowConsentModal(false);
     setLoading(true);
-    // Redirect to / first so session fully hydrates before middleware runs on /dashboard
-    await signIn("google", { callbackUrl: "/" });
+    // Preserve showPayment query parameter if present
+    const hasShowPayment = searchParams && searchParams.get("showPayment") === "1";
+    const callbackUrl = hasShowPayment ? "/?showPayment=1" : "/";
+    await signIn("google", { callbackUrl });
   };
 
   return (
@@ -183,6 +201,31 @@ export function LandingPage({ onPaymentRequired }) {
             <span className="badge-dot" />
             Striver&apos;s A2Z DSA Sheet — Structured &amp; Trackable
           </div>
+          
+          {/* Survey Promo Banner */}
+          <div 
+            className="hero-badge" 
+            style={{ 
+              background: "rgba(6, 182, 212, 0.12)", 
+              border: "1px solid rgba(6, 182, 212, 0.25)", 
+              color: "#22d3ee",
+              fontSize: "0.75rem",
+              marginTop: "-0.5rem"
+            }}
+          >
+            🎁 Complete our 2-min survey &amp; get ₹{surveyDiscount} OFF! &nbsp;
+            <Link 
+              href="/survey" 
+              style={{ 
+                textDecoration: "underline", 
+                color: "#67e8f9", 
+                fontWeight: "700" 
+              }}
+            >
+              Take Survey →
+            </Link>
+          </div>
+
           <h1 className="hero-title">
             Master DSA{" "}
             <span className="gradient-text">at Your Own Pace</span>
@@ -216,7 +259,7 @@ export function LandingPage({ onPaymentRequired }) {
               {loading ? (
                 <span className="btn-spinner" />
               ) : (
-                <span>🚀 Get Lifetime Access – ₹799</span>
+                <span>🚀 Get Lifetime Access – ₹{basePrice}</span>
               )}
             </button>
             <p className="hero-cta-sub" style={{ marginBottom: "0.75rem" }}>
@@ -421,7 +464,7 @@ export function LandingPage({ onPaymentRequired }) {
               <div className="pricing-name">Lifetime Access</div>
               <div className="pricing-amount">
                 <span className="pricing-currency">₹</span>
-                <span className="pricing-price">799</span>
+                <span className="pricing-price">{basePrice}</span>
               </div>
               <div className="pricing-original">₹1,999 value</div>
               <ul className="pricing-features">

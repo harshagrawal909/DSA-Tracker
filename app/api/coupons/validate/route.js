@@ -3,8 +3,6 @@ import { authOptions } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-const BASE_PRICE = 799;
-
 export async function POST(request) {
   const session = await getServerSession(authOptions);
   if (!session || !session.user) {
@@ -36,12 +34,24 @@ export async function POST(request) {
       return NextResponse.json({ valid: false, message: "This coupon has been fully redeemed" });
     }
 
+    // Retrieve base price dynamically from config
+    let basePrice = 799;
+    try {
+      const configCol = db.collection("config");
+      const settingsDoc = await configCol.findOne({ _id: "global_settings" });
+      if (settingsDoc && settingsDoc.basePrice !== undefined) {
+        basePrice = Number(settingsDoc.basePrice);
+      }
+    } catch (err) {
+      console.error("Error loading config base price:", err);
+    }
+
     // Calculate discounted price
-    let finalPrice = BASE_PRICE;
+    let finalPrice = basePrice;
     if (coupon.discountType === "fixed") {
-      finalPrice = Math.max(0, BASE_PRICE - coupon.discountValue);
+      finalPrice = Math.max(0, basePrice - coupon.discountValue);
     } else if (coupon.discountType === "percent") {
-      finalPrice = Math.max(0, Math.round(BASE_PRICE * (1 - coupon.discountValue / 100)));
+      finalPrice = Math.max(0, Math.round(basePrice * (1 - coupon.discountValue / 100)));
     }
 
     return NextResponse.json({
@@ -49,11 +59,11 @@ export async function POST(request) {
       code: normalizedCode,
       discountType: coupon.discountType,
       discountValue: coupon.discountValue,
-      originalPrice: BASE_PRICE,
+      originalPrice: basePrice,
       finalPrice,
       message: finalPrice === 0
         ? "🎉 100% discount — free access!"
-        : `Coupon applied! You save ₹${BASE_PRICE - finalPrice}`,
+        : `Coupon applied! You save ₹${basePrice - finalPrice}`,
     });
   } catch (error) {
     console.error("Error validating coupon:", error);

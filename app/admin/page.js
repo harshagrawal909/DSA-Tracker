@@ -29,15 +29,19 @@ export default function AdminPage() {
   }, [status, session, router]);
 
   const [whatsappLink, setWhatsappLink] = useState("");
-  const [savingLink, setSavingLink] = useState(false);
+  const [basePrice, setBasePrice] = useState("799");
+  const [surveyDiscount, setSurveyDiscount] = useState("200");
+  const [savingSettings, setSavingSettings] = useState(false);
 
   const fetchConfig = async () => {
     try {
       const res = await fetch("/api/config");
       if (res.ok) {
         const data = await res.json();
-        if (data && data.whatsappLink) {
-          setWhatsappLink(data.whatsappLink);
+        if (data) {
+          if (data.whatsappLink) setWhatsappLink(data.whatsappLink);
+          if (data.basePrice !== undefined) setBasePrice(String(data.basePrice));
+          if (data.surveyDiscount !== undefined) setSurveyDiscount(String(data.surveyDiscount));
         }
       }
     } catch (err) {
@@ -45,25 +49,29 @@ export default function AdminPage() {
     }
   };
 
-  const handleSaveLink = async (e) => {
+  const handleSaveSettings = async (e) => {
     e.preventDefault();
-    setSavingLink(true);
+    setSavingSettings(true);
     try {
       const res = await fetch("/api/config", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ whatsappLink }),
+        body: JSON.stringify({
+          whatsappLink,
+          basePrice: Number(basePrice),
+          surveyDiscount: Number(surveyDiscount),
+        }),
       });
       if (res.ok) {
-        alert("WhatsApp Group Link updated successfully!");
+        alert("Platform settings updated successfully!");
       } else {
-        alert("Failed to update WhatsApp Group Link.");
+        alert("Failed to update platform settings.");
       }
     } catch (err) {
       console.error(err);
-      alert("Error saving WhatsApp link.");
+      alert("Error saving settings.");
     } finally {
-      setSavingLink(false);
+      setSavingSettings(false);
     }
   };
 
@@ -253,49 +261,107 @@ export default function AdminPage() {
           </Link>
         </div>
 
-        {/* WhatsApp Link Config Card */}
-        <div style={{ background: "#0f172a", border: "1px solid rgba(37, 211, 102, 0.2)", padding: "1.25rem", borderRadius: "1rem", marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-            <span>💬 WhatsApp Group Link Manager</span>
+        {/* Platform Settings Card */}
+        <div style={{ background: "#0f172a", border: "1px solid rgba(139, 92, 246, 0.2)", padding: "1.5rem", borderRadius: "1rem", marginBottom: "2rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+            <span>⚙️ Platform Settings</span>
           </h2>
-          <p style={{ color: "#94a3b8", fontSize: "0.85rem", marginBottom: "1rem" }}>This link is dynamically displayed to paid users on their profile page and post-payment success page.</p>
-          <form onSubmit={handleSaveLink} style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-            <input
-              type="url"
-              value={whatsappLink}
-              onChange={(e) => setWhatsappLink(e.target.value)}
-              placeholder="Enter WhatsApp Group Link (e.g. https://chat.whatsapp.com/...)"
-              required
-              style={{
-                flex: "1",
-                minWidth: "280px",
-                background: "rgba(0,0,0,0.2)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "0.5rem",
-                padding: "0.6rem 0.8rem",
-                color: "#fff",
-                fontSize: "0.9rem"
-              }}
-            />
-            <button
-              type="submit"
-              disabled={savingLink}
-              style={{
-                background: "#25d366",
-                color: "#fff",
-                border: "none",
-                fontWeight: "700",
-                fontSize: "0.85rem",
-                padding: "0.6rem 1.25rem",
-                borderRadius: "0.5rem",
-                cursor: "pointer",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
-              {savingLink ? "Saving..." : "Update Link"}
-            </button>
+          <form onSubmit={handleSaveSettings} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              {/* WhatsApp Link Input */}
+              <div style={{ flex: "2", minWidth: "280px" }}>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "#94a3b8", fontWeight: "600", marginBottom: "0.4rem" }}>
+                  💬 WhatsApp Group Link
+                </label>
+                <input
+                  type="url"
+                  value={whatsappLink}
+                  onChange={(e) => setWhatsappLink(e.target.value)}
+                  placeholder="Enter WhatsApp Group Link (e.g. https://chat.whatsapp.com/...)"
+                  required
+                  style={{
+                    width: "100%",
+                    background: "rgba(0,0,0,0.2)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "0.5rem",
+                    padding: "0.6rem 0.8rem",
+                    color: "#fff",
+                    fontSize: "0.9rem"
+                  }}
+                />
+              </div>
+
+              {/* Base Price Input */}
+              <div style={{ flex: "1", minWidth: "120px" }}>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "#94a3b8", fontWeight: "600", marginBottom: "0.4rem" }}>
+                  💵 Base Price (₹)
+                </label>
+                <input
+                  type="number"
+                  value={basePrice}
+                  onChange={(e) => setBasePrice(e.target.value)}
+                  placeholder="e.g. 799"
+                  required
+                  min="0"
+                  style={{
+                    width: "100%",
+                    background: "rgba(0,0,0,0.2)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "0.5rem",
+                    padding: "0.6rem 0.8rem",
+                    color: "#fff",
+                    fontSize: "0.9rem"
+                  }}
+                />
+              </div>
+
+              {/* Survey Discount Input */}
+              <div style={{ flex: "1", minWidth: "120px" }}>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "#94a3b8", fontWeight: "600", marginBottom: "0.4rem" }}>
+                  🎟️ Survey Coupon Discount (₹)
+                </label>
+                <input
+                  type="number"
+                  value={surveyDiscount}
+                  onChange={(e) => setSurveyDiscount(e.target.value)}
+                  placeholder="e.g. 200"
+                  required
+                  min="0"
+                  style={{
+                    width: "100%",
+                    background: "rgba(0,0,0,0.2)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "0.5rem",
+                    padding: "0.6rem 0.8rem",
+                    color: "#fff",
+                    fontSize: "0.9rem"
+                  }}
+                />
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                disabled={savingSettings}
+                style={{
+                  background: "linear-gradient(135deg, var(--purple) 0%, #6d28d9 100%)",
+                  color: "#fff",
+                  border: "none",
+                  fontWeight: "700",
+                  fontSize: "0.85rem",
+                  padding: "0.65rem 1.5rem",
+                  borderRadius: "0.5rem",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 12px rgba(139, 92, 246, 0.2)"
+                }}
+              >
+                {savingSettings ? "Saving Settings..." : "Save Platform Settings"}
+              </button>
+            </div>
           </form>
         </div>
 
@@ -303,7 +369,7 @@ export default function AdminPage() {
         <div style={{ background: "#0f172a", border: "1px solid rgba(139,92,246,0.2)", padding: "1.25rem", borderRadius: "1rem", marginBottom: "2rem" }}>
           <h2 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
             <span>🎟️ Coupon Manager</span>
-            <span style={{ fontSize: "0.7rem", background: "rgba(139,92,246,0.15)", color: "#a78bfa", padding: "0.15rem 0.5rem", borderRadius: "9999px" }}>Base: ₹799</span>
+            <span style={{ fontSize: "0.7rem", background: "rgba(139,92,246,0.15)", color: "#a78bfa", padding: "0.15rem 0.5rem", borderRadius: "9999px" }}>Base: ₹{basePrice}</span>
           </h2>
 
           {/* Create coupon form */}
