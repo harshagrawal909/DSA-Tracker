@@ -78,7 +78,8 @@ export default function AdminPage() {
       if (res.ok) {
         alert("Platform settings updated successfully!");
       } else {
-        alert("Failed to update platform settings.");
+        const errData = await res.json().catch(() => ({}));
+        alert(`Failed to update platform settings: ${errData.error || res.statusText}`);
       }
     } catch (err) {
       console.error(err);
@@ -106,7 +107,8 @@ export default function AdminPage() {
       if (res.ok) {
         alert("Global campaign settings updated successfully!");
       } else {
-        alert("Failed to update campaign settings.");
+        const errData = await res.json().catch(() => ({}));
+        alert(`Failed to update campaign settings: ${errData.error || res.statusText}`);
       }
     } catch (err) {
       console.error(err);
