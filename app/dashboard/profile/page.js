@@ -71,6 +71,14 @@ export default async function ProfilePage() {
     console.error("Error loading config:", error);
   }
 
+  const displayInvoiceAmount = userDetails.role === "admin"
+    ? "₹0.00"
+    : userDetails.amountPaid !== undefined
+      ? `₹${Number(userDetails.amountPaid).toFixed(2)}`
+      : userDetails.isPaid
+        ? "₹149.00"
+        : "₹799.00";
+
   return (
     <main className="profile-page-wrapper">
       <div className="profile-container">
@@ -237,8 +245,8 @@ export default async function ProfilePage() {
                         <p className="desc-sub">Complete 60-day interactive path with paced scheduling and community mentorship group access.</p>
                       </td>
                       <td style={{ textAlign: "right" }}>1</td>
-                      <td style={{ textAlign: "right" }}>{userDetails.role === "admin" ? "₹0.00" : "₹149.00"}</td>
-                      <td style={{ textAlign: "right" }}>{userDetails.role === "admin" ? "₹0.00" : "₹149.00"}</td>
+                      <td style={{ textAlign: "right" }}>{displayInvoiceAmount}</td>
+                      <td style={{ textAlign: "right" }}>{displayInvoiceAmount}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -249,7 +257,7 @@ export default async function ProfilePage() {
                 <div className="invoice-totals">
                   <div className="totals-row">
                     <span>Subtotal</span>
-                    <span>{userDetails.role === "admin" ? "₹0.00" : "₹149.00"}</span>
+                    <span>{displayInvoiceAmount}</span>
                   </div>
                   <div className="totals-row">
                     <span>Tax (0%)</span>
@@ -258,7 +266,7 @@ export default async function ProfilePage() {
                   <div className="invoice-divider compact" />
                   <div className="totals-row total-paid">
                     <span>Amount Paid (INR)</span>
-                    <span>{userDetails.role === "admin" ? "₹0.00" : "₹149.00"}</span>
+                    <span>{displayInvoiceAmount}</span>
                   </div>
                 </div>
 

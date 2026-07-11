@@ -127,11 +127,96 @@ export default function AdminPage() {
     }
   };
 
+  // ── Coupon management ──
+  const [coupons, setCoupons] = useState([]);
+  const [couponForm, setCouponForm] = useState({ code: "", discountType: "fixed", discountValue: "", maxUses: "" });
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [couponError, setCouponError] = useState(null);
+
+  const fetchCoupons = async () => {
+    try {
+      const res = await fetch("/api/admin/coupons");
+      if (res.ok) {
+        const data = await res.json();
+        setCoupons(data);
+      }
+    } catch (err) {
+      console.error("Error loading coupons:", err);
+    }
+  };
+
+  // Add fetchCoupons to the initial load
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.role === "admin") {
+      fetchCoupons();
+    }
+  }, [status, session]);
+
+  const handleCreateCoupon = async (e) => {
+    e.preventDefault();
+    setCouponLoading(true);
+    setCouponError(null);
+    try {
+      const res = await fetch("/api/admin/coupons", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          code: couponForm.code,
+          discountType: couponForm.discountType,
+          discountValue: Number(couponForm.discountValue),
+          maxUses: couponForm.maxUses ? Number(couponForm.maxUses) : null,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setCoupons((prev) => [data.coupon, ...prev]);
+        setCouponForm({ code: "", discountType: "fixed", discountValue: "", maxUses: "" });
+      } else {
+        setCouponError(data.error || "Failed to create coupon");
+      }
+    } catch {
+      setCouponError("Error creating coupon");
+    } finally {
+      setCouponLoading(false);
+    }
+  };
+
+  const handleToggleCoupon = async (code, currentActive) => {
+    try {
+      await fetch("/api/admin/coupons", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code, isActive: !currentActive }),
+      });
+      setCoupons((prev) => prev.map((c) => c._id === code ? { ...c, isActive: !currentActive } : c));
+    } catch {
+      alert("Error toggling coupon");
+    }
+  };
+
+  const handleDeleteCoupon = async (code) => {
+    if (!window.confirm(`Delete coupon "${code}"?`)) return;
+    try {
+      const res = await fetch("/api/admin/coupons", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code }),
+      });
+      if (res.ok) {
+        setCoupons((prev) => prev.filter((c) => c._id !== code));
+      }
+    } catch {
+      alert("Error deleting coupon");
+    }
+  };
+
   const stats = useMemo(() => {
     const total = users.length;
     const paid = users.filter((u) => u.isPaid).length;
     const rate = total ? ((paid / total) * 100).toFixed(1) : 0;
-    const revenue = paid * 149;
+    const revenue = users
+      .filter((u) => u.isPaid)
+      .reduce((sum, u) => sum + (u.amountPaid !== undefined ? u.amountPaid : 799), 0);
     return { total, paid, rate, revenue };
   }, [users]);
 
@@ -202,6 +287,141 @@ export default function AdminPage() {
               {savingLink ? "Saving..." : "Update Link"}
             </button>
           </form>
+        </div>
+
+        {/* Coupon Manager Card */}
+        <div style={{ background: "#0f172a", border: "1px solid rgba(139,92,246,0.2)", padding: "1.25rem", borderRadius: "1rem", marginBottom: "2rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
+            <span>🎟️ Coupon Manager</span>
+            <span style={{ fontSize: "0.7rem", background: "rgba(139,92,246,0.15)", color: "#a78bfa", padding: "0.15rem 0.5rem", borderRadius: "9999px" }}>Base: ₹799</span>
+          </h2>
+
+          {/* Create coupon form */}
+          <form onSubmit={handleCreateCoupon} style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+            <input
+              type="text"
+              value={couponForm.code}
+              onChange={(e) => setCouponForm({ ...couponForm, code: e.target.value.toUpperCase() })}
+              placeholder="CODE"
+              required
+              maxLength={20}
+              style={{ width: "110px", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.5rem 0.6rem", color: "#fff", fontSize: "0.85rem", fontWeight: "700", letterSpacing: "0.05em", textTransform: "uppercase" }}
+            />
+            <select
+              value={couponForm.discountType}
+              onChange={(e) => setCouponForm({ ...couponForm, discountType: e.target.value })}
+              style={{ background: "rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.5rem", color: "#fff", fontSize: "0.85rem" }}
+            >
+              <option value="fixed">₹ Off</option>
+              <option value="percent">% Off</option>
+            </select>
+            <input
+              type="number"
+              value={couponForm.discountValue}
+              onChange={(e) => setCouponForm({ ...couponForm, discountValue: e.target.value })}
+              placeholder={couponForm.discountType === "fixed" ? "Amount (₹)" : "Percent (%)"}
+              required
+              min="1"
+              max={couponForm.discountType === "percent" ? "100" : "799"}
+              style={{ width: "110px", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.5rem 0.6rem", color: "#fff", fontSize: "0.85rem" }}
+            />
+            <input
+              type="number"
+              value={couponForm.maxUses}
+              onChange={(e) => setCouponForm({ ...couponForm, maxUses: e.target.value })}
+              placeholder="Max uses (∞)"
+              min="1"
+              style={{ width: "110px", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.5rem 0.6rem", color: "#fff", fontSize: "0.85rem" }}
+            />
+            <button
+              type="submit"
+              disabled={couponLoading}
+              style={{ background: "#8b5cf6", color: "#fff", border: "none", fontWeight: "700", fontSize: "0.85rem", padding: "0.5rem 1rem", borderRadius: "0.5rem", cursor: "pointer" }}
+            >
+              {couponLoading ? "..." : "Create"}
+            </button>
+          </form>
+          {couponError && <p style={{ color: "#f87171", fontSize: "0.8rem", marginBottom: "0.75rem" }}>{couponError}</p>}
+
+          {/* Coupon list */}
+          {coupons.length > 0 && (
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: "0.85rem" }}>
+                <thead>
+                  <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", color: "#94a3b8", fontSize: "0.75rem", fontWeight: "600", textTransform: "uppercase" }}>
+                    <th style={{ padding: "0.75rem 0.5rem" }}>Code</th>
+                    <th style={{ padding: "0.75rem 0.5rem" }}>Discount</th>
+                    <th style={{ padding: "0.75rem 0.5rem" }}>Final Price</th>
+                    <th style={{ padding: "0.75rem 0.5rem" }}>Used</th>
+                    <th style={{ padding: "0.75rem 0.5rem" }}>Status</th>
+                    <th style={{ padding: "0.75rem 0.5rem", textAlign: "right" }}>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {coupons.map((c) => {
+                    const fp = c.discountType === "fixed"
+                      ? Math.max(0, 799 - c.discountValue)
+                      : Math.max(0, Math.round(799 * (1 - c.discountValue / 100)));
+                    return (
+                      <tr key={c._id} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+                        <td style={{ padding: "0.6rem 0.5rem", fontWeight: "700", color: "#fff", letterSpacing: "0.05em" }}>{c._id}</td>
+                        <td style={{ padding: "0.6rem 0.5rem", color: "#cbd5e1" }}>
+                          {c.discountType === "fixed" ? `₹${c.discountValue} off` : `${c.discountValue}% off`}
+                        </td>
+                        <td style={{ padding: "0.6rem 0.5rem", color: fp === 0 ? "#34d399" : "#a78bfa", fontWeight: "700" }}>
+                          {fp === 0 ? "FREE" : `₹${fp}`}
+                        </td>
+                        <td style={{ padding: "0.6rem 0.5rem", color: "#94a3b8" }}>
+                          {c.usedCount}{c.maxUses ? `/${c.maxUses}` : "/∞"}
+                        </td>
+                        <td style={{ padding: "0.6rem 0.5rem" }}>
+                          <span style={{
+                            fontSize: "0.7rem", fontWeight: "600",
+                            background: c.isActive ? "rgba(52,211,153,0.15)" : "rgba(239,68,68,0.15)",
+                            color: c.isActive ? "#34d399" : "#f87171",
+                            padding: "0.2rem 0.5rem", borderRadius: "9999px"
+                          }}>
+                            {c.isActive ? "Active" : "Disabled"}
+                          </span>
+                        </td>
+                        <td style={{ padding: "0.6rem 0.5rem", textAlign: "right" }}>
+                          <div style={{ display: "inline-flex", gap: "0.4rem" }}>
+                            <button
+                              onClick={() => handleToggleCoupon(c._id, c.isActive)}
+                              style={{
+                                background: c.isActive ? "rgba(251,191,36,0.1)" : "rgba(52,211,153,0.1)",
+                                border: "1px solid " + (c.isActive ? "rgba(251,191,36,0.2)" : "rgba(52,211,153,0.2)"),
+                                color: c.isActive ? "#fbbf24" : "#34d399",
+                                fontSize: "0.7rem", fontWeight: "600", padding: "0.25rem 0.5rem",
+                                borderRadius: "0.375rem", cursor: "pointer"
+                              }}
+                            >
+                              {c.isActive ? "Disable" : "Enable"}
+                            </button>
+                            <button
+                              onClick={() => handleDeleteCoupon(c._id)}
+                              style={{
+                                background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.15)",
+                                color: "#f87171", fontSize: "0.7rem", fontWeight: "600", padding: "0.25rem 0.5rem",
+                                borderRadius: "0.375rem", cursor: "pointer"
+                              }}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+          {coupons.length === 0 && (
+            <p style={{ color: "#64748b", fontSize: "0.85rem", textAlign: "center", padding: "1rem 0" }}>
+              No coupons created yet. Create your first coupon above!
+            </p>
+          )}
         </div>
 
         {/* Stats Grid */}

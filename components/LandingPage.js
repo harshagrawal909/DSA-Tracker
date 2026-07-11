@@ -191,7 +191,7 @@ export function LandingPage({ onPaymentRequired }) {
               {loading ? (
                 <span className="btn-spinner" />
               ) : (
-                <span>🚀 Get Lifetime Access – ₹149</span>
+                <span>🚀 Get Lifetime Access – ₹799</span>
               )}
             </button>
             <p className="hero-cta-sub" style={{ marginBottom: "0.75rem" }}>
@@ -353,7 +353,7 @@ export function LandingPage({ onPaymentRequired }) {
               Simple,{" "}
               <span className="gradient-text">honest pricing</span>
             </h2>
-            <p className="section-sub">Less than a cup of chai. Lifetime value.</p>
+            <p className="section-sub">One-time investment. Lifetime value. Use coupons for extra savings!</p>
           </div>
           <div className="pricing-card-wrap">
             <div className="pricing-card">
@@ -361,9 +361,9 @@ export function LandingPage({ onPaymentRequired }) {
               <div className="pricing-name">Lifetime Access</div>
               <div className="pricing-amount">
                 <span className="pricing-currency">₹</span>
-                <span className="pricing-price">149</span>
+                <span className="pricing-price">799</span>
               </div>
-              <div className="pricing-original">₹499 value</div>
+              <div className="pricing-original">₹1,999 value</div>
               <ul className="pricing-features">
                 <li>✅ All 4 schedule options (1/2/3/6 months)</li>
                 <li>✅ Switch pace anytime, no re-payment</li>

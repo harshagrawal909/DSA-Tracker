@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
-import { getUsersCollection } from "@/lib/db";
+import { getUsersCollection, getDb } from "@/lib/db";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 
@@ -18,27 +18,38 @@ export async function POST(request) {
   }
 
   try {
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, isMock } = await request.json();
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, isMock, couponCode, amountPaid } = await request.json();
 
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
     const isMockMode = isMock || !keySecret || keySecret === "xxxxxx";
 
     const usersCol = await getUsersCollection();
 
+    const paymentFields = {
+      isPaid: true,
+      paidAt: new Date().toISOString(),
+      paymentId: razorpay_payment_id || `mock_pay_${Date.now()}`,
+      orderId: razorpay_order_id || `mock_order_${Date.now()}`,
+      schedule: { type: "3month", startDate: new Date().toISOString().split("T")[0] },
+    };
+
+    // Store coupon and amount info
+    if (couponCode) paymentFields.couponCode = couponCode;
+    if (amountPaid !== undefined) paymentFields.amountPaid = amountPaid;
+
     if (isMockMode) {
       await usersCol.updateOne(
         { _id: userId },
-        {
-          $set: {
-            isPaid: true,
-            paidAt: new Date().toISOString(),
-            paymentId: razorpay_payment_id || `mock_pay_${Date.now()}`,
-            orderId: razorpay_order_id || `mock_order_${Date.now()}`,
-            schedule: { type: "3month", startDate: new Date().toISOString().split("T")[0] }
-          }
-        },
+        { $set: paymentFields },
         { upsert: true }
       );
+
+      // Increment coupon usage
+      if (couponCode) {
+        const db = await getDb();
+        await db.collection("coupons").updateOne({ _id: couponCode }, { $inc: { usedCount: 1 } });
+      }
+
       return NextResponse.json({ success: true });
     }
 
@@ -52,17 +63,15 @@ export async function POST(request) {
 
     await usersCol.updateOne(
       { _id: userId },
-      {
-        $set: {
-          isPaid: true,
-          paidAt: new Date().toISOString(),
-          paymentId: razorpay_payment_id,
-          orderId: razorpay_order_id,
-          schedule: { type: "3month", startDate: new Date().toISOString().split("T")[0] }
-        }
-      },
+      { $set: paymentFields },
       { upsert: true }
     );
+
+    // Increment coupon usage on successful payment
+    if (couponCode) {
+      const db = await getDb();
+      await db.collection("coupons").updateOne({ _id: couponCode }, { $inc: { usedCount: 1 } });
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

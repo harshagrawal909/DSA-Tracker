@@ -67,7 +67,7 @@ export default function AdminUserTable({ initialUsers, currentAdminId }) {
               <td style={{ padding: "1rem" }}>
                 {u.paidAt ? (
                   <div>
-                    <p style={{ color: "#34d399", fontWeight: "600", fontSize: "0.8rem" }}>Billed (₹149)</p>
+                    <p style={{ color: "#34d399", fontWeight: "600", fontSize: "0.8rem" }}>Billed (₹{u.amountPaid !== undefined ? u.amountPaid : 149})</p>
                     <p className="mono" style={{ color: "var(--text-muted)", fontSize: "0.75rem" }}>{u.paymentId || "admin_bypass"}</p>
                   </div>
                 ) : (
