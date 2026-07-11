@@ -78,8 +78,12 @@ export default function AdminPage() {
       if (res.ok) {
         alert("Platform settings updated successfully!");
       } else {
-        const errData = await res.json().catch(() => ({}));
-        alert(`Failed to update platform settings: ${errData.error || res.statusText}`);
+        const errText = await res.text().catch(() => "");
+        let errData = {};
+        try {
+          errData = JSON.parse(errText);
+        } catch {}
+        alert(`Failed to update platform settings: [Status ${res.status}] ${errData.error || errData.message || errText || "Unknown error"}`);
       }
     } catch (err) {
       console.error(err);
@@ -107,8 +111,12 @@ export default function AdminPage() {
       if (res.ok) {
         alert("Global campaign settings updated successfully!");
       } else {
-        const errData = await res.json().catch(() => ({}));
-        alert(`Failed to update campaign settings: ${errData.error || res.statusText}`);
+        const errText = await res.text().catch(() => "");
+        let errData = {};
+        try {
+          errData = JSON.parse(errText);
+        } catch {}
+        alert(`Failed to update campaign settings: [Status ${res.status}] ${errData.error || errData.message || errText || "Unknown error"}`);
       }
     } catch (err) {
       console.error(err);
