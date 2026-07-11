@@ -35,7 +35,10 @@ export async function POST(request) {
 
     // Store coupon and amount info
     if (couponCode) paymentFields.couponCode = couponCode;
-    if (amountPaid !== undefined) paymentFields.amountPaid = amountPaid;
+    if (amountPaid !== undefined) {
+      paymentFields.amountPaid = amountPaid;
+      paymentFields.discountAmount = Math.max(0, 799 - amountPaid);
+    }
 
     if (isMockMode) {
       await usersCol.updateOne(

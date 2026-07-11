@@ -132,6 +132,7 @@ export default function AdminPage() {
   const [couponForm, setCouponForm] = useState({ code: "", discountType: "fixed", discountValue: "", maxUses: "" });
   const [couponLoading, setCouponLoading] = useState(false);
   const [couponError, setCouponError] = useState(null);
+  const [newlyCreatedCoupon, setNewlyCreatedCoupon] = useState(null);
 
   const fetchCoupons = async () => {
     try {
@@ -156,6 +157,7 @@ export default function AdminPage() {
     e.preventDefault();
     setCouponLoading(true);
     setCouponError(null);
+    setNewlyCreatedCoupon(null);
     try {
       const res = await fetch("/api/admin/coupons", {
         method: "POST",
@@ -170,6 +172,7 @@ export default function AdminPage() {
       const data = await res.json();
       if (res.ok) {
         setCoupons((prev) => [data.coupon, ...prev]);
+        setNewlyCreatedCoupon(data.coupon);
         setCouponForm({ code: "", discountType: "fixed", discountValue: "", maxUses: "" });
       } else {
         setCouponError(data.error || "Failed to create coupon");
@@ -211,12 +214,19 @@ export default function AdminPage() {
   };
 
   const stats = useMemo(() => {
-    const total = users.length;
-    const paid = users.filter((u) => u.isPaid).length;
+    const nonAdmins = users.filter((u) => u.role !== "admin");
+    const total = nonAdmins.length;
+    const paid = nonAdmins.filter((u) => u.isPaid).length;
     const rate = total ? ((paid / total) * 100).toFixed(1) : 0;
-    const revenue = users
+    const revenue = nonAdmins
       .filter((u) => u.isPaid)
-      .reduce((sum, u) => sum + (u.amountPaid !== undefined ? u.amountPaid : 799), 0);
+      .reduce((sum, u) => {
+        if (u.amountPaid !== undefined) {
+          return sum + u.amountPaid; // Adds actual dynamic checkout amount (could be 0 for free coupons)
+        }
+        // Fallback for legacy paid users who paid 149 before coupons/799 base update
+        return sum + 149;
+      }, 0);
     return { total, paid, rate, revenue };
   }, [users]);
 
@@ -343,6 +353,89 @@ export default function AdminPage() {
           </form>
           {couponError && <p style={{ color: "#f87171", fontSize: "0.8rem", marginBottom: "0.75rem" }}>{couponError}</p>}
 
+          {/* Newly Created Coupon Share Box */}
+          {newlyCreatedCoupon && (
+            <div style={{
+              background: "rgba(139,92,246,0.1)",
+              border: "1px solid rgba(139,92,246,0.25)",
+              borderRadius: "0.75rem",
+              padding: "1rem",
+              marginBottom: "1.5rem",
+              position: "relative"
+            }}>
+              <button
+                onClick={() => setNewlyCreatedCoupon(null)}
+                style={{
+                  position: "absolute", top: "0.75rem", right: "0.75rem",
+                  background: "none", border: "none", color: "#94a3b8", cursor: "pointer",
+                  fontSize: "0.9rem"
+                }}
+              >
+                ✕
+              </button>
+              <h4 style={{ color: "#34d399", fontWeight: "700", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.4rem" }}>
+                <span>🎉 Coupon &quot;{newlyCreatedCoupon._id}&quot; Created Successfully!</span>
+              </h4>
+              <p style={{ color: "#94a3b8", fontSize: "0.75rem", marginBottom: "0.6rem" }}>
+                Here is a professional sharing message you can copy and post to your WhatsApp community or student groups:
+              </p>
+              
+              <div style={{
+                background: "rgba(0,0,0,0.35)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: "0.5rem",
+                padding: "0.75rem",
+                fontSize: "0.75rem",
+                fontFamily: "monospace",
+                color: "#cbd5e1",
+                whiteSpace: "pre-wrap",
+                maxHeight: "150px",
+                overflowY: "auto",
+                marginBottom: "0.6rem"
+              }}>
+                {(() => {
+                  const coupon = newlyCreatedCoupon;
+                  const discountText = coupon.discountType === "fixed"
+                    ? `₹${coupon.discountValue} FLAT discount`
+                    : `${coupon.discountValue}% discount`;
+                  const finalPrice = coupon.discountType === "fixed"
+                    ? Math.max(0, 799 - coupon.discountValue)
+                    : Math.max(0, Math.round(799 * (1 - coupon.discountValue / 100)));
+                  const priceText = finalPrice === 0 
+                    ? "FREE lifetime access" 
+                    : `lifetime access for just *₹${finalPrice}* (originally ₹799)`;
+                  const origin = typeof window !== "undefined" ? window.location.origin : "https://algopath.vercel.app";
+                  return `🚀 *AlgoPath Pro Lifetime Access Offer!* 🎯\n\nHey study group! Master Data Structures & Algorithms with interactive trackers, custom schedules, and progress sheets.\n\nUse coupon code *${coupon._id}* to get **${discountText}** and get ${priceText}! ✨\n\n👉 Join now: ${origin}\n\n*Limited to first ${coupon.maxUses || "few"} students. Consistent prep starts here!* 💻`;
+                })()}
+              </div>
+
+              <button
+                onClick={() => {
+                  const coupon = newlyCreatedCoupon;
+                  const discountText = coupon.discountType === "fixed"
+                    ? `₹${coupon.discountValue} FLAT discount`
+                    : `${coupon.discountValue}% discount`;
+                  const finalPrice = coupon.discountType === "fixed"
+                    ? Math.max(0, 799 - coupon.discountValue)
+                    : Math.max(0, Math.round(799 * (1 - coupon.discountValue / 100)));
+                  const priceText = finalPrice === 0 
+                    ? "FREE lifetime access" 
+                    : `lifetime access for just *₹${finalPrice}* (originally ₹799)`;
+                  const origin = typeof window !== "undefined" ? window.location.origin : "https://algopath.vercel.app";
+                  const shareMsg = `🚀 *AlgoPath Pro Lifetime Access Offer!* 🎯\n\nHey study group! Master Data Structures & Algorithms with interactive trackers, custom schedules, and progress sheets.\n\nUse coupon code *${coupon._id}* to get **${discountText}** and get ${priceText}! ✨\n\n👉 Join now: ${origin}\n\n*Limited to first ${coupon.maxUses || "few"} students. Consistent prep starts here!* 💻`;
+                  navigator.clipboard.writeText(shareMsg);
+                  alert("Sharing message copied to clipboard!");
+                }}
+                style={{
+                  background: "#10b981", color: "#fff", border: "none", fontWeight: "700",
+                  fontSize: "0.75rem", padding: "0.4rem 0.8rem", borderRadius: "0.375rem", cursor: "pointer"
+                }}
+              >
+                📋 Copy Sharing Message
+              </button>
+            </div>
+          )}
+
           {/* Coupon list */}
           {coupons.length > 0 && (
             <div style={{ overflowX: "auto" }}>
@@ -397,6 +490,30 @@ export default function AdminPage() {
                               }}
                             >
                               {c.isActive ? "Disable" : "Enable"}
+                            </button>
+                            <button
+                              onClick={() => {
+                                const discountText = c.discountType === "fixed"
+                                  ? `₹${c.discountValue} FLAT discount`
+                                  : `${c.discountValue}% discount`;
+                                const finalPrice = c.discountType === "fixed"
+                                  ? Math.max(0, 799 - c.discountValue)
+                                  : Math.max(0, Math.round(799 * (1 - c.discountValue / 100)));
+                                const priceText = finalPrice === 0 
+                                  ? "FREE lifetime access" 
+                                  : `lifetime access for just *₹${finalPrice}* (originally ₹799)`;
+                                const origin = typeof window !== "undefined" ? window.location.origin : "https://algopath.vercel.app";
+                                const shareMsg = `🚀 *AlgoPath Pro Lifetime Access Offer!* 🎯\n\nHey study group! Master Data Structures & Algorithms with interactive trackers, custom schedules, and progress sheets.\n\nUse coupon code *${c._id}* to get **${discountText}** and get ${priceText}! ✨\n\n👉 Join now: ${origin}\n\n*Limited to first ${c.maxUses || "few"} students. Consistent prep starts here!* 💻`;
+                                navigator.clipboard.writeText(shareMsg);
+                                alert(`Sharing message for coupon "${c._id}" copied to clipboard!`);
+                              }}
+                              style={{
+                                background: "rgba(16, 185, 129, 0.1)", border: "1px solid rgba(16, 185, 129, 0.2)",
+                                color: "#34d399", fontSize: "0.7rem", fontWeight: "600", padding: "0.25rem 0.5rem",
+                                borderRadius: "0.375rem", cursor: "pointer"
+                              }}
+                            >
+                              Copy Msg
                             </button>
                             <button
                               onClick={() => handleDeleteCoupon(c._id)}
@@ -458,6 +575,7 @@ export default function AdminPage() {
                   <th style={{ padding: "1rem 1.25rem" }}>Access</th>
                   <th style={{ padding: "1rem 1.25rem" }}>Schedule</th>
                   <th style={{ padding: "1rem 1.25rem" }}>Joined</th>
+                  <th style={{ padding: "1rem 1.25rem" }}>Paid Amount</th>
                   <th style={{ padding: "1rem 1.25rem", textAlign: "right" }}>Actions</th>
                 </tr>
               </thead>
@@ -498,6 +616,26 @@ export default function AdminPage() {
                       </td>
                       <td style={{ padding: "1rem 1.25rem", color: "#64748b", fontSize: "0.8rem" }}>
                         {u.createdAt ? new Date(u.createdAt).toLocaleDateString("en-IN") : "N/A"}
+                      </td>
+                      <td style={{ padding: "1rem 1.25rem" }}>
+                        {u.isPaid ? (
+                          u.role === "admin" ? (
+                            <span style={{ color: "#c084fc", fontWeight: "600", fontSize: "0.8rem" }}>₹0 (Admin)</span>
+                          ) : u.amountPaid !== undefined ? (
+                            <div>
+                              <div style={{ color: "#34d399", fontWeight: "700", fontSize: "0.85rem" }}>₹{u.amountPaid}</div>
+                              {u.couponCode && (
+                                <div style={{ fontSize: "0.7rem", color: "#a78bfa", marginTop: "0.1rem" }}>
+                                  🎟️ {u.couponCode} (-₹{u.discountAmount !== undefined ? u.discountAmount : Math.max(0, 799 - u.amountPaid)})
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <span style={{ color: "#cbd5e1", fontSize: "0.8rem" }}>₹149 (Legacy)</span>
+                          )
+                        ) : (
+                          <span style={{ color: "#64748b" }}>—</span>
+                        )}
                       </td>
                       <td style={{ padding: "1rem 1.25rem", textAlign: "right" }}>
                         <div style={{ display: "inline-flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "flex-end" }}>

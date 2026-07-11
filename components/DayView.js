@@ -108,7 +108,8 @@ export function DayView({ dayNum, basePath = "/dashboard/day" }) {
     (contentDay, originalIndex) => {
       const key = taskKey(contentDay, originalIndex);
       setCompletions((prev) => {
-        const next = { ...prev, [key]: !prev[key] };
+        const isCurrentlyCompleted = !!prev[key];
+        const next = { ...prev, [key]: !isCurrentlyCompleted ? new Date().toISOString() : false };
         writeCompletions(next);
         syncToCloud(next, null);
         return next;
@@ -121,7 +122,8 @@ export function DayView({ dayNum, basePath = "/dashboard/day" }) {
     (contentDay, originalIndex) => {
       const key = problemKey(contentDay, originalIndex);
       setCompletions((prev) => {
-        const next = { ...prev, [key]: !prev[key] };
+        const isCurrentlyCompleted = !!prev[key];
+        const next = { ...prev, [key]: !isCurrentlyCompleted ? new Date().toISOString() : false };
         writeCompletions(next);
         syncToCloud(next, null);
         return next;

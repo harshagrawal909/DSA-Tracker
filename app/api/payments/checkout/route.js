@@ -69,6 +69,7 @@ export async function POST(request) {
             orderId: `free_coupon_${couponCode}`,
             couponCode: couponCode,
             amountPaid: 0,
+            discountAmount: 799,
             schedule: { type: "3month", startDate: new Date().toISOString().split("T")[0] }
           }
         },

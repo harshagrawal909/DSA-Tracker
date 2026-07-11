@@ -58,16 +58,68 @@ function countStats(data, completions) {
 }
 
 function getStreak(completions) {
-  let streak = 0;
-  for (let d = 1; d <= MAX_DAY; d++) {
-    const dayData = dsaData.find((x) => x.day === d);
-    if (!dayData) break;
-    const done =
-      dayData.tasks.every((_, i) => completions[taskKey(d, i)]) &&
-      dayData.problems.every((_, i) => completions[problemKey(d, i)]);
-    if (done) streak++;
-    else break;
+  if (!completions) return 0;
+
+  const activeDates = new Set();
+  
+  for (const key in completions) {
+    const val = completions[key];
+    if (val) {
+      if (typeof val === "string") {
+        try {
+          const dateStr = val.split("T")[0]; // Extract YYYY-MM-DD
+          if (dateStr) activeDates.add(dateStr);
+        } catch {
+          // Ignore invalid timestamps
+        }
+      } else if (val === true) {
+        // Fallback for legacy completions: treat as active today to preserve streak
+        const todayStr = new Date().toISOString().split("T")[0];
+        activeDates.add(todayStr);
+      }
+    }
   }
+
+  if (activeDates.size === 0) return 0;
+
+  let streak = 0;
+  
+  // Format local date as YYYY-MM-DD
+  const formatDateLocal = (date) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  };
+
+  let checkDate = new Date();
+  
+  const todayStr = formatDateLocal(checkDate);
+  checkDate.setDate(checkDate.getDate() - 1);
+  const yesterdayStr = formatDateLocal(checkDate);
+
+  // If user hasn't solved anything today or yesterday, streak is 0
+  if (!activeDates.has(todayStr) && !activeDates.has(yesterdayStr)) {
+    return 0;
+  }
+
+  checkDate = new Date(); // Start from today
+  while (true) {
+    const dateStr = formatDateLocal(checkDate);
+    if (activeDates.has(dateStr)) {
+      streak++;
+      checkDate.setDate(checkDate.getDate() - 1);
+    } else {
+      // If we are checking today's date and today is not active yet, skip today and look at yesterday
+      const isCheckingToday = formatDateLocal(new Date()) === dateStr;
+      if (isCheckingToday) {
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+  }
+
   return streak;
 }
 
@@ -291,13 +343,13 @@ export function UserDashboard() {
   }, [planId, focusDay]);
 
   const expectedContentDay = useMemo(() => {
-    return scheduleProgress?.expectedDay ?? focusDay;
-  }, [scheduleProgress, focusDay]);
+    return focusDay;
+  }, [focusDay]);
 
   const expectedCalendarDay = useMemo(() => {
-    if (!scheduleProgress || !planId) return 1;
-    return getCalendarDayForContentDay(planId, scheduleProgress.expectedDay);
-  }, [scheduleProgress, planId]);
+    if (!planId) return 1;
+    return getCalendarDayForContentDay(planId, focusDay);
+  }, [planId, focusDay]);
 
   const calendarDays = useMemo(() => {
     return Array.from({ length: totalCalendarDays }, (_, i) => i + 1);

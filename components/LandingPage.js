@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -122,7 +122,7 @@ export function LandingPage({ onPaymentRequired }) {
           </div>
           <div className="nav-actions">
             {status === "authenticated" ? (
-              <div className="nav-user">
+              <div className="nav-user" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 {session?.user?.image && (
                   <Image
                     src={session.user.image}
@@ -134,6 +134,23 @@ export function LandingPage({ onPaymentRequired }) {
                 )}
                 <button className="btn-primary btn-sm" onClick={onPaymentRequired}>
                   Get Access →
+                </button>
+                <button
+                  className="btn-secondary btn-sm"
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  style={{
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    color: "#cbd5e1",
+                    padding: "0.4rem 0.75rem",
+                    borderRadius: "0.375rem",
+                    cursor: "pointer",
+                    fontSize: "0.8rem",
+                    fontWeight: "600",
+                    transition: "all 0.2s"
+                  }}
+                >
+                  Sign Out
                 </button>
               </div>
             ) : (

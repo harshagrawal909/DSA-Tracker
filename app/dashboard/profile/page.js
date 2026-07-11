@@ -71,13 +71,31 @@ export default async function ProfilePage() {
     console.error("Error loading config:", error);
   }
 
-  const displayInvoiceAmount = userDetails.role === "admin"
-    ? "₹0.00"
-    : userDetails.amountPaid !== undefined
-      ? `₹${Number(userDetails.amountPaid).toFixed(2)}`
-      : userDetails.isPaid
-        ? "₹149.00"
-        : "₹799.00";
+  const isAdmin = userDetails.role === "admin";
+  const hasAmountPaid = userDetails.amountPaid !== undefined;
+  
+  let basePriceVal = 799;
+  let discountVal = 0;
+  let finalPaidVal = 799;
+
+  if (isAdmin) {
+    basePriceVal = 0;
+    discountVal = 0;
+    finalPaidVal = 0;
+  } else if (hasAmountPaid) {
+    finalPaidVal = userDetails.amountPaid;
+    discountVal = userDetails.discountAmount !== undefined 
+      ? userDetails.discountAmount 
+      : Math.max(0, 799 - finalPaidVal);
+  } else if (userDetails.isPaid) {
+    basePriceVal = 149;
+    discountVal = 0;
+    finalPaidVal = 149;
+  }
+
+  const basePriceStr = `₹${basePriceVal.toFixed(2)}`;
+  const discountStr = discountVal > 0 ? `-₹${discountVal.toFixed(2)}` : "₹0.00";
+  const finalPaidStr = `₹${finalPaidVal.toFixed(2)}`;
 
   return (
     <main className="profile-page-wrapper">
@@ -245,9 +263,19 @@ export default async function ProfilePage() {
                         <p className="desc-sub">Complete 60-day interactive path with paced scheduling and community mentorship group access.</p>
                       </td>
                       <td style={{ textAlign: "right" }}>1</td>
-                      <td style={{ textAlign: "right" }}>{displayInvoiceAmount}</td>
-                      <td style={{ textAlign: "right" }}>{displayInvoiceAmount}</td>
+                      <td style={{ textAlign: "right" }}>{basePriceStr}</td>
+                      <td style={{ textAlign: "right" }}>{basePriceStr}</td>
                     </tr>
+                    {discountVal > 0 && (
+                      <tr>
+                        <td style={{ textAlign: "left" }}>
+                          <span style={{ color: "#34d399", fontWeight: "700" }}>🎟️ Coupon Discount ({userDetails.couponCode})</span>
+                        </td>
+                        <td style={{ textAlign: "right" }}>—</td>
+                        <td style={{ textAlign: "right", color: "#34d399" }}>{discountStr}</td>
+                        <td style={{ textAlign: "right", color: "#34d399" }}>{discountStr}</td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
 
@@ -257,8 +285,14 @@ export default async function ProfilePage() {
                 <div className="invoice-totals">
                   <div className="totals-row">
                     <span>Subtotal</span>
-                    <span>{displayInvoiceAmount}</span>
+                    <span>{basePriceStr}</span>
                   </div>
+                  {discountVal > 0 && (
+                    <div className="totals-row" style={{ color: "#34d399" }}>
+                      <span>Coupon Discount ({userDetails.couponCode})</span>
+                      <span>{discountStr}</span>
+                    </div>
+                  )}
                   <div className="totals-row">
                     <span>Tax (0%)</span>
                     <span>₹0.00</span>
@@ -266,7 +300,7 @@ export default async function ProfilePage() {
                   <div className="invoice-divider compact" />
                   <div className="totals-row total-paid">
                     <span>Amount Paid (INR)</span>
-                    <span>{displayInvoiceAmount}</span>
+                    <span>{finalPaidStr}</span>
                   </div>
                 </div>
 
