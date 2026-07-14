@@ -27,7 +27,7 @@ export async function POST(request) {
     const usersCol = await getUsersCollection();
 
     // Fetch dynamic basePrice
-    let basePrice = 799;
+    let basePrice = 599;
     try {
       const settingsDoc = await db.collection("config").findOne({ _id: "global_settings" });
       if (settingsDoc && settingsDoc.basePrice !== undefined) {

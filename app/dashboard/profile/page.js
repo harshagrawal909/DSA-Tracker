@@ -74,9 +74,9 @@ export default async function ProfilePage() {
   const isAdmin = userDetails.role === "admin";
   const hasAmountPaid = userDetails.amountPaid !== undefined;
   
-  let basePriceVal = 799;
+  let basePriceVal = 599;
   let discountVal = 0;
-  let finalPaidVal = 799;
+  let finalPaidVal = 599;
 
   if (isAdmin) {
     basePriceVal = 0;
@@ -86,7 +86,7 @@ export default async function ProfilePage() {
     finalPaidVal = userDetails.amountPaid;
     discountVal = userDetails.discountAmount !== undefined 
       ? userDetails.discountAmount 
-      : Math.max(0, 799 - finalPaidVal);
+      : Math.max(0, 599 - finalPaidVal);
   } else if (userDetails.isPaid) {
     basePriceVal = 149;
     discountVal = 0;

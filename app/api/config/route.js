@@ -15,8 +15,8 @@ export async function GET(request) {
     if (settingsDoc) {
       return NextResponse.json({
         whatsappLink: settingsDoc.whatsappLink || "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK",
-        basePrice: settingsDoc.basePrice ?? 799,
-        surveyDiscount: settingsDoc.surveyDiscount ?? 200,
+        basePrice: settingsDoc.basePrice ?? 599,
+        surveyDiscount: settingsDoc.surveyDiscount ?? 340,
         campaignActive: settingsDoc.campaignActive ?? false,
         campaignTitle: settingsDoc.campaignTitle || "",
         campaignMessage: settingsDoc.campaignMessage || "",
@@ -30,8 +30,8 @@ export async function GET(request) {
     const legacyLink = linkDoc ? linkDoc.value : "https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK";
     return NextResponse.json({
       whatsappLink: legacyLink,
-      basePrice: 799,
-      surveyDiscount: 200,
+      basePrice: 599,
+      surveyDiscount: 340,
       campaignActive: false,
       campaignTitle: "",
       campaignMessage: "",
@@ -79,8 +79,8 @@ export async function PUT(request) {
 
     const updatedSettings = {
       whatsappLink: whatsappLink !== undefined ? whatsappLink : (existing.whatsappLink || ""),
-      basePrice: basePrice !== undefined ? Number(basePrice) : (existing.basePrice ?? 799),
-      surveyDiscount: surveyDiscount !== undefined ? Number(surveyDiscount) : (existing.surveyDiscount ?? 200),
+      basePrice: basePrice !== undefined ? Number(basePrice) : (existing.basePrice ?? 599),
+      surveyDiscount: surveyDiscount !== undefined ? Number(surveyDiscount) : (existing.surveyDiscount ?? 340),
       campaignActive: campaignActive !== undefined ? Boolean(campaignActive) : (existing.campaignActive ?? false),
       campaignTitle: campaignTitle !== undefined ? String(campaignTitle) : (existing.campaignTitle || ""),
       campaignMessage: campaignMessage !== undefined ? String(campaignMessage) : (existing.campaignMessage || ""),

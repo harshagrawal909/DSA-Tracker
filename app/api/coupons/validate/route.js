@@ -46,7 +46,7 @@ export async function POST(request) {
     }
 
     // Retrieve base price dynamically from config
-    let basePrice = 799;
+    let basePrice = 599;
     try {
       const configCol = db.collection("config");
       const settingsDoc = await configCol.findOne({ _id: "global_settings" });

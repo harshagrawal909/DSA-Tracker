@@ -24,7 +24,7 @@ export default function SurveyPage() {
   const [error, setError] = useState(null);
   const [successData, setSuccessData] = useState(null);
   const [copied, setCopied] = useState(false);
-  const [discountAmount, setDiscountAmount] = useState(200);
+  const [discountAmount, setDiscountAmount] = useState(340);
 
   // Load configured discount to show in the UI
   useEffect(() => {

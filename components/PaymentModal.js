@@ -24,7 +24,7 @@ export function PaymentModal({ onClose, userName }) {
   const router = useRouter();
 
   // Pricing configuration state
-  const [basePrice, setBasePrice] = useState(799);
+  const [basePrice, setBasePrice] = useState(599);
 
   // Campaign states
   const [campaignActive, setCampaignActive] = useState(false);
@@ -52,7 +52,7 @@ export function PaymentModal({ onClose, userName }) {
     loadRazorpayScript();
 
     const initializePayment = async () => {
-      let currentBase = 799;
+      let currentBase = 599;
       // 1. Fetch dynamic base price & campaign configurations
       try {
         const res = await fetch("/api/config");

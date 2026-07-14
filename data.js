@@ -7,22 +7,26 @@ export const dsaData = [
       {
         "title": "Don't watch my A2Z DSA Course",
         "duration": "8:24",
-        "link": "https://www.youtube.com/watch?v=0bHoB32fuj0"
+        "link": "https://www.youtube.com/watch?v=0bHoB32fuj0",
+        "category": "Basics"
       },
       {
         "title": "How to setup VS code for DSA and CP | Input / Output split format",
         "duration": "8:51",
-        "link": "https://www.youtube.com/watch?v=h3uDCJ5mvgw"
+        "link": "https://www.youtube.com/watch?v=h3uDCJ5mvgw",
+        "category": "Basics"
       },
       {
         "title": "C++ Basics in One Shot - Strivers A2Z DSA Course - L1",
         "duration": "1:26:27",
-        "link": "https://www.youtube.com/watch?v=EAR7De6Goz4"
+        "link": "https://www.youtube.com/watch?v=EAR7De6Goz4",
+        "category": "Basics"
       },
       {
         "title": "Time and Space Complexity - Strivers A2Z DSA Course",
         "duration": "35:16",
-        "link": "https://www.youtube.com/watch?v=FPu9Uld7W-E"
+        "link": "https://www.youtube.com/watch?v=FPu9Uld7W-E",
+        "category": "Basics"
       }
     ],
     "problems": [
@@ -32,7 +36,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/two-sum/"
+        "link": "https://leetcode.com/problems/two-sum/",
+        "category": "Basics"
       },
       {
         "probId": "#9",
@@ -40,7 +45,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/palindrome-number/"
+        "link": "https://leetcode.com/problems/palindrome-number/",
+        "category": "Basics"
       }
     ]
   },
@@ -50,7 +56,8 @@ export const dsaData = [
       {
         "title": "Solve any Pattern Question - Trick Explained | 22 Patterns in 1 Shot | Strivers A2Z DSA Course",
         "duration": "1:22:06",
-        "link": "https://www.youtube.com/watch?v=tNm_NNSB3_w"
+        "link": "https://www.youtube.com/watch?v=tNm_NNSB3_w",
+        "category": "Basics"
       }
     ],
     "problems": [
@@ -60,7 +67,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-integer/"
+        "link": "https://leetcode.com/problems/reverse-integer/",
+        "category": "Basics"
       },
       {
         "probId": "#66",
@@ -68,7 +76,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/plus-one/"
+        "link": "https://leetcode.com/problems/plus-one/",
+        "category": "Basics"
       }
     ]
   },
@@ -78,12 +87,14 @@ export const dsaData = [
       {
         "title": "Complete C++ STL in 1 Video | Time Complexity and Notes",
         "duration": "1:07:37",
-        "link": "https://www.youtube.com/watch?v=RRVYpIET_RU"
+        "link": "https://www.youtube.com/watch?v=RRVYpIET_RU",
+        "category": "Basics"
       },
       {
         "title": "Basic Maths for DSA | Euclidean Algorithm | Strivers A2Z DSA Course",
         "duration": "1:03:20",
-        "link": "https://www.youtube.com/watch?v=1xNbjMdbjug"
+        "link": "https://www.youtube.com/watch?v=1xNbjMdbjug",
+        "category": "Basics"
       }
     ],
     "problems": [
@@ -93,7 +104,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/contains-duplicate/"
+        "link": "https://leetcode.com/problems/contains-duplicate/",
+        "category": "Basics"
       },
       {
         "probId": "#1071",
@@ -101,7 +113,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/greatest-common-divisor-of-strings/"
+        "link": "https://leetcode.com/problems/greatest-common-divisor-of-strings/",
+        "category": "Basics"
       },
       {
         "probId": "#204",
@@ -109,7 +122,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/count-primes/"
+        "link": "https://leetcode.com/problems/count-primes/",
+        "category": "Basics"
       }
     ]
   },
@@ -119,27 +133,32 @@ export const dsaData = [
       {
         "title": "Re 1. Introduction to Recursion | Recursion Tree | Stack Space | Strivers A2Z DSA Course",
         "duration": "22:46",
-        "link": "https://www.youtube.com/watch?v=yVdKa8dnKiE"
+        "link": "https://www.youtube.com/watch?v=yVdKa8dnKiE",
+        "category": "Recursion"
       },
       {
         "title": "Re 2. Problems on Recursion | Strivers A2Z DSA Course",
         "duration": "22:04",
-        "link": "https://www.youtube.com/watch?v=un6PLygfXrA"
+        "link": "https://www.youtube.com/watch?v=un6PLygfXrA",
+        "category": "Recursion"
       },
       {
         "title": "Re 3. Parameterised and Functional Recursion | Strivers A2Z DSA Course",
         "duration": "18:14",
-        "link": "https://www.youtube.com/watch?v=69ZCDFy-OUo"
+        "link": "https://www.youtube.com/watch?v=69ZCDFy-OUo",
+        "category": "Recursion"
       },
       {
         "title": "Re 4. Problems on Functional Recursion | Strivers A2Z DSA Course",
         "duration": "19:48",
-        "link": "https://www.youtube.com/watch?v=twuC1F6gLI8"
+        "link": "https://www.youtube.com/watch?v=twuC1F6gLI8",
+        "category": "Recursion"
       },
       {
         "title": "Re 5. Multiple Recursion Calls | Problems | Strivers A2Z DSA Course",
         "duration": "16:45",
-        "link": "https://www.youtube.com/watch?v=kvRjNm4rVBE"
+        "link": "https://www.youtube.com/watch?v=kvRjNm4rVBE",
+        "category": "Recursion"
       }
     ],
     "problems": [
@@ -149,7 +168,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/fibonacci-number/"
+        "link": "https://leetcode.com/problems/fibonacci-number/",
+        "category": "Recursion"
       },
       {
         "probId": "#50",
@@ -157,7 +177,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/powx-n/"
+        "link": "https://leetcode.com/problems/powx-n/",
+        "category": "Recursion"
       },
       {
         "probId": "#206",
@@ -165,7 +186,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-linked-list/"
+        "link": "https://leetcode.com/problems/reverse-linked-list/",
+        "category": "Recursion"
       },
       {
         "probId": "#326",
@@ -173,7 +195,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/power-of-three/"
+        "link": "https://leetcode.com/problems/power-of-three/",
+        "category": "Recursion"
       }
     ]
   },
@@ -183,12 +206,14 @@ export const dsaData = [
       {
         "title": "Hashing | Maps | Time Complexity | Collisions | Division Rule of Hashing | Strivers A2Z DSA Course",
         "duration": "1:00:06",
-        "link": "https://www.youtube.com/watch?v=KEs5UyBJ39g"
+        "link": "https://www.youtube.com/watch?v=KEs5UyBJ39g",
+        "category": "Hashing"
       },
       {
         "title": "Sorting - Part 1 | Selection Sort, Bubble Sort, Insertion Sort | Strivers A2Z DSA Course",
         "duration": "43:44",
-        "link": "https://www.youtube.com/watch?v=HGk_ypEuS24"
+        "link": "https://www.youtube.com/watch?v=HGk_ypEuS24",
+        "category": "Sorting"
       }
     ],
     "problems": [
@@ -198,7 +223,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/two-sum/"
+        "link": "https://leetcode.com/problems/two-sum/",
+        "category": "Basics"
       },
       {
         "probId": "#242",
@@ -206,7 +232,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/valid-anagram/"
+        "link": "https://leetcode.com/problems/valid-anagram/",
+        "category": "Hashing"
       },
       {
         "probId": "#912",
@@ -214,7 +241,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sort-an-array/"
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "category": "Sorting"
       },
       {
         "probId": "#169",
@@ -222,7 +250,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/majority-element/"
+        "link": "https://leetcode.com/problems/majority-element/",
+        "category": "Basics"
       }
     ]
   },
@@ -232,17 +261,20 @@ export const dsaData = [
       {
         "title": "Merge Sort | Algorithm | Pseudocode | Dry Run | Code | Strivers A2Z DSA Course",
         "duration": "49:43",
-        "link": "https://www.youtube.com/watch?v=ogjf7ORKfd8"
+        "link": "https://www.youtube.com/watch?v=ogjf7ORKfd8",
+        "category": "Sorting"
       },
       {
         "title": "Quick Sort For Beginners | Strivers A2Z DSA Course",
         "duration": "35:17",
-        "link": "https://www.youtube.com/watch?v=WIrA4YexLRQ"
+        "link": "https://www.youtube.com/watch?v=WIrA4YexLRQ",
+        "category": "Sorting"
       },
       {
         "title": "Find Second Largest Element in Array | Remove duplicates from Sorted Array | Arrays Intro Video",
         "duration": "43:26",
-        "link": "https://www.youtube.com/watch?v=37E9ckMDdTk"
+        "link": "https://www.youtube.com/watch?v=37E9ckMDdTk",
+        "category": "Sorting"
       }
     ],
     "problems": [
@@ -252,7 +284,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sort-an-array/"
+        "link": "https://leetcode.com/problems/sort-an-array/",
+        "category": "Sorting"
       },
       {
         "probId": "#26",
@@ -260,7 +293,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
+        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+        "category": "Sorting"
       },
       {
         "probId": "#414",
@@ -268,7 +302,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/third-maximum-number/"
+        "link": "https://leetcode.com/problems/third-maximum-number/",
+        "category": "Arrays"
       }
     ]
   },
@@ -278,12 +313,14 @@ export const dsaData = [
       {
         "title": "Rotate Array by K places | Union, Intersection of Sorted Arrays | Move Zeros to End | Arrays Part-2",
         "duration": "1:13:17",
-        "link": "https://www.youtube.com/watch?v=wvcQg43_V8U"
+        "link": "https://www.youtube.com/watch?v=wvcQg43_V8U",
+        "category": "Arrays"
       },
       {
         "title": "Find element that appears once | Find missing number | Max Consecutive number of 1's | Arrays Part-3",
         "duration": "38:00",
-        "link": "https://www.youtube.com/watch?v=bYWLJb3vCWY"
+        "link": "https://www.youtube.com/watch?v=bYWLJb3vCWY",
+        "category": "Arrays"
       }
     ],
     "problems": [
@@ -293,7 +330,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/rotate-array/"
+        "link": "https://leetcode.com/problems/rotate-array/",
+        "category": "Arrays"
       },
       {
         "probId": "#283",
@@ -301,7 +339,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/move-zeroes/"
+        "link": "https://leetcode.com/problems/move-zeroes/",
+        "category": "Arrays"
       },
       {
         "probId": "#268",
@@ -309,7 +348,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/missing-number/"
+        "link": "https://leetcode.com/problems/missing-number/",
+        "category": "Arrays"
       },
       {
         "probId": "#485",
@@ -317,7 +357,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/max-consecutive-ones/"
+        "link": "https://leetcode.com/problems/max-consecutive-ones/",
+        "category": "Arrays"
       },
       {
         "probId": "#349",
@@ -325,7 +366,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/intersection-of-two-arrays/"
+        "link": "https://leetcode.com/problems/intersection-of-two-arrays/",
+        "category": "Arrays"
       }
     ]
   },
@@ -335,32 +377,38 @@ export const dsaData = [
       {
         "title": "Longest Subarray with sum K | Brute - Better - Optimal | Generate Subarrays",
         "duration": "41:42",
-        "link": "https://www.youtube.com/watch?v=frf7qxiN2qU"
+        "link": "https://www.youtube.com/watch?v=frf7qxiN2qU",
+        "category": "Arrays"
       },
       {
         "title": "2 Sum Problem | 2 types of the same problem for Interviews | Brute-Better-Optimal",
         "duration": "18:20",
-        "link": "https://www.youtube.com/watch?v=UXDSeD9mN-k"
+        "link": "https://www.youtube.com/watch?v=UXDSeD9mN-k",
+        "category": "Arrays"
       },
       {
         "title": "Sort an array of 0's 1's & 2's | Intuition of Algo | C++ Java Python | Brute-Better-Optimal",
         "duration": "25:07",
-        "link": "https://www.youtube.com/watch?v=tp8JIuCXBaU"
+        "link": "https://www.youtube.com/watch?v=tp8JIuCXBaU",
+        "category": "Arrays"
       },
       {
         "title": "Majority Element I | Brute-Better-Optimal | Moore's Voting Algorithm | Intuition |Brute to Optimal",
         "duration": "18:13",
-        "link": "https://www.youtube.com/watch?v=nP_ns3uSh80"
+        "link": "https://www.youtube.com/watch?v=nP_ns3uSh80",
+        "category": "Arrays"
       },
       {
         "title": "Kadane's Algorithm | Maximum Subarray Sum | Finding and Printing",
         "duration": "20:09",
-        "link": "https://www.youtube.com/watch?v=AHZpyENo7k4"
+        "link": "https://www.youtube.com/watch?v=AHZpyENo7k4",
+        "category": "Arrays"
       },
       {
         "title": "DP 35. Best Time to Buy and Sell Stock | DP on Stocks ",
         "duration": "9:11",
-        "link": "https://www.youtube.com/watch?v=excAOvwF_Wk"
+        "link": "https://www.youtube.com/watch?v=excAOvwF_Wk",
+        "category": "Arrays"
       }
     ],
     "problems": [
@@ -370,7 +418,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/subarray-sum-equals-k/"
+        "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
+        "category": "Arrays"
       },
       {
         "probId": "#1",
@@ -378,7 +427,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/two-sum/"
+        "link": "https://leetcode.com/problems/two-sum/",
+        "category": "Arrays"
       },
       {
         "probId": "#75",
@@ -386,7 +436,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sort-colors/"
+        "link": "https://leetcode.com/problems/sort-colors/",
+        "category": "Arrays"
       },
       {
         "probId": "#169",
@@ -394,7 +445,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/majority-element/"
+        "link": "https://leetcode.com/problems/majority-element/",
+        "category": "Arrays"
       },
       {
         "probId": "#53",
@@ -402,7 +454,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximum-subarray/"
+        "link": "https://leetcode.com/problems/maximum-subarray/",
+        "category": "Arrays"
       },
       {
         "probId": "#121",
@@ -410,7 +463,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+        "category": "Arrays"
       }
     ]
   },
@@ -420,32 +474,38 @@ export const dsaData = [
       {
         "title": "Rearrange Array Elements by Sign | 2 Varieties of same Problem",
         "duration": "21:37",
-        "link": "https://www.youtube.com/watch?v=h4aBagy4Uok"
+        "link": "https://www.youtube.com/watch?v=h4aBagy4Uok",
+        "category": "Arrays"
       },
       {
         "title": "Next Permutation - Intuition in Detail  | Brute to Optimal",
         "duration": "28:15",
-        "link": "https://www.youtube.com/watch?v=JDOXKqF60RQ"
+        "link": "https://www.youtube.com/watch?v=JDOXKqF60RQ",
+        "category": "Arrays"
       },
       {
         "title": "Leaders in an Array | Brute - Optimal | Strivers A2Z DSA Course",
         "duration": "11:53",
-        "link": "https://www.youtube.com/watch?v=cHrH9CQ8pmY"
+        "link": "https://www.youtube.com/watch?v=cHrH9CQ8pmY",
+        "category": "Arrays"
       },
       {
         "title": "Longest Consecutive Sequence | Google Interview Question | Brute Better Optimal",
         "duration": "23:11",
-        "link": "https://www.youtube.com/watch?v=oO5uLE7EUlM"
+        "link": "https://www.youtube.com/watch?v=oO5uLE7EUlM",
+        "category": "Arrays"
       },
       {
         "title": "Set Matrix Zeroes | O(1) Space Approach | Brute - Better - Optimal",
         "duration": "30:07",
-        "link": "https://www.youtube.com/watch?v=N0MgLvceX7M"
+        "link": "https://www.youtube.com/watch?v=N0MgLvceX7M",
+        "category": "Arrays"
       },
       {
         "title": "Rotate Matrix/Image by 90 Degrees | Brute - Optimal",
         "duration": "17:47",
-        "link": "https://www.youtube.com/watch?v=Z0R2u6gd3GU"
+        "link": "https://www.youtube.com/watch?v=Z0R2u6gd3GU",
+        "category": "Arrays"
       }
     ],
     "problems": [
@@ -455,7 +515,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/rearrange-array-elements-by-sign/"
+        "link": "https://leetcode.com/problems/rearrange-array-elements-by-sign/",
+        "category": "Arrays"
       },
       {
         "probId": "#31",
@@ -463,7 +524,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/next-permutation/"
+        "link": "https://leetcode.com/problems/next-permutation/",
+        "category": "Arrays"
       },
       {
         "probId": "#128",
@@ -471,7 +533,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-consecutive-sequence/"
+        "link": "https://leetcode.com/problems/longest-consecutive-sequence/",
+        "category": "Arrays"
       },
       {
         "probId": "#73",
@@ -479,7 +542,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/set-matrix-zeroes/"
+        "link": "https://leetcode.com/problems/set-matrix-zeroes/",
+        "category": "Arrays"
       },
       {
         "probId": "#48",
@@ -487,7 +551,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/rotate-image/"
+        "link": "https://leetcode.com/problems/rotate-image/",
+        "category": "Arrays"
       }
     ]
   },
@@ -497,27 +562,32 @@ export const dsaData = [
       {
         "title": "Spiral Traversal of a Matrix | Spiral Matrix",
         "duration": "16:33",
-        "link": "https://www.youtube.com/watch?v=3Zv-s9UUrFM"
+        "link": "https://www.youtube.com/watch?v=3Zv-s9UUrFM",
+        "category": "Arrays"
       },
       {
         "title": "Count Subarray sum Equals K | Brute - Better -Optimal",
         "duration": "24:09",
-        "link": "https://www.youtube.com/watch?v=xvNwoz-ufXA"
+        "link": "https://www.youtube.com/watch?v=xvNwoz-ufXA",
+        "category": "Arrays"
       },
       {
         "title": "Pascal Triangle | Finding nCr in minimal time",
         "duration": "26:45",
-        "link": "https://www.youtube.com/watch?v=bR7mQgwQ_o8"
+        "link": "https://www.youtube.com/watch?v=bR7mQgwQ_o8",
+        "category": "Arrays"
       },
       {
         "title": "Majority Element II | Brute-Better-Optimal",
         "duration": "26:58",
-        "link": "https://www.youtube.com/watch?v=vwZj1K0e9U8"
+        "link": "https://www.youtube.com/watch?v=vwZj1K0e9U8",
+        "category": "Arrays"
       },
       {
         "title": "3 Sum | Brute -  Better - Optimal with Codes",
         "duration": "38:25",
-        "link": "https://www.youtube.com/watch?v=DhFh8Kw7ymk"
+        "link": "https://www.youtube.com/watch?v=DhFh8Kw7ymk",
+        "category": "Arrays"
       }
     ],
     "problems": [
@@ -527,7 +597,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/spiral-matrix/"
+        "link": "https://leetcode.com/problems/spiral-matrix/",
+        "category": "Arrays"
       },
       {
         "probId": "#560",
@@ -535,7 +606,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/subarray-sum-equals-k/"
+        "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
+        "category": "Arrays"
       },
       {
         "probId": "#118",
@@ -543,7 +615,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/pascals-triangle/"
+        "link": "https://leetcode.com/problems/pascals-triangle/",
+        "category": "Arrays"
       },
       {
         "probId": "#229",
@@ -551,7 +624,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/majority-element-ii/"
+        "link": "https://leetcode.com/problems/majority-element-ii/",
+        "category": "Arrays"
       },
       {
         "probId": "#15",
@@ -559,7 +633,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/3sum/"
+        "link": "https://leetcode.com/problems/3sum/",
+        "category": "Arrays"
       }
     ]
   },
@@ -569,22 +644,26 @@ export const dsaData = [
       {
         "title": "4 Sum | Brute - Better - Optimal with Codes",
         "duration": "28:47",
-        "link": "https://www.youtube.com/watch?v=eD95WRfh81c"
+        "link": "https://www.youtube.com/watch?v=eD95WRfh81c",
+        "category": "Arrays"
       },
       {
         "title": "Number of Subarrays with xor K | Brute - Better - Optimal",
         "duration": "24:55",
-        "link": "https://www.youtube.com/watch?v=eZr-6p0B7ME"
+        "link": "https://www.youtube.com/watch?v=eZr-6p0B7ME",
+        "category": "Arrays"
       },
       {
         "title": "Merge Overlapping Intervals | Brute, Optimal with Precise TC analysis",
         "duration": "22:35",
-        "link": "https://www.youtube.com/watch?v=IexN60k62jo"
+        "link": "https://www.youtube.com/watch?v=IexN60k62jo",
+        "category": "Arrays"
       },
       {
         "title": "Merge Sorted Arrays Without Extra Space | 2 Optimal Solution",
         "duration": "32:47",
-        "link": "https://www.youtube.com/watch?v=n7uwj04E0I4"
+        "link": "https://www.youtube.com/watch?v=n7uwj04E0I4",
+        "category": "Arrays"
       }
     ],
     "problems": [
@@ -594,7 +673,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/4sum/"
+        "link": "https://leetcode.com/problems/4sum/",
+        "category": "Arrays"
       },
       {
         "probId": "#1310",
@@ -602,7 +682,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/xor-queries-of-a-subarray/"
+        "link": "https://leetcode.com/problems/xor-queries-of-a-subarray/",
+        "category": "Arrays"
       },
       {
         "probId": "#56",
@@ -610,7 +691,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/merge-intervals/"
+        "link": "https://leetcode.com/problems/merge-intervals/",
+        "category": "Arrays"
       },
       {
         "probId": "#88",
@@ -618,7 +700,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/merge-sorted-array/"
+        "link": "https://leetcode.com/problems/merge-sorted-array/",
+        "category": "Arrays"
       }
     ]
   },
@@ -628,22 +711,26 @@ export const dsaData = [
       {
         "title": "Find the Missing and Repeating Number | 4 Approaches ",
         "duration": "42:24",
-        "link": "https://www.youtube.com/watch?v=2D0D8HE6uak"
+        "link": "https://www.youtube.com/watch?v=2D0D8HE6uak",
+        "category": "Arrays"
       },
       {
         "title": "Count Inversions in an Array | Brute and Optimal",
         "duration": "24:17",
-        "link": "https://www.youtube.com/watch?v=AseUmwVNaoY"
+        "link": "https://www.youtube.com/watch?v=AseUmwVNaoY",
+        "category": "Arrays"
       },
       {
         "title": "Reverse Pairs | Hard Interview Question",
         "duration": "32:26",
-        "link": "https://www.youtube.com/watch?v=0e4bZaP3MDI"
+        "link": "https://www.youtube.com/watch?v=0e4bZaP3MDI",
+        "category": "Arrays"
       },
       {
         "title": "Maximum Product Subarray - Best Intuitive Approach Discussed",
         "duration": "20:27",
-        "link": "https://www.youtube.com/watch?v=hnswaLJvr6g"
+        "link": "https://www.youtube.com/watch?v=hnswaLJvr6g",
+        "category": "Arrays"
       }
     ],
     "problems": [
@@ -653,7 +740,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-the-duplicate-number/"
+        "link": "https://leetcode.com/problems/find-the-duplicate-number/",
+        "category": "Arrays"
       },
       {
         "probId": "#493",
@@ -661,7 +749,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-pairs/"
+        "link": "https://leetcode.com/problems/reverse-pairs/",
+        "category": "Arrays"
       },
       {
         "probId": "#152",
@@ -669,7 +758,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximum-product-subarray/"
+        "link": "https://leetcode.com/problems/maximum-product-subarray/",
+        "category": "Arrays"
       },
       {
         "probId": "#287",
@@ -677,7 +767,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-the-duplicate-number/"
+        "link": "https://leetcode.com/problems/find-the-duplicate-number/",
+        "category": "Arrays"
       }
     ]
   },
@@ -687,32 +778,38 @@ export const dsaData = [
       {
         "title": "BS-1. Binary Search Introduction | Real Life Example | Iterative | Recursive | Overflow Cases",
         "duration": "33:27",
-        "link": "https://www.youtube.com/watch?v=MHf6awe89xw"
+        "link": "https://www.youtube.com/watch?v=MHf6awe89xw",
+        "category": "Binary Search"
       },
       {
         "title": "BS-2. Implement Lower Bound and Upper Bound | Search Insert Position | Floor and Ceil",
         "duration": "32:26",
-        "link": "https://www.youtube.com/watch?v=6zhGS79oQ4k"
+        "link": "https://www.youtube.com/watch?v=6zhGS79oQ4k",
+        "category": "Binary Search"
       },
       {
         "title": "BS-3. First and Last Occurrences in Array | Count occurrences in Array",
         "duration": "25:28",
-        "link": "https://www.youtube.com/watch?v=hjR1IYVx9lY"
+        "link": "https://www.youtube.com/watch?v=hjR1IYVx9lY",
+        "category": "Binary Search"
       },
       {
         "title": "BS-4. Search Element in Rotated Sorted Array - I",
         "duration": "16:38",
-        "link": "https://www.youtube.com/watch?v=5qGrJbHhqFs"
+        "link": "https://www.youtube.com/watch?v=5qGrJbHhqFs",
+        "category": "Binary Search"
       },
       {
         "title": "BS-5. Search Element in Rotated Sorted Array II",
         "duration": "12:44",
-        "link": "https://www.youtube.com/watch?v=w2G2W8l__pc"
+        "link": "https://www.youtube.com/watch?v=w2G2W8l__pc",
+        "category": "Binary Search"
       },
       {
         "title": "BS-6. Minimum in Rotated Sorted Array",
         "duration": "17:08",
-        "link": "https://www.youtube.com/watch?v=nhEMDKMB44g"
+        "link": "https://www.youtube.com/watch?v=nhEMDKMB44g",
+        "category": "Binary Search"
       }
     ],
     "problems": [
@@ -722,7 +819,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-search/"
+        "link": "https://leetcode.com/problems/binary-search/",
+        "category": "Binary Search"
       },
       {
         "probId": "#35",
@@ -730,7 +828,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/search-insert-position/"
+        "link": "https://leetcode.com/problems/search-insert-position/",
+        "category": "Binary Search"
       },
       {
         "probId": "#34",
@@ -738,7 +837,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+        "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+        "category": "Binary Search"
       },
       {
         "probId": "#33",
@@ -746,7 +846,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+        "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+        "category": "Binary Search"
       },
       {
         "probId": "#81",
@@ -754,7 +855,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/"
+        "link": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
+        "category": "Binary Search"
       },
       {
         "probId": "#153",
@@ -762,7 +864,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+        "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+        "category": "Binary Search"
       }
     ]
   },
@@ -772,32 +875,38 @@ export const dsaData = [
       {
         "title": "BS-7. Find out how many times array has been rotated",
         "duration": "5:01",
-        "link": "https://www.youtube.com/watch?v=jtSiWTPLwd0"
+        "link": "https://www.youtube.com/watch?v=jtSiWTPLwd0",
+        "category": "Binary Search"
       },
       {
         "title": "BS-8. Single Element in Sorted Array",
         "duration": "22:16",
-        "link": "https://www.youtube.com/watch?v=AZOmHuHadxQ"
+        "link": "https://www.youtube.com/watch?v=AZOmHuHadxQ",
+        "category": "Binary Search"
       },
       {
         "title": "BS-9. Find Peak Element",
         "duration": "32:53",
-        "link": "https://www.youtube.com/watch?v=cXxmbemS6XM"
+        "link": "https://www.youtube.com/watch?v=cXxmbemS6XM",
+        "category": "Binary Search"
       },
       {
         "title": "BS-10. Finding Sqrt of a number using Binary Search",
         "duration": "17:11",
-        "link": "https://www.youtube.com/watch?v=Bsv3FPUX_BA"
+        "link": "https://www.youtube.com/watch?v=Bsv3FPUX_BA",
+        "category": "Binary Search"
       },
       {
         "title": "BS-11. Find the Nth root of an Integer",
         "duration": "20:44",
-        "link": "https://www.youtube.com/watch?v=rjEJeYCasHs"
+        "link": "https://www.youtube.com/watch?v=rjEJeYCasHs",
+        "category": "Binary Search"
       },
       {
         "title": "BS-12. Koko Eating Bananas",
         "duration": "21:04",
-        "link": "https://www.youtube.com/watch?v=qyfekrNni90"
+        "link": "https://www.youtube.com/watch?v=qyfekrNni90",
+        "category": "Binary Search"
       }
     ],
     "problems": [
@@ -807,7 +916,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/"
+        "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
+        "category": "Binary Search"
       },
       {
         "probId": "#540",
@@ -815,7 +925,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
+        "link": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
+        "category": "Binary Search"
       },
       {
         "probId": "#162",
@@ -823,7 +934,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-peak-element/"
+        "link": "https://leetcode.com/problems/find-peak-element/",
+        "category": "Binary Search"
       },
       {
         "probId": "#69",
@@ -831,7 +943,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sqrtx/"
+        "link": "https://leetcode.com/problems/sqrtx/",
+        "category": "Binary Search"
       },
       {
         "probId": "#875",
@@ -839,7 +952,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/koko-eating-bananas/"
+        "link": "https://leetcode.com/problems/koko-eating-bananas/",
+        "category": "Binary Search"
       }
     ]
   },
@@ -849,32 +963,38 @@ export const dsaData = [
       {
         "title": "BS-13. Minimum days to make M bouquets | Binary Search",
         "duration": "26:01",
-        "link": "https://www.youtube.com/watch?v=TXAuxeYBTdg"
+        "link": "https://www.youtube.com/watch?v=TXAuxeYBTdg",
+        "category": "Binary Search"
       },
       {
         "title": "BS-14. Find the Smallest Divisor Given a Threshold | Binary Search",
         "duration": "16:00",
-        "link": "https://www.youtube.com/watch?v=UvBKTVaG6U8"
+        "link": "https://www.youtube.com/watch?v=UvBKTVaG6U8",
+        "category": "Binary Search"
       },
       {
         "title": "BS-15. Capacity to Ship Packages within D Days",
         "duration": "20:36",
-        "link": "https://www.youtube.com/watch?v=MG-Ac4TAvTY"
+        "link": "https://www.youtube.com/watch?v=MG-Ac4TAvTY",
+        "category": "Binary Search"
       },
       {
         "title": "BS-16. Kth Missing Positive Number | Maths + Binary Search",
         "duration": "22:52",
-        "link": "https://www.youtube.com/watch?v=uZ0N_hZpyps"
+        "link": "https://www.youtube.com/watch?v=uZ0N_hZpyps",
+        "category": "Binary Search"
       },
       {
         "title": "BS-17. Aggressive Cows | Binary Search Hard",
         "duration": "26:44",
-        "link": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo"
+        "link": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo",
+        "category": "Binary Search"
       },
       {
         "title": "BS-18. Allocate Books or Book Allocation | Hard Binary Search",
         "duration": "27:29",
-        "link": "https://www.youtube.com/watch?v=Z0hwjftStI4"
+        "link": "https://www.youtube.com/watch?v=Z0hwjftStI4",
+        "category": "Binary Search"
       }
     ],
     "problems": [
@@ -884,7 +1004,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/"
+        "link": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
+        "category": "Binary Search"
       },
       {
         "probId": "#1283",
@@ -892,7 +1013,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/"
+        "link": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
+        "category": "Binary Search"
       },
       {
         "probId": "#1011",
@@ -900,7 +1022,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/"
+        "link": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+        "category": "Binary Search"
       },
       {
         "probId": "#1539",
@@ -908,7 +1031,17 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/kth-missing-positive-number/"
+        "link": "https://leetcode.com/problems/kth-missing-positive-number/",
+        "category": "Binary Search"
+      },
+      {
+        "probId": "#1552",
+        "title": "Magnetic Force Between Two Balls (Aggressive Cows)",
+        "difficulty": "Medium",
+        "platform": "LeetCode",
+        "approach": "",
+        "link": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
+        "category": "Binary Search"
       },
       {
         "probId": "#410",
@@ -916,7 +1049,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/split-array-largest-sum/"
+        "link": "https://leetcode.com/problems/split-array-largest-sum/",
+        "category": "Binary Search"
       }
     ]
   },
@@ -926,27 +1060,32 @@ export const dsaData = [
       {
         "title": "BS 19. Painter's Partition and Split Array - Largest Sum",
         "duration": "11:20",
-        "link": "https://www.youtube.com/watch?v=thUd_WJn6wk"
+        "link": "https://www.youtube.com/watch?v=thUd_WJn6wk",
+        "category": "Binary Search"
       },
       {
         "title": "BS-20. Minimise Maximum Distance between Gas Stations | 3 Approaches | Heap | Binary Search",
         "duration": "59:12",
-        "link": "https://www.youtube.com/watch?v=kMSBvlZ-_HA"
+        "link": "https://www.youtube.com/watch?v=kMSBvlZ-_HA",
+        "category": "Binary Search"
       },
       {
         "title": "BS 21: Median of two Sorted Arrays of Different Sizes | Brute and Better Approach",
         "duration": "15:59",
-        "link": "https://www.youtube.com/watch?v=C2rRzz-JDk8"
+        "link": "https://www.youtube.com/watch?v=C2rRzz-JDk8",
+        "category": "Binary Search"
       },
       {
         "title": "BS-21. Median of two Sorted Arrays of Different Sizes | Binary Search Approach With Intuition",
         "duration": "35:00",
-        "link": "https://www.youtube.com/watch?v=F9c7LpRZWVQ"
+        "link": "https://www.youtube.com/watch?v=F9c7LpRZWVQ",
+        "category": "Binary Search"
       },
       {
         "title": "Bs-22. K-th element of two sorted arrays | Binary Search Approach",
         "duration": "11:53",
-        "link": "https://www.youtube.com/watch?v=D1oDwWCq50g"
+        "link": "https://www.youtube.com/watch?v=D1oDwWCq50g",
+        "category": "Binary Search"
       }
     ],
     "problems": [
@@ -956,7 +1095,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/split-array-largest-sum/"
+        "link": "https://leetcode.com/problems/split-array-largest-sum/",
+        "category": "Binary Search"
       },
       {
         "probId": "#774",
@@ -964,7 +1104,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/"
+        "link": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/",
+        "category": "Binary Search"
       },
       {
         "probId": "#4",
@@ -972,7 +1113,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
+        "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+        "category": "Binary Search"
       },
       {
         "probId": "#1428",
@@ -980,7 +1122,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/leftmost-column-with-at-least-a-one/"
+        "link": "https://leetcode.com/problems/leftmost-column-with-at-least-a-one/",
+        "category": "Binary Search"
       }
     ]
   },
@@ -990,62 +1133,74 @@ export const dsaData = [
       {
         "title": "BS 23. Row with maximum number of 1s | Binary Search on 2D Arrays",
         "duration": "10:18",
-        "link": "https://www.youtube.com/watch?v=SCz-1TtYxDI"
+        "link": "https://www.youtube.com/watch?v=SCz-1TtYxDI",
+        "category": "Binary Search"
       },
       {
         "title": "BS-24. Search in a 2D Matrix - I | Binary Search of 2D",
         "duration": "15:42",
-        "link": "https://www.youtube.com/watch?v=JXU4Akft7yk"
+        "link": "https://www.youtube.com/watch?v=JXU4Akft7yk",
+        "category": "Binary Search"
       },
       {
         "title": "BS-25. Search in a 2D Matrix - II  |  Binary Search on 2D",
         "duration": "15:29",
-        "link": "https://www.youtube.com/watch?v=9ZbB397jU4k"
+        "link": "https://www.youtube.com/watch?v=9ZbB397jU4k",
+        "category": "Binary Search"
       },
       {
         "title": "BS-26. Find Peak Element-II | Binary Search",
         "duration": "20:02",
-        "link": "https://www.youtube.com/watch?v=nGGp5XBzC4g"
+        "link": "https://www.youtube.com/watch?v=nGGp5XBzC4g",
+        "category": "Binary Search"
       },
       {
         "title": "BS-27. Median in a Row Wise Sorted Matrix",
         "duration": "23:13",
-        "link": "https://www.youtube.com/watch?v=Q9wXgdxJq48"
+        "link": "https://www.youtube.com/watch?v=Q9wXgdxJq48",
+        "category": "Binary Search"
       },
       {
         "title": "L1. Introduction to Trees | Types of Trees",
         "duration": "9:50",
-        "link": "https://www.youtube.com/watch?v=_ANrF3FJm7I"
+        "link": "https://www.youtube.com/watch?v=_ANrF3FJm7I",
+        "category": "Binary Trees"
       },
       {
         "title": "L2. Binary Tree Representation in C++",
         "duration": "4:43",
-        "link": "https://www.youtube.com/watch?v=ctCpP0RFDFc"
+        "link": "https://www.youtube.com/watch?v=ctCpP0RFDFc",
+        "category": "Binary Trees"
       },
       {
         "title": "L3. Binary Tree Representation in Java",
         "duration": "4:12",
-        "link": "https://www.youtube.com/watch?v=hyLyW7rP24I"
+        "link": "https://www.youtube.com/watch?v=hyLyW7rP24I",
+        "category": "Binary Trees"
       },
       {
         "title": "L4. Binary Tree Traversals in Binary Tree | BFS | DFS",
         "duration": "9:59",
-        "link": "https://www.youtube.com/watch?v=jmy0LaGET1I"
+        "link": "https://www.youtube.com/watch?v=jmy0LaGET1I",
+        "category": "Binary Trees"
       },
       {
         "title": "L5. Preorder Traversal of Binary Tree | C++ | Java | Code Explanation",
         "duration": "7:29",
-        "link": "https://www.youtube.com/watch?v=RlUu72JrOCQ"
+        "link": "https://www.youtube.com/watch?v=RlUu72JrOCQ",
+        "category": "Binary Trees"
       },
       {
         "title": "L6. Inorder Traversal of Binary Tree | C++ | Java | Code Explanation",
         "duration": "7:07",
-        "link": "https://www.youtube.com/watch?v=Z_NEgBgbRVI"
+        "link": "https://www.youtube.com/watch?v=Z_NEgBgbRVI",
+        "category": "Binary Trees"
       },
       {
         "title": "L7. Postorder Traversal of Binary Tree | C++ | Java | Code Explanation",
         "duration": "5:31",
-        "link": "https://www.youtube.com/watch?v=COQOU6klsBg"
+        "link": "https://www.youtube.com/watch?v=COQOU6klsBg",
+        "category": "Binary Trees"
       }
     ],
     "problems": [
@@ -1055,7 +1210,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/leftmost-column-with-at-least-a-one/"
+        "link": "https://leetcode.com/problems/leftmost-column-with-at-least-a-one/",
+        "category": "Binary Search"
       },
       {
         "probId": "#74",
@@ -1063,7 +1219,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/search-a-2d-matrix/"
+        "link": "https://leetcode.com/problems/search-a-2d-matrix/",
+        "category": "Binary Search"
       },
       {
         "probId": "#240",
@@ -1071,7 +1228,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/search-a-2d-matrix-ii/"
+        "link": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
+        "category": "Binary Search"
       },
       {
         "probId": "#1901",
@@ -1079,7 +1237,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-a-peak-element-ii/"
+        "link": "https://leetcode.com/problems/find-a-peak-element-ii/",
+        "category": "Binary Search"
       },
       {
         "probId": "#144",
@@ -1087,7 +1246,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-preorder-traversal/"
+        "link": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#94",
@@ -1095,7 +1255,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-inorder-traversal/"
+        "link": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#145",
@@ -1103,7 +1264,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-postorder-traversal/"
+        "link": "https://leetcode.com/problems/binary-tree-postorder-traversal/",
+        "category": "Binary Trees"
       }
     ]
   },
@@ -1113,67 +1275,80 @@ export const dsaData = [
       {
         "title": "L8. Level Order Traversal of Binary Tree | BFS | C++ | Java",
         "duration": "8:57",
-        "link": "https://www.youtube.com/watch?v=EoAsWbO7sqg"
+        "link": "https://www.youtube.com/watch?v=EoAsWbO7sqg",
+        "category": "Binary Trees"
       },
       {
         "title": "L9. Iterative Preorder Traversal in Binary Tree | C++ | Java | Stack",
         "duration": "6:50",
-        "link": "https://www.youtube.com/watch?v=Bfqd8BsPVuw"
+        "link": "https://www.youtube.com/watch?v=Bfqd8BsPVuw",
+        "category": "Binary Trees"
       },
       {
         "title": "L10. iterative Inorder Traversal in Binary Tree | C++ | Java | Stack",
         "duration": "11:14",
-        "link": "https://www.youtube.com/watch?v=lxTGsVXjwvM"
+        "link": "https://www.youtube.com/watch?v=lxTGsVXjwvM",
+        "category": "Binary Trees"
       },
       {
         "title": "L11. Iterative Postorder Traversal using 2 Stack | C++ | Java | Binary Tree",
         "duration": "4:09",
-        "link": "https://www.youtube.com/watch?v=2YBhNLodD8Q"
+        "link": "https://www.youtube.com/watch?v=2YBhNLodD8Q",
+        "category": "Binary Trees"
       },
       {
         "title": "L12. Iterative Postorder Traversal using 1 Stack | C++ | Java | Binary Trees",
         "duration": "12:33",
-        "link": "https://www.youtube.com/watch?v=NzIGLLwZBS8"
+        "link": "https://www.youtube.com/watch?v=NzIGLLwZBS8",
+        "category": "Binary Trees"
       },
       {
         "title": "L13. Preorder Inorder Postorder Traversals in One Traversal | C++ | Java | Stack | Binary Trees",
         "duration": "10:57",
-        "link": "https://www.youtube.com/watch?v=ySp2epYvgTE"
+        "link": "https://www.youtube.com/watch?v=ySp2epYvgTE",
+        "category": "Binary Trees"
       },
       {
         "title": "L14. Maximum Depth in Binary Tree | Height of Binary Tree | C++ | Java",
         "duration": "8:05",
-        "link": "https://www.youtube.com/watch?v=eD3tmO66aBA"
+        "link": "https://www.youtube.com/watch?v=eD3tmO66aBA",
+        "category": "Binary Trees"
       },
       {
         "title": "L15. Check for Balanced Binary Tree | C++ | Java",
         "duration": "12:30",
-        "link": "https://www.youtube.com/watch?v=Yt50Jfbd8Po"
+        "link": "https://www.youtube.com/watch?v=Yt50Jfbd8Po",
+        "category": "Binary Trees"
       },
       {
         "title": "L16. Diameter of Binary Tree | C++ | Java",
         "duration": "13:47",
-        "link": "https://www.youtube.com/watch?v=Rezetez59Nk"
+        "link": "https://www.youtube.com/watch?v=Rezetez59Nk",
+        "category": "Binary Trees"
       },
       {
         "title": "L17. Maximum Path Sum in Binary Tree | C++ | Java",
         "duration": "17:50",
-        "link": "https://www.youtube.com/watch?v=WszrfSwMz58"
+        "link": "https://www.youtube.com/watch?v=WszrfSwMz58",
+        "category": "Binary Trees"
       },
       {
         "title": "L18. Check it two trees are Identical or Not | C++ | Java",
         "duration": "4:18",
-        "link": "https://www.youtube.com/watch?v=BhuvF_-PWS0"
+        "link": "https://www.youtube.com/watch?v=BhuvF_-PWS0",
+        "category": "Binary Trees"
       },
       {
         "title": "L19. Zig-Zag or Spiral Traversal in Binary Tree | C++ | Java",
         "duration": "8:21",
-        "link": "https://www.youtube.com/watch?v=3OXWEdlIGl4"
+        "link": "https://www.youtube.com/watch?v=3OXWEdlIGl4",
+        "category": "Binary Trees"
       },
       {
         "title": "L20. Boundary Traversal in Binary Tree | C++ | Java",
         "duration": "9:47",
-        "link": "https://www.youtube.com/watch?v=0ca1nvR0be4"
+        "link": "https://www.youtube.com/watch?v=0ca1nvR0be4",
+        "category": "Binary Trees"
       }
     ],
     "problems": [
@@ -1183,7 +1358,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+        "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#104",
@@ -1191,7 +1367,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+        "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#110",
@@ -1199,7 +1376,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/balanced-binary-tree/"
+        "link": "https://leetcode.com/problems/balanced-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#543",
@@ -1207,7 +1385,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/diameter-of-binary-tree/"
+        "link": "https://leetcode.com/problems/diameter-of-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#124",
@@ -1215,7 +1394,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+        "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#100",
@@ -1223,7 +1403,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/same-tree/"
+        "link": "https://leetcode.com/problems/same-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#103",
@@ -1231,7 +1412,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+        "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+        "category": "Binary Trees"
       }
     ]
   },
@@ -1241,47 +1423,56 @@ export const dsaData = [
       {
         "title": "L21. Vertical Order Traversal of Binary Tree | C++ | Java",
         "duration": "18:53",
-        "link": "https://www.youtube.com/watch?v=q_a6lpbKJdw"
+        "link": "https://www.youtube.com/watch?v=q_a6lpbKJdw",
+        "category": "Binary Trees"
       },
       {
         "title": "L22. Top View of Binary Tree | C++ | Java",
         "duration": "10:30",
-        "link": "https://www.youtube.com/watch?v=Et9OCDNvJ78"
+        "link": "https://www.youtube.com/watch?v=Et9OCDNvJ78",
+        "category": "Binary Trees"
       },
       {
         "title": "L23. Bottom View of Binary Tree | C++ | Java",
         "duration": "13:13",
-        "link": "https://www.youtube.com/watch?v=0FtVY6I4pB8"
+        "link": "https://www.youtube.com/watch?v=0FtVY6I4pB8",
+        "category": "Binary Trees"
       },
       {
         "title": "L24. Right/Left View of Binary Tree | C++ | Java",
         "duration": "13:28",
-        "link": "https://www.youtube.com/watch?v=KV4mRzTjlAk"
+        "link": "https://www.youtube.com/watch?v=KV4mRzTjlAk",
+        "category": "Binary Trees"
       },
       {
         "title": "L25. Check for Symmetrical Binary Trees | C++ | Java",
         "duration": "9:20",
-        "link": "https://www.youtube.com/watch?v=nKggNAiEpBE"
+        "link": "https://www.youtube.com/watch?v=nKggNAiEpBE",
+        "category": "Binary Trees"
       },
       {
         "title": "L26. Print Root to Node Path in Binary Tree | C++ | Java",
         "duration": "11:00",
-        "link": "https://www.youtube.com/watch?v=fmflMqVOC7k"
+        "link": "https://www.youtube.com/watch?v=fmflMqVOC7k",
+        "category": "Binary Trees"
       },
       {
         "title": "L27. Lowest Common Ancestor in Binary Tree | LCA | C++ | Java",
         "duration": "14:09",
-        "link": "https://www.youtube.com/watch?v=_-QHfMDde90"
+        "link": "https://www.youtube.com/watch?v=_-QHfMDde90",
+        "category": "Binary Trees"
       },
       {
         "title": "L28. Maximum Width of Binary Tree | C++ | Java",
         "duration": "22:41",
-        "link": "https://www.youtube.com/watch?v=ZbybYvcVLks"
+        "link": "https://www.youtube.com/watch?v=ZbybYvcVLks",
+        "category": "Binary Trees"
       },
       {
         "title": "L29. Children Sum Property in Binary Tree | O(N) Approach | C++ | Java",
         "duration": "16:13",
-        "link": "https://www.youtube.com/watch?v=fnmisPM6cVo"
+        "link": "https://www.youtube.com/watch?v=fnmisPM6cVo",
+        "category": "Binary Trees"
       }
     ],
     "problems": [
@@ -1291,7 +1482,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/"
+        "link": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#199",
@@ -1299,7 +1491,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-right-side-view/"
+        "link": "https://leetcode.com/problems/binary-tree-right-side-view/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#101",
@@ -1307,7 +1500,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/symmetric-tree/"
+        "link": "https://leetcode.com/problems/symmetric-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#257",
@@ -1315,7 +1509,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-paths/"
+        "link": "https://leetcode.com/problems/binary-tree-paths/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#236",
@@ -1323,7 +1518,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#662",
@@ -1331,7 +1527,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximum-width-of-binary-tree/"
+        "link": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
+        "category": "Binary Trees"
       }
     ]
   },
@@ -1341,42 +1538,50 @@ export const dsaData = [
       {
         "title": "L30. Print all the Nodes at a distance of K in Binary Tree | C++ | Java",
         "duration": "17:42",
-        "link": "https://www.youtube.com/watch?v=i9ORlEy6EsI"
+        "link": "https://www.youtube.com/watch?v=i9ORlEy6EsI",
+        "category": "Binary Trees"
       },
       {
         "title": "L31. Minimum time taken to BURN the Binary Tree from a Node | C++ | Java",
         "duration": "18:24",
-        "link": "https://www.youtube.com/watch?v=2r5wLmQfD6g"
+        "link": "https://www.youtube.com/watch?v=2r5wLmQfD6g",
+        "category": "Binary Trees"
       },
       {
         "title": "L32. Count total Nodes in a COMPLETE Binary Tree | O(Log^2 N) Approach | C++ | Java",
         "duration": "16:13",
-        "link": "https://www.youtube.com/watch?v=u-yWemKGWO0"
+        "link": "https://www.youtube.com/watch?v=u-yWemKGWO0",
+        "category": "Binary Trees"
       },
       {
         "title": "L33. Requirements needed to construct a Unique Binary Tree | Theory",
         "duration": "8:41",
-        "link": "https://www.youtube.com/watch?v=9GMECGQgWrQ"
+        "link": "https://www.youtube.com/watch?v=9GMECGQgWrQ",
+        "category": "Binary Trees"
       },
       {
         "title": "L34. Construct a Binary Tree from Preorder and Inorder Traversal | C++ | Java",
         "duration": "18:52",
-        "link": "https://www.youtube.com/watch?v=aZNaLrVebKQ"
+        "link": "https://www.youtube.com/watch?v=aZNaLrVebKQ",
+        "category": "Binary Trees"
       },
       {
         "title": "L35. Construct the Binary Tree from Postorder and Inorder Traversal | C++ | Java",
         "duration": "19:46",
-        "link": "https://www.youtube.com/watch?v=LgLRTaEMRVc"
+        "link": "https://www.youtube.com/watch?v=LgLRTaEMRVc",
+        "category": "Binary Trees"
       },
       {
         "title": "L36. Serialize and De-serialize Binary Tree | C++ | Java",
         "duration": "17:18",
-        "link": "https://www.youtube.com/watch?v=-YbXySKJsX8"
+        "link": "https://www.youtube.com/watch?v=-YbXySKJsX8",
+        "category": "Binary Trees"
       },
       {
         "title": "L37. Morris Traversal | Preorder | Inorder | C++ | Java",
         "duration": "23:50",
-        "link": "https://www.youtube.com/watch?v=80Zug6D1_r4"
+        "link": "https://www.youtube.com/watch?v=80Zug6D1_r4",
+        "category": "Binary Trees"
       }
     ],
     "problems": [
@@ -1386,7 +1591,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/"
+        "link": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#222",
@@ -1394,7 +1600,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/count-complete-tree-nodes/"
+        "link": "https://leetcode.com/problems/count-complete-tree-nodes/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#105",
@@ -1402,7 +1609,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#106",
@@ -1410,7 +1618,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/"
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#297",
@@ -1418,7 +1627,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+        "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#98",
@@ -1426,7 +1636,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/validate-binary-search-tree/"
+        "link": "https://leetcode.com/problems/validate-binary-search-tree/",
+        "category": "Binary Trees"
       }
     ]
   },
@@ -1436,67 +1647,80 @@ export const dsaData = [
       {
         "title": "L38. Flatten a Binary Tree to Linked List | 3 Approaches | C++ | Java",
         "duration": "21:51",
-        "link": "https://www.youtube.com/watch?v=sWf7k1x9XR4"
+        "link": "https://www.youtube.com/watch?v=sWf7k1x9XR4",
+        "category": "Binary Trees"
       },
       {
         "title": "L39. Introduction to Binary Search Tree | BST",
         "duration": "8:54",
-        "link": "https://www.youtube.com/watch?v=p7-9UvDQZ3w"
+        "link": "https://www.youtube.com/watch?v=p7-9UvDQZ3w",
+        "category": "Binary Trees"
       },
       {
         "title": "L40. Search in a Binary Search Tree | BST | C++ | Java",
         "duration": "6:33",
-        "link": "https://www.youtube.com/watch?v=KcNt6v_56cc"
+        "link": "https://www.youtube.com/watch?v=KcNt6v_56cc",
+        "category": "Binary Trees"
       },
       {
         "title": "L41. Ceil in a Binary Search Tree | BST | C++ | Java",
         "duration": "5:36",
-        "link": "https://www.youtube.com/watch?v=KSsk8AhdOZA"
+        "link": "https://www.youtube.com/watch?v=KSsk8AhdOZA",
+        "category": "Binary Trees"
       },
       {
         "title": "L42. Floor in a Binary Search Tree | BST | C++ | Java",
         "duration": "5:00",
-        "link": "https://www.youtube.com/watch?v=xm_W1ub-K-w"
+        "link": "https://www.youtube.com/watch?v=xm_W1ub-K-w",
+        "category": "Binary Trees"
       },
       {
         "title": "L43. Insert a given Node in Binary Search Tree | BST | C++ | Java",
         "duration": "8:18",
-        "link": "https://www.youtube.com/watch?v=FiFiNvM29ps"
+        "link": "https://www.youtube.com/watch?v=FiFiNvM29ps",
+        "category": "Binary Trees"
       },
       {
         "title": "L44. Delete a Node in Binary Search Tree | BST | C++ | Java",
         "duration": "15:48",
-        "link": "https://www.youtube.com/watch?v=kouxiP_H5WE"
+        "link": "https://www.youtube.com/watch?v=kouxiP_H5WE",
+        "category": "Binary Trees"
       },
       {
         "title": "L45. K-th Smallest/Largest Element in BST",
         "duration": "8:27",
-        "link": "https://www.youtube.com/watch?v=9TJYWh0adfk"
+        "link": "https://www.youtube.com/watch?v=9TJYWh0adfk",
+        "category": "Binary Trees"
       },
       {
         "title": "L46. Check if a tree is a BST or BT | Validate a BST",
         "duration": "9:39",
-        "link": "https://www.youtube.com/watch?v=f-sj7I5oXEI"
+        "link": "https://www.youtube.com/watch?v=f-sj7I5oXEI",
+        "category": "Binary Trees"
       },
       {
         "title": "L47. LCA in Binary Search Tree",
         "duration": "8:06",
-        "link": "https://www.youtube.com/watch?v=cX_kPV_foZc"
+        "link": "https://www.youtube.com/watch?v=cX_kPV_foZc",
+        "category": "Binary Trees"
       },
       {
         "title": "L48. Construct a BST from a preorder traversal | 3 Methods",
         "duration": "16:32",
-        "link": "https://www.youtube.com/watch?v=UmJT3j26t1I"
+        "link": "https://www.youtube.com/watch?v=UmJT3j26t1I",
+        "category": "Binary Trees"
       },
       {
         "title": "L49. Inorder Successor/Predecessor in BST | 3 Methods",
         "duration": "10:47",
-        "link": "https://www.youtube.com/watch?v=SXKAD2svfmI"
+        "link": "https://www.youtube.com/watch?v=SXKAD2svfmI",
+        "category": "Binary Trees"
       },
       {
         "title": "L50. Binary Search Tree Iterator | BST | O(H) Space",
         "duration": "14:00",
-        "link": "https://www.youtube.com/watch?v=D2jMcmxU4bs"
+        "link": "https://www.youtube.com/watch?v=D2jMcmxU4bs",
+        "category": "Binary Trees"
       }
     ],
     "problems": [
@@ -1506,7 +1730,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/"
+        "link": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#700",
@@ -1514,7 +1739,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
+        "link": "https://leetcode.com/problems/search-in-a-binary-search-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#701",
@@ -1522,7 +1748,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/insert-into-a-binary-search-tree/"
+        "link": "https://leetcode.com/problems/insert-into-a-binary-search-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#450",
@@ -1530,7 +1757,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/delete-node-in-a-bst/"
+        "link": "https://leetcode.com/problems/delete-node-in-a-bst/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#230",
@@ -1538,7 +1766,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+        "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#98",
@@ -1546,7 +1775,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/validate-binary-search-tree/"
+        "link": "https://leetcode.com/problems/validate-binary-search-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#235",
@@ -1554,7 +1784,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#173",
@@ -1562,7 +1793,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-search-tree-iterator/"
+        "link": "https://leetcode.com/problems/binary-search-tree-iterator/",
+        "category": "Binary Trees"
       }
     ]
   },
@@ -1572,47 +1804,56 @@ export const dsaData = [
       {
         "title": "L51. Two Sum In BST | Check if there exists a pair with Sum K",
         "duration": "15:06",
-        "link": "https://www.youtube.com/watch?v=ssL3sHwPeb4"
+        "link": "https://www.youtube.com/watch?v=ssL3sHwPeb4",
+        "category": "Binary Trees"
       },
       {
         "title": "L52. Recover BST | Correct BST with two nodes swapped",
         "duration": "15:56",
-        "link": "https://www.youtube.com/watch?v=ZWGW7FminDM"
+        "link": "https://www.youtube.com/watch?v=ZWGW7FminDM",
+        "category": "Binary Trees"
       },
       {
         "title": "L53. Largest BST in Binary Tree",
         "duration": "17:27",
-        "link": "https://www.youtube.com/watch?v=X0oXMdtUDwo"
+        "link": "https://www.youtube.com/watch?v=X0oXMdtUDwo",
+        "category": "Binary Trees"
       },
       {
         "title": "G-1. Introduction to Graph | Types | Different Conventions Used",
         "duration": "13:43",
-        "link": "https://www.youtube.com/watch?v=M3_pLsDdeuU"
+        "link": "https://www.youtube.com/watch?v=M3_pLsDdeuU",
+        "category": "Graphs"
       },
       {
         "title": "G-2. Graph Representation in C++ | Two Ways to Represent",
         "duration": "16:04",
-        "link": "https://www.youtube.com/watch?v=3oI-34aPMWM"
+        "link": "https://www.youtube.com/watch?v=3oI-34aPMWM",
+        "category": "Graphs"
       },
       {
         "title": "G-3. Graph Representation in Java | Two Ways to Represent",
         "duration": "13:13",
-        "link": "https://www.youtube.com/watch?v=OsNklbh9gYI"
+        "link": "https://www.youtube.com/watch?v=OsNklbh9gYI",
+        "category": "Graphs"
       },
       {
         "title": "G-4. What are Connected Components ?",
         "duration": "7:07",
-        "link": "https://www.youtube.com/watch?v=lea-Wl_uWXY"
+        "link": "https://www.youtube.com/watch?v=lea-Wl_uWXY",
+        "category": "Graphs"
       },
       {
         "title": "G-5. Breadth-First Search (BFS) | C++ and Java | Traversal Technique in Graphs",
         "duration": "19:39",
-        "link": "https://www.youtube.com/watch?v=-tgVpUgsQ5k"
+        "link": "https://www.youtube.com/watch?v=-tgVpUgsQ5k",
+        "category": "Graphs"
       },
       {
         "title": "G-6. Depth-First Search (DFS) | C++ and Java | Traversal Technique in Graphs",
         "duration": "20:16",
-        "link": "https://www.youtube.com/watch?v=Qzf1a--rhp8"
+        "link": "https://www.youtube.com/watch?v=Qzf1a--rhp8",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -1622,7 +1863,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/"
+        "link": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#99",
@@ -1630,7 +1872,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/recover-binary-search-tree/"
+        "link": "https://leetcode.com/problems/recover-binary-search-tree/",
+        "category": "Binary Trees"
       },
       {
         "probId": "#200",
@@ -1638,7 +1881,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-islands/"
+        "link": "https://leetcode.com/problems/number-of-islands/",
+        "category": "Graphs"
       },
       {
         "probId": "#133",
@@ -1646,7 +1890,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/clone-graph/"
+        "link": "https://leetcode.com/problems/clone-graph/",
+        "category": "Graphs"
       },
       {
         "probId": "#841",
@@ -1654,7 +1899,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/keys-and-rooms/"
+        "link": "https://leetcode.com/problems/keys-and-rooms/",
+        "category": "Graphs"
       }
     ]
   },
@@ -1664,32 +1910,38 @@ export const dsaData = [
       {
         "title": "G-7. Number of Provinces | C++ | Java | Connected Components",
         "duration": "15:29",
-        "link": "https://www.youtube.com/watch?v=ACzkVtewUYA"
+        "link": "https://www.youtube.com/watch?v=ACzkVtewUYA",
+        "category": "Graphs"
       },
       {
         "title": "G-8. Number of Islands | Number of Connected Components in Matrix | C++ | Java",
         "duration": "25:04",
-        "link": "https://www.youtube.com/watch?v=muncqlKJrH0"
+        "link": "https://www.youtube.com/watch?v=muncqlKJrH0",
+        "category": "Graphs"
       },
       {
         "title": "G-9. Flood Fill Algorithm | C++ | Java",
         "duration": "20:34",
-        "link": "https://www.youtube.com/watch?v=C-2_uSRli8o"
+        "link": "https://www.youtube.com/watch?v=C-2_uSRli8o",
+        "category": "Graphs"
       },
       {
         "title": "G-10. Rotten Oranges | C++ | Java",
         "duration": "22:30",
-        "link": "https://www.youtube.com/watch?v=yf3oUhkvqA0"
+        "link": "https://www.youtube.com/watch?v=yf3oUhkvqA0",
+        "category": "Graphs"
       },
       {
         "title": "G-11. Detect a Cycle in an Undirected Graph using BFS | C++ | Java",
         "duration": "20:19",
-        "link": "https://www.youtube.com/watch?v=BPlrALf1LDU"
+        "link": "https://www.youtube.com/watch?v=BPlrALf1LDU",
+        "category": "Graphs"
       },
       {
         "title": "G-12. Detect a Cycle in an Undirected Graph using DFS | C++ | Java",
         "duration": "19:10",
-        "link": "https://www.youtube.com/watch?v=zQ3zgFypzX4"
+        "link": "https://www.youtube.com/watch?v=zQ3zgFypzX4",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -1699,7 +1951,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-provinces/"
+        "link": "https://leetcode.com/problems/number-of-provinces/",
+        "category": "Graphs"
       },
       {
         "probId": "#200",
@@ -1707,7 +1960,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-islands/"
+        "link": "https://leetcode.com/problems/number-of-islands/",
+        "category": "Graphs"
       },
       {
         "probId": "#733",
@@ -1715,7 +1969,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/flood-fill/"
+        "link": "https://leetcode.com/problems/flood-fill/",
+        "category": "Graphs"
       },
       {
         "probId": "#994",
@@ -1723,7 +1978,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/rotting-oranges/"
+        "link": "https://leetcode.com/problems/rotting-oranges/",
+        "category": "Graphs"
       },
       {
         "probId": "#261",
@@ -1731,7 +1987,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/graph-valid-tree/"
+        "link": "https://leetcode.com/problems/graph-valid-tree/",
+        "category": "Graphs"
       }
     ]
   },
@@ -1741,37 +1998,44 @@ export const dsaData = [
       {
         "title": "G-13. Distance of nearest cell having 1 | 0/1 Matrix | C++ | Java",
         "duration": "20:21",
-        "link": "https://www.youtube.com/watch?v=edXdVwkYHF8"
+        "link": "https://www.youtube.com/watch?v=edXdVwkYHF8",
+        "category": "Graphs"
       },
       {
         "title": "G-14. Surrounded Regions | Replace O's with X's | C++ | Java",
         "duration": "23:17",
-        "link": "https://www.youtube.com/watch?v=BtdgAys4yMk"
+        "link": "https://www.youtube.com/watch?v=BtdgAys4yMk",
+        "category": "Graphs"
       },
       {
         "title": "G-15. Number of Enclaves | Multi-source BFS | C++ | Java",
         "duration": "15:34",
-        "link": "https://www.youtube.com/watch?v=rxKcepXQgU4"
+        "link": "https://www.youtube.com/watch?v=rxKcepXQgU4",
+        "category": "Graphs"
       },
       {
         "title": "G-16. Number of Distinct Islands | Constructive Thinking + DFS | C++ | Java",
         "duration": "18:02",
-        "link": "https://www.youtube.com/watch?v=7zmgQSJghpo"
+        "link": "https://www.youtube.com/watch?v=7zmgQSJghpo",
+        "category": "Graphs"
       },
       {
         "title": "G-17. Bipartite Graph | BFS | C++ | Java",
         "duration": "18:29",
-        "link": "https://www.youtube.com/watch?v=-vu34sct1g8"
+        "link": "https://www.youtube.com/watch?v=-vu34sct1g8",
+        "category": "Graphs"
       },
       {
         "title": "G-18. Bipartite Graph | DFS | C++ | Java",
         "duration": "14:54",
-        "link": "https://www.youtube.com/watch?v=KG5YFfR0j8A"
+        "link": "https://www.youtube.com/watch?v=KG5YFfR0j8A",
+        "category": "Graphs"
       },
       {
         "title": "G-19. Detect cycle in a directed graph using DFS | Java | C++",
         "duration": "17:22",
-        "link": "https://www.youtube.com/watch?v=9twcmtQj4DU"
+        "link": "https://www.youtube.com/watch?v=9twcmtQj4DU",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -1781,7 +2045,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/01-matrix/"
+        "link": "https://leetcode.com/problems/01-matrix/",
+        "category": "Graphs"
       },
       {
         "probId": "#130",
@@ -1789,7 +2054,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/surrounded-regions/"
+        "link": "https://leetcode.com/problems/surrounded-regions/",
+        "category": "Graphs"
       },
       {
         "probId": "#1020",
@@ -1797,7 +2063,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-enclaves/"
+        "link": "https://leetcode.com/problems/number-of-enclaves/",
+        "category": "Graphs"
       },
       {
         "probId": "#694",
@@ -1805,7 +2072,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-distinct-islands/"
+        "link": "https://leetcode.com/problems/number-of-distinct-islands/",
+        "category": "Graphs"
       },
       {
         "probId": "#785",
@@ -1813,7 +2081,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/is-graph-bipartite/"
+        "link": "https://leetcode.com/problems/is-graph-bipartite/",
+        "category": "Graphs"
       },
       {
         "probId": "#802",
@@ -1821,7 +2090,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-eventual-safe-states/"
+        "link": "https://leetcode.com/problems/find-eventual-safe-states/",
+        "category": "Graphs"
       }
     ]
   },
@@ -1831,42 +2101,50 @@ export const dsaData = [
       {
         "title": "G-20. Find Eventual Safe States - DFS",
         "duration": "23:43",
-        "link": "https://www.youtube.com/watch?v=uRbJ1OF9aYM"
+        "link": "https://www.youtube.com/watch?v=uRbJ1OF9aYM",
+        "category": "Graphs"
       },
       {
         "title": "G-21. Topological Sort Algorithm | DFS",
         "duration": "13:30",
-        "link": "https://www.youtube.com/watch?v=5lZ0iJMrUMk"
+        "link": "https://www.youtube.com/watch?v=5lZ0iJMrUMk",
+        "category": "Graphs"
       },
       {
         "title": "G-22. Kahn's Algorithm | Topological Sort Algorithm | BFS",
         "duration": "13:50",
-        "link": "https://www.youtube.com/watch?v=73sneFXuTEg"
+        "link": "https://www.youtube.com/watch?v=73sneFXuTEg",
+        "category": "Graphs"
       },
       {
         "title": "G-23. Detect a Cycle in Directed Graph | Topological Sort | Kahn's Algorithm | BFS",
         "duration": "6:17",
-        "link": "https://www.youtube.com/watch?v=iTBaI90lpDQ"
+        "link": "https://www.youtube.com/watch?v=iTBaI90lpDQ",
+        "category": "Graphs"
       },
       {
         "title": "G-24. Course Schedule I and II | Pre-requisite Tasks | Topological Sort",
         "duration": "11:32",
-        "link": "https://www.youtube.com/watch?v=WAOfKpxYHR8"
+        "link": "https://www.youtube.com/watch?v=WAOfKpxYHR8",
+        "category": "Graphs"
       },
       {
         "title": "G-25. Find Eventual Safe States - BFS - Topological Sort",
         "duration": "16:57",
-        "link": "https://www.youtube.com/watch?v=2gtg3VsDGyc"
+        "link": "https://www.youtube.com/watch?v=2gtg3VsDGyc",
+        "category": "Graphs"
       },
       {
         "title": "G-26. Alien Dictionary - Topological Sort",
         "duration": "20:54",
-        "link": "https://www.youtube.com/watch?v=U3N_je7tWAs"
+        "link": "https://www.youtube.com/watch?v=U3N_je7tWAs",
+        "category": "Graphs"
       },
       {
         "title": "G-27. Shortest Path in Directed Acyclic Graph - Topological Sort",
         "duration": "26:36",
-        "link": "https://www.youtube.com/watch?v=ZUFQfFaU-8U"
+        "link": "https://www.youtube.com/watch?v=ZUFQfFaU-8U",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -1876,7 +2154,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-eventual-safe-states/"
+        "link": "https://leetcode.com/problems/find-eventual-safe-states/",
+        "category": "Graphs"
       },
       {
         "probId": "#207",
@@ -1884,7 +2163,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/course-schedule/"
+        "link": "https://leetcode.com/problems/course-schedule/",
+        "category": "Graphs"
       },
       {
         "probId": "#210",
@@ -1892,7 +2172,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/course-schedule-ii/"
+        "link": "https://leetcode.com/problems/course-schedule-ii/",
+        "category": "Graphs"
       },
       {
         "probId": "#269",
@@ -1900,7 +2181,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/alien-dictionary/"
+        "link": "https://leetcode.com/problems/alien-dictionary/",
+        "category": "Graphs"
       },
       {
         "probId": "#1059",
@@ -1908,7 +2190,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/all-paths-from-source-lead-to-destination/"
+        "link": "https://leetcode.com/problems/all-paths-from-source-lead-to-destination/",
+        "category": "Graphs"
       }
     ]
   },
@@ -1918,32 +2201,38 @@ export const dsaData = [
       {
         "title": "G-28. Shortest Path in Undirected Graph with Unit Weights",
         "duration": "16:32",
-        "link": "https://www.youtube.com/watch?v=C4gxoTaI71U"
+        "link": "https://www.youtube.com/watch?v=C4gxoTaI71U",
+        "category": "Graphs"
       },
       {
         "title": "G-29. Word Ladder - I | Shortest Paths",
         "duration": "28:07",
-        "link": "https://www.youtube.com/watch?v=tRPda0rcf8E"
+        "link": "https://www.youtube.com/watch?v=tRPda0rcf8E",
+        "category": "Graphs"
       },
       {
         "title": "G-30. Word Ladder - 2 | Shortest Paths",
         "duration": "25:42",
-        "link": "https://www.youtube.com/watch?v=DREutrv2XD0"
+        "link": "https://www.youtube.com/watch?v=DREutrv2XD0",
+        "category": "Graphs"
       },
       {
         "title": "G-31. Word Ladder - 2 | Optimised Approach for Leetcode",
         "duration": "23:40",
-        "link": "https://www.youtube.com/watch?v=AD4SFl7tu7I"
+        "link": "https://www.youtube.com/watch?v=AD4SFl7tu7I",
+        "category": "Graphs"
       },
       {
         "title": "G-32. Dijkstra's Algorithm - Using Priority Queue - C++ and Java - Part 1",
         "duration": "22:42",
-        "link": "https://www.youtube.com/watch?v=V6H1qAeB-l4"
+        "link": "https://www.youtube.com/watch?v=V6H1qAeB-l4",
+        "category": "Graphs"
       },
       {
         "title": "G-33. Dijkstra's Algorithm - Using Set - Part 2",
         "duration": "12:29",
-        "link": "https://www.youtube.com/watch?v=PATgNiuTP20"
+        "link": "https://www.youtube.com/watch?v=PATgNiuTP20",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -1953,7 +2242,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/"
+        "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+        "category": "Graphs"
       },
       {
         "probId": "#127",
@@ -1961,7 +2251,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/word-ladder/"
+        "link": "https://leetcode.com/problems/word-ladder/",
+        "category": "Graphs"
       },
       {
         "probId": "#126",
@@ -1969,7 +2260,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/word-ladder-ii/"
+        "link": "https://leetcode.com/problems/word-ladder-ii/",
+        "category": "Graphs"
       },
       {
         "probId": "#743",
@@ -1977,7 +2269,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/network-delay-time/"
+        "link": "https://leetcode.com/problems/network-delay-time/",
+        "category": "Graphs"
       }
     ]
   },
@@ -1987,32 +2280,38 @@ export const dsaData = [
       {
         "title": "G-34. Dijkstra's Algorithm - Why PQ and not Q, Intuition, Time Complexity Derivation - Part 3",
         "duration": "14:30",
-        "link": "https://www.youtube.com/watch?v=3dINsjyfooY"
+        "link": "https://www.youtube.com/watch?v=3dINsjyfooY",
+        "category": "Graphs"
       },
       {
         "title": "G-35. Print Shortest Path - Dijkstra's Algorithm",
         "duration": "19:20",
-        "link": "https://www.youtube.com/watch?v=rp1SMw7HSO8"
+        "link": "https://www.youtube.com/watch?v=rp1SMw7HSO8",
+        "category": "Graphs"
       },
       {
         "title": "G-36. Shortest Distance in a Binary Maze",
         "duration": "23:42",
-        "link": "https://www.youtube.com/watch?v=U5Mw4eyUmw4"
+        "link": "https://www.youtube.com/watch?v=U5Mw4eyUmw4",
+        "category": "Graphs"
       },
       {
         "title": "G-37. Path With Minimum Effort",
         "duration": "24:30",
-        "link": "https://www.youtube.com/watch?v=0ytpZyiZFhA"
+        "link": "https://www.youtube.com/watch?v=0ytpZyiZFhA",
+        "category": "Graphs"
       },
       {
         "title": "G-38. Cheapest Flights Within K Stops",
         "duration": "23:56",
-        "link": "https://www.youtube.com/watch?v=9XybHVqTHcQ"
+        "link": "https://www.youtube.com/watch?v=9XybHVqTHcQ",
+        "category": "Graphs"
       },
       {
         "title": "G-39. Minimum Multiplications to Reach End",
         "duration": "19:31",
-        "link": "https://www.youtube.com/watch?v=_BvEJ3VIDWw"
+        "link": "https://www.youtube.com/watch?v=_BvEJ3VIDWw",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -2022,7 +2321,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/path-with-minimum-effort/"
+        "link": "https://leetcode.com/problems/path-with-minimum-effort/",
+        "category": "Graphs"
       },
       {
         "probId": "#1091",
@@ -2030,7 +2330,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/"
+        "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+        "category": "Graphs"
       },
       {
         "probId": "#787",
@@ -2038,7 +2339,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+        "category": "Graphs"
       },
       {
         "probId": "#1928",
@@ -2046,7 +2348,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/"
+        "link": "https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/",
+        "category": "Graphs"
       }
     ]
   },
@@ -2056,32 +2359,38 @@ export const dsaData = [
       {
         "title": "G-40. Number of Ways to Arrive at Destination",
         "duration": "24:06",
-        "link": "https://www.youtube.com/watch?v=_-0mx0SmYxA"
+        "link": "https://www.youtube.com/watch?v=_-0mx0SmYxA",
+        "category": "Graphs"
       },
       {
         "title": "G-41. Bellman Ford Algorithm",
         "duration": "27:43",
-        "link": "https://www.youtube.com/watch?v=0vVofAhAYjc"
+        "link": "https://www.youtube.com/watch?v=0vVofAhAYjc",
+        "category": "Graphs"
       },
       {
         "title": "G-42. Floyd Warshall Algorithm",
         "duration": "30:13",
-        "link": "https://www.youtube.com/watch?v=YbY8cVwWAvw"
+        "link": "https://www.youtube.com/watch?v=YbY8cVwWAvw",
+        "category": "Graphs"
       },
       {
         "title": "G-43. Find the City With the Smallest Number of Neighbours at a Threshold Distance",
         "duration": "12:56",
-        "link": "https://www.youtube.com/watch?v=PwMVNSJ5SLI"
+        "link": "https://www.youtube.com/watch?v=PwMVNSJ5SLI",
+        "category": "Graphs"
       },
       {
         "title": "G-44. Minimum Spanning Tree - Theory",
         "duration": "7:59",
-        "link": "https://www.youtube.com/watch?v=ZSPjZuZWCME"
+        "link": "https://www.youtube.com/watch?v=ZSPjZuZWCME",
+        "category": "Graphs"
       },
       {
         "title": "G-45. Prim's Algorithm - Minimum Spanning Tree - C++ and Java",
         "duration": "19:10",
-        "link": "https://www.youtube.com/watch?v=mJcZjjKzeqk"
+        "link": "https://www.youtube.com/watch?v=mJcZjjKzeqk",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -2091,7 +2400,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/"
+        "link": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
+        "category": "Graphs"
       },
       {
         "probId": "#787",
@@ -2099,7 +2409,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+        "category": "Graphs"
       },
       {
         "probId": "#1334",
@@ -2107,7 +2418,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/"
+        "link": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+        "category": "Graphs"
       },
       {
         "probId": "#1584",
@@ -2115,7 +2427,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/"
+        "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+        "category": "Graphs"
       }
     ]
   },
@@ -2125,32 +2438,38 @@ export const dsaData = [
       {
         "title": "G-46. Disjoint Set | Union by Rank | Union by Size | Path Compression",
         "duration": "42:15",
-        "link": "https://www.youtube.com/watch?v=aBxjDBC4M1U"
+        "link": "https://www.youtube.com/watch?v=aBxjDBC4M1U",
+        "category": "Graphs"
       },
       {
         "title": "G-47. Kruskal's Algorithm - Minimum Spanning Tree - C++ and Java",
         "duration": "13:11",
-        "link": "https://www.youtube.com/watch?v=DMnDM_sxVig"
+        "link": "https://www.youtube.com/watch?v=DMnDM_sxVig",
+        "category": "Graphs"
       },
       {
         "title": "G-48. Number of Provinces - Disjoint Set",
         "duration": "8:03",
-        "link": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y"
+        "link": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y",
+        "category": "Graphs"
       },
       {
         "title": "G-49. Number of Operations to Make Network Connected - DSU",
         "duration": "14:48",
-        "link": "https://www.youtube.com/watch?v=FYrl7iz9_ZU"
+        "link": "https://www.youtube.com/watch?v=FYrl7iz9_ZU",
+        "category": "Graphs"
       },
       {
         "title": "G-50. Accounts Merge - DSU",
         "duration": "22:01",
-        "link": "https://www.youtube.com/watch?v=FMwpt_aQOGw"
+        "link": "https://www.youtube.com/watch?v=FMwpt_aQOGw",
+        "category": "Graphs"
       },
       {
         "title": "G-51. Number of Islands - II - Online Queries - DSU",
         "duration": "25:32",
-        "link": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA"
+        "link": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -2160,7 +2479,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/"
+        "link": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+        "category": "Graphs"
       },
       {
         "probId": "#721",
@@ -2168,7 +2488,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/accounts-merge/"
+        "link": "https://leetcode.com/problems/accounts-merge/",
+        "category": "Graphs"
       },
       {
         "probId": "#305",
@@ -2176,7 +2497,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-islands-ii/"
+        "link": "https://leetcode.com/problems/number-of-islands-ii/",
+        "category": "Graphs"
       },
       {
         "probId": "#1584",
@@ -2184,7 +2506,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/"
+        "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+        "category": "Graphs"
       }
     ]
   },
@@ -2194,27 +2517,32 @@ export const dsaData = [
       {
         "title": "G-52. Making a Large Island - DSU",
         "duration": "26:16",
-        "link": "https://www.youtube.com/watch?v=lgiz0Oup6gM"
+        "link": "https://www.youtube.com/watch?v=lgiz0Oup6gM",
+        "category": "Graphs"
       },
       {
         "title": "G-53. Most Stones Removed with Same Row or Column - DSU",
         "duration": "23:51",
-        "link": "https://www.youtube.com/watch?v=OwMNX8SPavM"
+        "link": "https://www.youtube.com/watch?v=OwMNX8SPavM",
+        "category": "Graphs"
       },
       {
         "title": "G-54. Strongly Connected Components - Kosaraju's Algorithm",
         "duration": "22:44",
-        "link": "https://www.youtube.com/watch?v=R6uoSjZ2imo"
+        "link": "https://www.youtube.com/watch?v=R6uoSjZ2imo",
+        "category": "Graphs"
       },
       {
         "title": "G-55. Bridges in Graph - Using Tarjan's Algorithm of time in and low time",
         "duration": "23:25",
-        "link": "https://www.youtube.com/watch?v=qrAub5z8FeA"
+        "link": "https://www.youtube.com/watch?v=qrAub5z8FeA",
+        "category": "Graphs"
       },
       {
         "title": "G-56. Articulation Point in Graph",
         "duration": "22:00",
-        "link": "https://www.youtube.com/watch?v=j1QDfU21iZk"
+        "link": "https://www.youtube.com/watch?v=j1QDfU21iZk",
+        "category": "Graphs"
       }
     ],
     "problems": [
@@ -2224,7 +2552,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/making-a-large-island/"
+        "link": "https://leetcode.com/problems/making-a-large-island/",
+        "category": "Graphs"
       },
       {
         "probId": "#947",
@@ -2232,7 +2561,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/"
+        "link": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/",
+        "category": "Graphs"
       },
       {
         "probId": "#1192",
@@ -2240,7 +2570,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/critical-connections-in-a-network/"
+        "link": "https://leetcode.com/problems/critical-connections-in-a-network/",
+        "category": "Graphs"
       },
       {
         "probId": "#1568",
@@ -2248,7 +2579,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island/"
+        "link": "https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island/",
+        "category": "Graphs"
       }
     ]
   },
@@ -2258,27 +2590,32 @@ export const dsaData = [
       {
         "title": "DP 1. Introduction to Dynamic Programming | Memoization | Tabulation | Space Optimization Techniques",
         "duration": "33:51",
-        "link": "https://www.youtube.com/watch?v=tyB0ztf0DNY"
+        "link": "https://www.youtube.com/watch?v=tyB0ztf0DNY",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 2. Climbing Stairs | Learn How to Write 1D Recurrence Relations",
         "duration": "13:17",
-        "link": "https://www.youtube.com/watch?v=mLfjzJsN8us"
+        "link": "https://www.youtube.com/watch?v=mLfjzJsN8us",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 3. Frog Jump | Dynamic Programming | Learn to write 1D DP",
         "duration": "38:50",
-        "link": "https://www.youtube.com/watch?v=EgG3jsGoPvQ"
+        "link": "https://www.youtube.com/watch?v=EgG3jsGoPvQ",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 4. Frog Jump with K Distance | Lecture 3 Follow Up Question",
         "duration": "17:35",
-        "link": "https://www.youtube.com/watch?v=Kmh3rhyEtB8"
+        "link": "https://www.youtube.com/watch?v=Kmh3rhyEtB8",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 5. Maximum Sum of Non-Adjacent Elements | House Robber | 1-D | DP on Subsequences",
         "duration": "32:23",
-        "link": "https://www.youtube.com/watch?v=GrMBfJNk_NY"
+        "link": "https://www.youtube.com/watch?v=GrMBfJNk_NY",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2288,7 +2625,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/climbing-stairs/"
+        "link": "https://leetcode.com/problems/climbing-stairs/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#746",
@@ -2296,7 +2634,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/min-cost-climbing-stairs/"
+        "link": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#198",
@@ -2304,7 +2643,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/house-robber/"
+        "link": "https://leetcode.com/problems/house-robber/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1137",
@@ -2312,7 +2652,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/n-th-tribonacci-number/"
+        "link": "https://leetcode.com/problems/n-th-tribonacci-number/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2322,22 +2663,26 @@ export const dsaData = [
       {
         "title": "DP 6. House Robber 2 | 1D DP | DP on Subsequences",
         "duration": "9:50",
-        "link": "https://www.youtube.com/watch?v=3WaxQMELSkw"
+        "link": "https://www.youtube.com/watch?v=3WaxQMELSkw",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 7. Ninja's Training | MUST WATCH for 2D CONCEPTS  | Vacation | Atcoder | 2D DP |",
         "duration": "52:18",
-        "link": "https://www.youtube.com/watch?v=AE39gJYuRog"
+        "link": "https://www.youtube.com/watch?v=AE39gJYuRog",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 8. Grid Unique Paths | Learn Everything about DP on Grids | ALL TECHNIQUES ",
         "duration": "48:29",
-        "link": "https://www.youtube.com/watch?v=sdE0A2Oxofw"
+        "link": "https://www.youtube.com/watch?v=sdE0A2Oxofw",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 9. Unique Paths 2 | DP on Grid with Maze Obstacles",
         "duration": "12:59",
-        "link": "https://www.youtube.com/watch?v=TmhpgXScLyY"
+        "link": "https://www.youtube.com/watch?v=TmhpgXScLyY",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2347,7 +2692,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/house-robber-ii/"
+        "link": "https://leetcode.com/problems/house-robber-ii/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#62",
@@ -2355,7 +2701,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/unique-paths/"
+        "link": "https://leetcode.com/problems/unique-paths/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#63",
@@ -2363,7 +2710,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/unique-paths-ii/"
+        "link": "https://leetcode.com/problems/unique-paths-ii/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1289",
@@ -2371,7 +2719,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-falling-path-sum-ii/"
+        "link": "https://leetcode.com/problems/minimum-falling-path-sum-ii/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2381,17 +2730,20 @@ export const dsaData = [
       {
         "title": "DP 10. Minimum Path Sum in Grid | Asked to me In Microsoft Internship Interview | DP on GRIDS",
         "duration": "23:47",
-        "link": "https://www.youtube.com/watch?v=_rgTlyky1uQ"
+        "link": "https://www.youtube.com/watch?v=_rgTlyky1uQ",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 11. Triangle | Fixed Starting Point and Variable Ending Point | DP on GRIDS",
         "duration": "34:39",
-        "link": "https://www.youtube.com/watch?v=SrP-PiLSYC0"
+        "link": "https://www.youtube.com/watch?v=SrP-PiLSYC0",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 12. Minimum/Maximum Falling Path Sum | Variable Starting and Ending Points | DP on Grids",
         "duration": "42:38",
-        "link": "https://www.youtube.com/watch?v=N_aJ5qQbYA0"
+        "link": "https://www.youtube.com/watch?v=N_aJ5qQbYA0",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2401,7 +2753,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-path-sum/"
+        "link": "https://leetcode.com/problems/minimum-path-sum/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#120",
@@ -2409,7 +2762,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/triangle/"
+        "link": "https://leetcode.com/problems/triangle/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#931",
@@ -2417,7 +2771,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-falling-path-sum/"
+        "link": "https://leetcode.com/problems/minimum-falling-path-sum/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2427,22 +2782,26 @@ export const dsaData = [
       {
         "title": "DP 13. Cherry Pickup II | 3D DP Made Easy | DP On Grids",
         "duration": "43:23",
-        "link": "https://www.youtube.com/watch?v=QGfn7JeXK54"
+        "link": "https://www.youtube.com/watch?v=QGfn7JeXK54",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 14. Subset Sum Equals to Target | Identify DP on Subsequences and Ways to Solve them",
         "duration": "38:49",
-        "link": "https://www.youtube.com/watch?v=fWX9xDmIzRI"
+        "link": "https://www.youtube.com/watch?v=fWX9xDmIzRI",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 15. Partition Equal Subset Sum | DP on Subsequences",
         "duration": "9:43",
-        "link": "https://www.youtube.com/watch?v=7win3dcgo3k"
+        "link": "https://www.youtube.com/watch?v=7win3dcgo3k",
+        "category": "Dynamic Programming"
       },
       {
         "title": "Dp 16. Partition A Set Into Two Subsets With Minimum Absolute Sum Difference | DP on Subsequences",
         "duration": "29:50",
-        "link": "https://www.youtube.com/watch?v=GS_OqZb2CWc"
+        "link": "https://www.youtube.com/watch?v=GS_OqZb2CWc",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2452,7 +2811,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/cherry-pickup-ii/"
+        "link": "https://leetcode.com/problems/cherry-pickup-ii/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#416",
@@ -2460,7 +2820,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/partition-equal-subset-sum/"
+        "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#494",
@@ -2468,7 +2829,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/target-sum/"
+        "link": "https://leetcode.com/problems/target-sum/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#2035",
@@ -2476,7 +2838,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/"
+        "link": "https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2486,27 +2849,32 @@ export const dsaData = [
       {
         "title": "DP 17. Counts Subsets with Sum K | Dp on Subsequences",
         "duration": "36:57",
-        "link": "https://www.youtube.com/watch?v=ZHyb-A2Mte4"
+        "link": "https://www.youtube.com/watch?v=ZHyb-A2Mte4",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 18. Count Partitions With Given Difference | Dp on Subsequences",
         "duration": "18:00",
-        "link": "https://www.youtube.com/watch?v=zoilQD1kYSg"
+        "link": "https://www.youtube.com/watch?v=zoilQD1kYSg",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 19. 0/1 Knapsack | Recursion to Single Array Space Optimised Approach | DP on Subsequences",
         "duration": "41:19",
-        "link": "https://www.youtube.com/watch?v=GqOmJHQZivw"
+        "link": "https://www.youtube.com/watch?v=GqOmJHQZivw",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 20. Minimum Coins | DP on Subsequences | Infinite Supplies Pattern",
         "duration": "34:15",
-        "link": "https://www.youtube.com/watch?v=myPeWb3Y68A"
+        "link": "https://www.youtube.com/watch?v=myPeWb3Y68A",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 21. Target Sum | DP on Subsequences",
         "duration": "9:04",
-        "link": "https://www.youtube.com/watch?v=b3GD8263-PQ"
+        "link": "https://www.youtube.com/watch?v=b3GD8263-PQ",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2516,7 +2884,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/partition-equal-subset-sum/"
+        "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#494",
@@ -2524,7 +2893,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/target-sum/"
+        "link": "https://leetcode.com/problems/target-sum/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#322",
@@ -2532,7 +2902,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/coin-change/"
+        "link": "https://leetcode.com/problems/coin-change/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#2787",
@@ -2540,7 +2911,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/"
+        "link": "https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2550,27 +2922,32 @@ export const dsaData = [
       {
         "title": "DP 22. Coin Change 2 | Infinite Supply Problems  | DP on Subsequences",
         "duration": "22:17",
-        "link": "https://www.youtube.com/watch?v=HgyouUi11zk"
+        "link": "https://www.youtube.com/watch?v=HgyouUi11zk",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 23. Unbounded Knapsack | 1-D Array Space Optimised Approach",
         "duration": "22:54",
-        "link": "https://www.youtube.com/watch?v=OgvOZ6OrJoY"
+        "link": "https://www.youtube.com/watch?v=OgvOZ6OrJoY",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 24. Rod Cutting Problem | 1D Array Space Optimised Approach",
         "duration": "22:54",
-        "link": "https://www.youtube.com/watch?v=mO8XpGoJwuo"
+        "link": "https://www.youtube.com/watch?v=mO8XpGoJwuo",
+        "category": "Dynamic Programming"
       },
       {
         "title": "Dp 25. Longest Common Subsequence | Top Down | Bottom-Up | Space Optimised | DP on Strings",
         "duration": "47:09",
-        "link": "https://www.youtube.com/watch?v=NPZn9jBrX8U"
+        "link": "https://www.youtube.com/watch?v=NPZn9jBrX8U",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 26. Print Longest Common Subsequence | Dp on Strings",
         "duration": "16:55",
-        "link": "https://www.youtube.com/watch?v=-zI4mrF2Pb4"
+        "link": "https://www.youtube.com/watch?v=-zI4mrF2Pb4",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2580,7 +2957,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/coin-change-ii/"
+        "link": "https://leetcode.com/problems/coin-change-ii/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1143",
@@ -2588,7 +2966,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-common-subsequence/"
+        "link": "https://leetcode.com/problems/longest-common-subsequence/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#516",
@@ -2596,7 +2975,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-palindromic-subsequence/"
+        "link": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#983",
@@ -2604,7 +2984,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-cost-for-tickets/"
+        "link": "https://leetcode.com/problems/minimum-cost-for-tickets/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2614,32 +2995,38 @@ export const dsaData = [
       {
         "title": "DP 27. Longest Common Substring | DP on Strings ",
         "duration": "14:01",
-        "link": "https://www.youtube.com/watch?v=_wP9mWNPL5w"
+        "link": "https://www.youtube.com/watch?v=_wP9mWNPL5w",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 28. Longest Palindromic Subsequence",
         "duration": "9:38",
-        "link": "https://www.youtube.com/watch?v=6i_T5kkfv4A"
+        "link": "https://www.youtube.com/watch?v=6i_T5kkfv4A",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 29. Minimum Insertions to Make String Palindrome",
         "duration": "12:00",
-        "link": "https://www.youtube.com/watch?v=xPBLEj41rFU"
+        "link": "https://www.youtube.com/watch?v=xPBLEj41rFU",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 30. Minimum Insertions/Deletions to Convert String A to String B",
         "duration": "7:30",
-        "link": "https://www.youtube.com/watch?v=yMnH0jrir0Q"
+        "link": "https://www.youtube.com/watch?v=yMnH0jrir0Q",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 31. Shortest Common Supersequence | DP on Strings",
         "duration": "26:44",
-        "link": "https://www.youtube.com/watch?v=xElxAuBcvsU"
+        "link": "https://www.youtube.com/watch?v=xElxAuBcvsU",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 32. Distinct Subsequences | 1D Array Optimisation Technique ",
         "duration": "40:15",
-        "link": "https://www.youtube.com/watch?v=nVG7eTiD2bY"
+        "link": "https://www.youtube.com/watch?v=nVG7eTiD2bY",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2649,7 +3036,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/shortest-common-supersequence/"
+        "link": "https://leetcode.com/problems/shortest-common-supersequence/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#583",
@@ -2657,7 +3045,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/delete-operation-for-two-strings/"
+        "link": "https://leetcode.com/problems/delete-operation-for-two-strings/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1312",
@@ -2665,7 +3054,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/"
+        "link": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#115",
@@ -2673,7 +3063,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/distinct-subsequences/"
+        "link": "https://leetcode.com/problems/distinct-subsequences/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2683,17 +3074,20 @@ export const dsaData = [
       {
         "title": "DP 33. Edit Distance | Recursive to 1D Array Optimised Solution ",
         "duration": "37:39",
-        "link": "https://www.youtube.com/watch?v=fJaKO8FbDdo"
+        "link": "https://www.youtube.com/watch?v=fJaKO8FbDdo",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 34. Wildcard Matching | Recursive to 1D Array Optimisation ",
         "duration": "43:52",
-        "link": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo"
+        "link": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 36. Buy and Sell Stock - II | Recursion to Space Optimisation",
         "duration": "35:34",
-        "link": "https://www.youtube.com/watch?v=nGJmxkUJQGs"
+        "link": "https://www.youtube.com/watch?v=nGJmxkUJQGs",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2703,7 +3097,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/edit-distance/"
+        "link": "https://leetcode.com/problems/edit-distance/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#44",
@@ -2711,7 +3106,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/wildcard-matching/"
+        "link": "https://leetcode.com/problems/wildcard-matching/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#122",
@@ -2719,7 +3115,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/"
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2729,37 +3126,44 @@ export const dsaData = [
       {
         "title": "DP 37. Buy and Sell Stocks III | Recursion to Space Optimisation",
         "duration": "31:50",
-        "link": "https://www.youtube.com/watch?v=-uQGzhYj8BQ"
+        "link": "https://www.youtube.com/watch?v=-uQGzhYj8BQ",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 38. Buy and Stock Sell IV | Recursion to Space Optimisation",
         "duration": "12:24",
-        "link": "https://www.youtube.com/watch?v=IV1dHbk5CDc"
+        "link": "https://www.youtube.com/watch?v=IV1dHbk5CDc",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 39. Buy and Sell Stocks With Cooldown | Recursion to Space Optimisation",
         "duration": "15:21",
-        "link": "https://www.youtube.com/watch?v=IGIe46xw3YY"
+        "link": "https://www.youtube.com/watch?v=IGIe46xw3YY",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 40. Buy and Sell Stocks With Transaction Fee | Recursion to Space Optimisation",
         "duration": "7:20",
-        "link": "https://www.youtube.com/watch?v=k4eK-vEmnKg"
+        "link": "https://www.youtube.com/watch?v=k4eK-vEmnKg",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 41. Longest Increasing Subsequence | Memoization",
         "duration": "24:35",
-        "link": "https://www.youtube.com/watch?v=ekcwMsSIzVc"
+        "link": "https://www.youtube.com/watch?v=ekcwMsSIzVc",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 42. Printing Longest Increasing Subsequence | Tabulation | Algorithm",
         "duration": "25:57",
-        "link": "https://www.youtube.com/watch?v=IFfYfonAFGc"
+        "link": "https://www.youtube.com/watch?v=IFfYfonAFGc",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 43. Longest Increasing Subsequence | Binary Search | Intuition",
         "duration": "16:27",
-        "link": "https://www.youtube.com/watch?v=on2hvxBXJH4"
+        "link": "https://www.youtube.com/watch?v=on2hvxBXJH4",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2769,7 +3173,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/"
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#188",
@@ -2777,7 +3182,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/"
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#309",
@@ -2785,7 +3191,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/"
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#714",
@@ -2793,7 +3200,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/"
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#300",
@@ -2801,7 +3209,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-increasing-subsequence/"
+        "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2811,32 +3220,38 @@ export const dsaData = [
       {
         "title": "DP 44. Largest Divisible Subset | Longest Increasing Subsequence",
         "duration": "14:39",
-        "link": "https://www.youtube.com/watch?v=gDuZwBW9VvM"
+        "link": "https://www.youtube.com/watch?v=gDuZwBW9VvM",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 45. Longest String Chain | Longest Increasing Subsequence | LIS",
         "duration": "16:57",
-        "link": "https://www.youtube.com/watch?v=YY8iBaYcc4g"
+        "link": "https://www.youtube.com/watch?v=YY8iBaYcc4g",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 46. Longest Bitonic Subsequence | LIS",
         "duration": "13:52",
-        "link": "https://www.youtube.com/watch?v=y4vN0WNdrlg"
+        "link": "https://www.youtube.com/watch?v=y4vN0WNdrlg",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 47. Number of Longest Increasing Subsequences",
         "duration": "20:46",
-        "link": "https://www.youtube.com/watch?v=cKVl1TFdNXg"
+        "link": "https://www.youtube.com/watch?v=cKVl1TFdNXg",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 48. Matrix Chain Multiplication | MCM | Partition DP Starts ",
         "duration": "53:41",
-        "link": "https://www.youtube.com/watch?v=vRVfmbCFW7Y"
+        "link": "https://www.youtube.com/watch?v=vRVfmbCFW7Y",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 49. Matrix Chain Multiplication | Bottom-Up | Tabulation",
         "duration": "9:08",
-        "link": "https://www.youtube.com/watch?v=pDCXsbAw5Cg"
+        "link": "https://www.youtube.com/watch?v=pDCXsbAw5Cg",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2846,7 +3261,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/largest-divisible-subset/"
+        "link": "https://leetcode.com/problems/largest-divisible-subset/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1048",
@@ -2854,7 +3270,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-string-chain/"
+        "link": "https://leetcode.com/problems/longest-string-chain/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#673",
@@ -2862,7 +3279,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/"
+        "link": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1130",
@@ -2870,7 +3288,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/"
+        "link": "https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2880,22 +3299,26 @@ export const dsaData = [
       {
         "title": "DP 50. Minimum Cost to Cut the Stick",
         "duration": "30:02",
-        "link": "https://www.youtube.com/watch?v=xwomavsC86c"
+        "link": "https://www.youtube.com/watch?v=xwomavsC86c",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 51. Burst Balloons | Partition DP | Interactive G-Meet Session Update",
         "duration": "34:00",
-        "link": "https://www.youtube.com/watch?v=Yz4LlDSlkns"
+        "link": "https://www.youtube.com/watch?v=Yz4LlDSlkns",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 52. Evaluate Boolean Expression to True | Partition DP",
         "duration": "34:55",
-        "link": "https://www.youtube.com/watch?v=MM7fXopgyjw"
+        "link": "https://www.youtube.com/watch?v=MM7fXopgyjw",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 53. Palindrome Partitioning - II | Front Partition ",
         "duration": "23:17",
-        "link": "https://www.youtube.com/watch?v=_H8V5hJUGd0"
+        "link": "https://www.youtube.com/watch?v=_H8V5hJUGd0",
+        "category": "Dynamic Programming"
       }
     ],
     "problems": [
@@ -2905,7 +3328,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/"
+        "link": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#312",
@@ -2913,7 +3337,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/burst-balloons/"
+        "link": "https://leetcode.com/problems/burst-balloons/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1278",
@@ -2921,7 +3346,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/palindrome-partitioning-iii/"
+        "link": "https://leetcode.com/problems/palindrome-partitioning-iii/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#132",
@@ -2929,7 +3355,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/palindrome-partitioning-ii/"
+        "link": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+        "category": "Dynamic Programming"
       }
     ]
   },
@@ -2939,22 +3366,26 @@ export const dsaData = [
       {
         "title": "DP 54. Partition Array for Maximum Sum | Front Partition ",
         "duration": "21:39",
-        "link": "https://www.youtube.com/watch?v=PhWWJmaKfMc"
+        "link": "https://www.youtube.com/watch?v=PhWWJmaKfMc",
+        "category": "Dynamic Programming"
       },
       {
         "title": "DP 55. Maximum Rectangle Area with all 1's | DP on Rectangles",
         "duration": "11:04",
-        "link": "https://www.youtube.com/watch?v=tOylVCugy9k"
+        "link": "https://www.youtube.com/watch?v=tOylVCugy9k",
+        "category": "Linked Lists"
       },
       {
         "title": "DP 56. Count Square Submatrices with All Ones | DP on Rectangles ",
         "duration": "15:59",
-        "link": "https://www.youtube.com/watch?v=auS1fynpnjo"
+        "link": "https://www.youtube.com/watch?v=auS1fynpnjo",
+        "category": "Linked Lists"
       },
       {
         "title": "L1. Introduction to LinkedList | Traversal | Length | Search an Element",
         "duration": "45:17",
-        "link": "https://www.youtube.com/watch?v=Nq7ok-OyEpg"
+        "link": "https://www.youtube.com/watch?v=Nq7ok-OyEpg",
+        "category": "Linked Lists"
       }
     ],
     "problems": [
@@ -2964,7 +3395,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/partition-array-for-maximum-sum/"
+        "link": "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#85",
@@ -2972,7 +3404,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximal-rectangle/"
+        "link": "https://leetcode.com/problems/maximal-rectangle/",
+        "category": "Dynamic Programming"
       },
       {
         "probId": "#1277",
@@ -2980,7 +3413,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/count-square-submatrices-with-all-ones/"
+        "link": "https://leetcode.com/problems/count-square-submatrices-with-all-ones/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#206",
@@ -2988,7 +3422,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-linked-list/"
+        "link": "https://leetcode.com/problems/reverse-linked-list/",
+        "category": "Linked Lists"
       }
     ]
   },
@@ -2998,17 +3433,20 @@ export const dsaData = [
       {
         "title": "L2. Deletion and Insertion in LL | 8 Problems",
         "duration": "56:30",
-        "link": "https://www.youtube.com/watch?v=VaECK03Dz-g"
+        "link": "https://www.youtube.com/watch?v=VaECK03Dz-g",
+        "category": "Linked Lists"
       },
       {
         "title": "L3. Introduction to Doubly LinkedList | Insertions and Deletions",
         "duration": "1:04:07",
-        "link": "https://www.youtube.com/watch?v=0eKMU10uEDI"
+        "link": "https://www.youtube.com/watch?v=0eKMU10uEDI",
+        "category": "Linked Lists"
       },
       {
         "title": "L4. Reverse a DLL | Multiple Approaches",
         "duration": "18:30",
-        "link": "https://www.youtube.com/watch?v=u3WUW2qe6ww"
+        "link": "https://www.youtube.com/watch?v=u3WUW2qe6ww",
+        "category": "Linked Lists"
       }
     ],
     "problems": [
@@ -3018,7 +3456,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/remove-nodes-from-linked-list/"
+        "link": "https://leetcode.com/problems/remove-nodes-from-linked-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#83",
@@ -3026,7 +3465,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/"
+        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#206",
@@ -3034,7 +3474,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-linked-list/"
+        "link": "https://leetcode.com/problems/reverse-linked-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#92",
@@ -3042,7 +3483,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-linked-list-ii/"
+        "link": "https://leetcode.com/problems/reverse-linked-list-ii/",
+        "category": "Linked Lists"
       }
     ]
   },
@@ -3052,32 +3494,38 @@ export const dsaData = [
       {
         "title": "L5. Add 2 numbers in LinkedList | Dummy Node Approach",
         "duration": "14:48",
-        "link": "https://www.youtube.com/watch?v=XmRrGzR6udg"
+        "link": "https://www.youtube.com/watch?v=XmRrGzR6udg",
+        "category": "Linked Lists"
       },
       {
         "title": "L6. Odd Even Linked List | Multiple Approaches",
         "duration": "24:05",
-        "link": "https://www.youtube.com/watch?v=qf6qp7GzD5Q"
+        "link": "https://www.youtube.com/watch?v=qf6qp7GzD5Q",
+        "category": "Linked Lists"
       },
       {
         "title": "L7. Sort a LinkedList of 0's, 1's and 2's | Multiple Approaches",
         "duration": "23:23",
-        "link": "https://www.youtube.com/watch?v=gRII7LhdJWc"
+        "link": "https://www.youtube.com/watch?v=gRII7LhdJWc",
+        "category": "Linked Lists"
       },
       {
         "title": "L8. Remove Nth Node from the end of the LinkedList | Multiple Approaches",
         "duration": "16:23",
-        "link": "https://www.youtube.com/watch?v=3kMKYQ2wNIU"
+        "link": "https://www.youtube.com/watch?v=3kMKYQ2wNIU",
+        "category": "Linked Lists"
       },
       {
         "title": "L9. Reverse a LinkedList | Iterative and Recursive",
         "duration": "32:42",
-        "link": "https://www.youtube.com/watch?v=D2vI2DNJGd8"
+        "link": "https://www.youtube.com/watch?v=D2vI2DNJGd8",
+        "category": "Linked Lists"
       },
       {
         "title": "L10. Check if a LinkedList is Palindrome or Not | Multiple Approaches",
         "duration": "20:02",
-        "link": "https://www.youtube.com/watch?v=lRY_G-u_8jk"
+        "link": "https://www.youtube.com/watch?v=lRY_G-u_8jk",
+        "category": "Linked Lists"
       }
     ],
     "problems": [
@@ -3087,7 +3535,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/add-two-numbers/"
+        "link": "https://leetcode.com/problems/add-two-numbers/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#328",
@@ -3095,7 +3544,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/odd-even-linked-list/"
+        "link": "https://leetcode.com/problems/odd-even-linked-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#86",
@@ -3103,7 +3553,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/partition-list/"
+        "link": "https://leetcode.com/problems/partition-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#19",
@@ -3111,7 +3562,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+        "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#234",
@@ -3119,7 +3571,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/palindrome-linked-list/"
+        "link": "https://leetcode.com/problems/palindrome-linked-list/",
+        "category": "Linked Lists"
       }
     ]
   },
@@ -3129,32 +3582,38 @@ export const dsaData = [
       {
         "title": "L11. Add 1 to a number represented by LinkedList",
         "duration": "25:28",
-        "link": "https://www.youtube.com/watch?v=aXQWhbvT3w0"
+        "link": "https://www.youtube.com/watch?v=aXQWhbvT3w0",
+        "category": "Linked Lists"
       },
       {
         "title": "L12. Find the intersection point of Y LinkedList",
         "duration": "32:05",
-        "link": "https://www.youtube.com/watch?v=0DYoPz2Tpt4"
+        "link": "https://www.youtube.com/watch?v=0DYoPz2Tpt4",
+        "category": "Linked Lists"
       },
       {
         "title": "L13. Find the middle element of the LinkedList | Multiple Approaches",
         "duration": "14:37",
-        "link": "https://www.youtube.com/watch?v=7LjQ57RqgEc"
+        "link": "https://www.youtube.com/watch?v=7LjQ57RqgEc",
+        "category": "Linked Lists"
       },
       {
         "title": "L14. Detect a loop or cycle in LinkedList | With proof and Intuition",
         "duration": "20:26",
-        "link": "https://www.youtube.com/watch?v=wiOo4DC5GGA"
+        "link": "https://www.youtube.com/watch?v=wiOo4DC5GGA",
+        "category": "Linked Lists"
       },
       {
         "title": "L15. Find the length of the Loop in LinkedList",
         "duration": "14:01",
-        "link": "https://www.youtube.com/watch?v=I4g1qbkTPus"
+        "link": "https://www.youtube.com/watch?v=I4g1qbkTPus",
+        "category": "Linked Lists"
       },
       {
         "title": "L16. Delete the middle node of the LinkedList",
         "duration": "16:36",
-        "link": "https://www.youtube.com/watch?v=ePpV-_pfOeI"
+        "link": "https://www.youtube.com/watch?v=ePpV-_pfOeI",
+        "category": "Linked Lists"
       }
     ],
     "problems": [
@@ -3164,7 +3623,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/plus-one-linked-list/"
+        "link": "https://leetcode.com/problems/plus-one-linked-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#160",
@@ -3172,7 +3632,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/intersection-of-two-linked-lists/"
+        "link": "https://leetcode.com/problems/intersection-of-two-linked-lists/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#2095",
@@ -3180,7 +3641,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/"
+        "link": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#141",
@@ -3188,7 +3650,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/linked-list-cycle/"
+        "link": "https://leetcode.com/problems/linked-list-cycle/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#142",
@@ -3196,7 +3659,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/linked-list-cycle-ii/"
+        "link": "https://leetcode.com/problems/linked-list-cycle-ii/",
+        "category": "Linked Lists"
       }
     ]
   },
@@ -3206,37 +3670,44 @@ export const dsaData = [
       {
         "title": "L17. Find the starting point of the Loop/Cycle in LinkedList | Multiple Approaches",
         "duration": "22:42",
-        "link": "https://www.youtube.com/watch?v=2Kd0KKmmHFc"
+        "link": "https://www.youtube.com/watch?v=2Kd0KKmmHFc",
+        "category": "Linked Lists"
       },
       {
         "title": "L18. Delete all occurrences of a Key in DLL",
         "duration": "11:13",
-        "link": "https://www.youtube.com/watch?v=Mh0NH_SD92k"
+        "link": "https://www.youtube.com/watch?v=Mh0NH_SD92k",
+        "category": "Linked Lists"
       },
       {
         "title": "L19. Find all Pairs with given Sum in DLL",
         "duration": "14:14",
-        "link": "https://www.youtube.com/watch?v=YitR4dQsddE"
+        "link": "https://www.youtube.com/watch?v=YitR4dQsddE",
+        "category": "Linked Lists"
       },
       {
         "title": "L20. Remove duplicates from sorted DLL",
         "duration": "12:53",
-        "link": "https://www.youtube.com/watch?v=YJKVTnOJXSY"
+        "link": "https://www.youtube.com/watch?v=YJKVTnOJXSY",
+        "category": "Linked Lists"
       },
       {
         "title": "L21. Reverse Nodes in K Group Size of LinkedList",
         "duration": "24:31",
-        "link": "https://www.youtube.com/watch?v=lIar1skcQYI"
+        "link": "https://www.youtube.com/watch?v=lIar1skcQYI",
+        "category": "Linked Lists"
       },
       {
         "title": "L22. Rotate a LinkedList",
         "duration": "12:10",
-        "link": "https://www.youtube.com/watch?v=uT7YI7XbTY8"
+        "link": "https://www.youtube.com/watch?v=uT7YI7XbTY8",
+        "category": "Linked Lists"
       },
       {
         "title": "L23. Merge two sorted Linked Lists",
         "duration": "18:55",
-        "link": "https://www.youtube.com/watch?v=jXu-H7XuClE"
+        "link": "https://www.youtube.com/watch?v=jXu-H7XuClE",
+        "category": "Linked Lists"
       }
     ],
     "problems": [
@@ -3246,7 +3717,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/linked-list-cycle-ii/"
+        "link": "https://leetcode.com/problems/linked-list-cycle-ii/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#25",
@@ -3254,7 +3726,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/"
+        "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#61",
@@ -3262,7 +3735,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/rotate-list/"
+        "link": "https://leetcode.com/problems/rotate-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#21",
@@ -3270,7 +3744,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/merge-two-sorted-lists/"
+        "link": "https://leetcode.com/problems/merge-two-sorted-lists/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#82",
@@ -3278,7 +3753,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/"
+        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/",
+        "category": "Linked Lists"
       }
     ]
   },
@@ -3288,27 +3764,32 @@ export const dsaData = [
       {
         "title": "L24. Flattening a LinkedList | Multiple Approaches with Dry Run",
         "duration": "32:58",
-        "link": "https://www.youtube.com/watch?v=ykelywHJWLg"
+        "link": "https://www.youtube.com/watch?v=ykelywHJWLg",
+        "category": "Linked Lists"
       },
       {
         "title": "L25. Merge K Sorted Lists | Multiple Approaches",
         "duration": "30:02",
-        "link": "https://www.youtube.com/watch?v=1zktEppsdig"
+        "link": "https://www.youtube.com/watch?v=1zktEppsdig",
+        "category": "Linked Lists"
       },
       {
         "title": "L26. Sort a Linked List | Merge Sort and Brute Force",
         "duration": "22:11",
-        "link": "https://www.youtube.com/watch?v=8ocB7a_c-Cc"
+        "link": "https://www.youtube.com/watch?v=8ocB7a_c-Cc",
+        "category": "Linked Lists"
       },
       {
         "title": "L27. Clone a LinkedList with Next and Random Pointers | Copy List with Random Pointers",
         "duration": "33:00",
-        "link": "https://www.youtube.com/watch?v=q570bKdrnlw"
+        "link": "https://www.youtube.com/watch?v=q570bKdrnlw",
+        "category": "Linked Lists"
       },
       {
         "title": "L28. Design a Browser History | LinkedList Implementation",
         "duration": "14:38",
-        "link": "https://www.youtube.com/watch?v=mG3KLugbOdc"
+        "link": "https://www.youtube.com/watch?v=mG3KLugbOdc",
+        "category": "Linked Lists"
       }
     ],
     "problems": [
@@ -3318,7 +3799,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/merge-k-sorted-lists/"
+        "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#148",
@@ -3326,7 +3808,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sort-list/"
+        "link": "https://leetcode.com/problems/sort-list/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#138",
@@ -3334,7 +3817,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/copy-list-with-random-pointer/"
+        "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+        "category": "Linked Lists"
       },
       {
         "probId": "#1472",
@@ -3342,7 +3826,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/design-browser-history/"
+        "link": "https://leetcode.com/problems/design-browser-history/",
+        "category": "Linked Lists"
       }
     ]
   },
@@ -3352,42 +3837,50 @@ export const dsaData = [
       {
         "title": "L2. Print all Divisors of a Number | Maths Playlist",
         "duration": "9:10",
-        "link": "https://www.youtube.com/watch?v=Ae_Ag_saG9s"
+        "link": "https://www.youtube.com/watch?v=Ae_Ag_saG9s",
+        "category": "Basics"
       },
       {
         "title": "L3. Check if a Number if Prime or not | Maths Playlist",
         "duration": "7:10",
-        "link": "https://www.youtube.com/watch?v=MJcckSfoYdI"
+        "link": "https://www.youtube.com/watch?v=MJcckSfoYdI",
+        "category": "Basics"
       },
       {
         "title": "L4. Print all prime factors of a Number | Maths Playlist",
         "duration": "18:53",
-        "link": "https://www.youtube.com/watch?v=LT7XhVdeRyg"
+        "link": "https://www.youtube.com/watch?v=LT7XhVdeRyg",
+        "category": "Basics"
       },
       {
         "title": "L5. Power Exponentiation | Maths Playlist",
         "duration": "12:39",
-        "link": "https://www.youtube.com/watch?v=hFWckDXE-K8"
+        "link": "https://www.youtube.com/watch?v=hFWckDXE-K8",
+        "category": "Basics"
       },
       {
         "title": "L6. Sieve of Eratosthenes | Maths Playlist",
         "duration": "18:27",
-        "link": "https://www.youtube.com/watch?v=g5Fuxn_AvSk"
+        "link": "https://www.youtube.com/watch?v=g5Fuxn_AvSk",
+        "category": "Basics"
       },
       {
         "title": "L7. Count Prime in a range L-R | Maths Playlist",
         "duration": "16:39",
-        "link": "https://www.youtube.com/watch?v=os82DjD2-MA"
+        "link": "https://www.youtube.com/watch?v=os82DjD2-MA",
+        "category": "Basics"
       },
       {
         "title": "L8. Smallest Prime Factor (SPF) | Prime Factorisation | Query Based Problem | Maths Playlist",
         "duration": "16:57",
-        "link": "https://www.youtube.com/watch?v=glKWkmKFlMw"
+        "link": "https://www.youtube.com/watch?v=glKWkmKFlMw",
+        "category": "Basics"
       },
       {
         "title": "L1. Introduction to Sliding Window and 2 Pointers | Templates | Patterns",
         "duration": "36:55",
-        "link": "https://www.youtube.com/watch?v=9kdHxplyl5I"
+        "link": "https://www.youtube.com/watch?v=9kdHxplyl5I",
+        "category": "Sliding Window / Greedy"
       }
     ],
     "problems": [
@@ -3397,7 +3890,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/count-primes/"
+        "link": "https://leetcode.com/problems/count-primes/",
+        "category": "Basics"
       },
       {
         "probId": "#50",
@@ -3405,7 +3899,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/powx-n/"
+        "link": "https://leetcode.com/problems/powx-n/",
+        "category": "Basics"
       },
       {
         "probId": "#829",
@@ -3413,7 +3908,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/consecutive-numbers-sum/"
+        "link": "https://leetcode.com/problems/consecutive-numbers-sum/",
+        "category": "Basics"
       },
       {
         "probId": "#238",
@@ -3421,7 +3917,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/product-of-array-except-self/"
+        "link": "https://leetcode.com/problems/product-of-array-except-self/",
+        "category": "Sliding Window / Greedy"
       }
     ]
   },
@@ -3431,32 +3928,38 @@ export const dsaData = [
       {
         "title": "L2. Maximum Points You Can Obtain from Cards | 2 Pointers and Sliding Window Playlist",
         "duration": "11:13",
-        "link": "https://www.youtube.com/watch?v=pBWCOCS636U"
+        "link": "https://www.youtube.com/watch?v=pBWCOCS636U",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L3. Longest Substring Without Repeating Characters | 2 Pointers and Sliding Window Playlist",
         "duration": "23:09",
-        "link": "https://www.youtube.com/watch?v=-zSxTJkcdAo"
+        "link": "https://www.youtube.com/watch?v=-zSxTJkcdAo",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L4. Max Consecutive Ones III | 2 Pointers and Sliding Window Playlist",
         "duration": "29:58",
-        "link": "https://www.youtube.com/watch?v=3E4JBHSLpYk"
+        "link": "https://www.youtube.com/watch?v=3E4JBHSLpYk",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L5. Fruit Into Baskets | 2 Pointers and Sliding Window Playlist",
         "duration": "30:02",
-        "link": "https://www.youtube.com/watch?v=e3bs0uA1NhQ"
+        "link": "https://www.youtube.com/watch?v=e3bs0uA1NhQ",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L6. Longest Substring With At Most K Distinct Characters | 2 Pointers and Sliding Window Playlist",
         "duration": "21:32",
-        "link": "https://www.youtube.com/watch?v=teM9ZsVRQyc"
+        "link": "https://www.youtube.com/watch?v=teM9ZsVRQyc",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L7. Number of Substrings Containing All Three Characters | 2 Pointers and Sliding Window Playlist",
         "duration": "19:40",
-        "link": "https://www.youtube.com/watch?v=xtqN4qlgr8s"
+        "link": "https://www.youtube.com/watch?v=xtqN4qlgr8s",
+        "category": "Sliding Window / Greedy"
       }
     ],
     "problems": [
@@ -3466,7 +3969,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/"
+        "link": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#3",
@@ -3474,7 +3978,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+        "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#1004",
@@ -3482,7 +3987,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/max-consecutive-ones-iii/"
+        "link": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#904",
@@ -3490,7 +3996,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/fruit-into-baskets/"
+        "link": "https://leetcode.com/problems/fruit-into-baskets/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#340",
@@ -3498,7 +4005,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/"
+        "link": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#1358",
@@ -3506,7 +4014,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/"
+        "link": "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/",
+        "category": "Sliding Window / Greedy"
       }
     ]
   },
@@ -3516,47 +4025,56 @@ export const dsaData = [
       {
         "title": "L8. Longest Repeating Character Replacement | 2 Pointers and Sliding Window Playlist",
         "duration": "25:21",
-        "link": "https://www.youtube.com/watch?v=_eNhaDCr6P0"
+        "link": "https://www.youtube.com/watch?v=_eNhaDCr6P0",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L9. Binary Subarrays With Sum | 2 Pointers and Sliding Window Playlist",
         "duration": "20:27",
-        "link": "https://www.youtube.com/watch?v=XnMdNUkX6VM"
+        "link": "https://www.youtube.com/watch?v=XnMdNUkX6VM",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L10. Count number of Nice subarrays | 2 Pointers and Sliding Window Playlist",
         "duration": "4:54",
-        "link": "https://www.youtube.com/watch?v=j_QOv9OT9Og"
+        "link": "https://www.youtube.com/watch?v=j_QOv9OT9Og",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L11. Subarray with k different integers | 2 Pointers and Sliding Window Playlist",
         "duration": "20:49",
-        "link": "https://www.youtube.com/watch?v=7wYGbV_LsX4"
+        "link": "https://www.youtube.com/watch?v=7wYGbV_LsX4",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L12. Minimum Window Substring | 2 Pointers and Sliding Window Playlist",
         "duration": "27:06",
-        "link": "https://www.youtube.com/watch?v=WJaij9ffOIY"
+        "link": "https://www.youtube.com/watch?v=WJaij9ffOIY",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L1. Assign Cookies | Greedy Algorithm Playlist",
         "duration": "10:51",
-        "link": "https://www.youtube.com/watch?v=DIX2p7vb9co"
+        "link": "https://www.youtube.com/watch?v=DIX2p7vb9co",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L3. Shortest Job First (or SJF) CPU Scheduling",
         "duration": "7:20",
-        "link": "https://www.youtube.com/watch?v=3-QbX1iDbXs"
+        "link": "https://www.youtube.com/watch?v=3-QbX1iDbXs",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L2. Lemonade Change | Greedy Algorithm Playlist",
         "duration": "9:00",
-        "link": "https://www.youtube.com/watch?v=n_tmibEhO6Q"
+        "link": "https://www.youtube.com/watch?v=n_tmibEhO6Q",
+        "category": "Sliding Window / Greedy"
       },
       {
         "title": "L4. Jump Game - I | Greedy Algorithm Playlist",
         "duration": "10:53",
-        "link": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ"
+        "link": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ",
+        "category": "Sliding Window / Greedy"
       }
     ],
     "problems": [
@@ -3566,7 +4084,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-repeating-character-replacement/"
+        "link": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#930",
@@ -3574,7 +4093,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-subarrays-with-sum/"
+        "link": "https://leetcode.com/problems/binary-subarrays-with-sum/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#1248",
@@ -3582,7 +4102,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/count-number-of-nice-subarrays/"
+        "link": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#992",
@@ -3590,7 +4111,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/subarrays-with-k-different-integers/"
+        "link": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#76",
@@ -3598,7 +4120,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-window-substring/"
+        "link": "https://leetcode.com/problems/minimum-window-substring/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#455",
@@ -3606,7 +4129,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/assign-cookies/"
+        "link": "https://leetcode.com/problems/assign-cookies/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#860",
@@ -3614,7 +4138,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/lemonade-change/"
+        "link": "https://leetcode.com/problems/lemonade-change/",
+        "category": "Sliding Window / Greedy"
       },
       {
         "probId": "#55",
@@ -3622,7 +4147,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/jump-game/"
+        "link": "https://leetcode.com/problems/jump-game/",
+        "category": "Sliding Window / Greedy"
       }
     ]
   },
@@ -3632,42 +4158,50 @@ export const dsaData = [
       {
         "title": "L5. Jump Game - II | Greedy Algorithm Playlist",
         "duration": "16:45",
-        "link": "https://www.youtube.com/watch?v=7SBVnw7GSTk"
+        "link": "https://www.youtube.com/watch?v=7SBVnw7GSTk",
+        "category": "Greedy"
       },
       {
         "title": "L6. Job Sequencing Problem | Greedy Algorithm Playlist",
         "duration": "16:07",
-        "link": "https://www.youtube.com/watch?v=QbwltemZbRg"
+        "link": "https://www.youtube.com/watch?v=QbwltemZbRg",
+        "category": "Greedy"
       },
       {
         "title": "L7. N Meeting in One Room | Greedy Algorithms Playlist",
         "duration": "13:12",
-        "link": "https://www.youtube.com/watch?v=mKfhTotEguk"
+        "link": "https://www.youtube.com/watch?v=mKfhTotEguk",
+        "category": "Greedy"
       },
       {
         "title": "L8. Non Overlapping Intervals | Greedy Algorithms Playlist",
         "duration": "8:46",
-        "link": "https://www.youtube.com/watch?v=HDHQ8lAWakY"
+        "link": "https://www.youtube.com/watch?v=HDHQ8lAWakY",
+        "category": "Greedy"
       },
       {
         "title": "L9. Insert Intervals | Greedy Algorithms Playlist",
         "duration": "13:16",
-        "link": "https://www.youtube.com/watch?v=xxRE-46OCC8"
+        "link": "https://www.youtube.com/watch?v=xxRE-46OCC8",
+        "category": "Greedy"
       },
       {
         "title": "L10. Minimum number of platforms required in a railway station",
         "duration": "18:10",
-        "link": "https://www.youtube.com/watch?v=AsGzwR_FWok"
+        "link": "https://www.youtube.com/watch?v=AsGzwR_FWok",
+        "category": "Greedy"
       },
       {
         "title": "L11. Valid Parenthesis String | Multiple Approaches",
         "duration": "26:09",
-        "link": "https://www.youtube.com/watch?v=cHT6sG_hUZI"
+        "link": "https://www.youtube.com/watch?v=cHT6sG_hUZI",
+        "category": "Greedy"
       },
       {
         "title": "L13. Fractional Knapsack Algorithm",
         "duration": "18:41",
-        "link": "https://www.youtube.com/watch?v=1ibsQrnuEEg"
+        "link": "https://www.youtube.com/watch?v=1ibsQrnuEEg",
+        "category": "Greedy"
       }
     ],
     "problems": [
@@ -3677,7 +4211,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/jump-game-ii/"
+        "link": "https://leetcode.com/problems/jump-game-ii/",
+        "category": "Greedy"
       },
       {
         "probId": "#435",
@@ -3685,7 +4220,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/non-overlapping-intervals/"
+        "link": "https://leetcode.com/problems/non-overlapping-intervals/",
+        "category": "Greedy"
       },
       {
         "probId": "#57",
@@ -3693,7 +4229,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/insert-interval/"
+        "link": "https://leetcode.com/problems/insert-interval/",
+        "category": "Greedy"
       },
       {
         "probId": "#678",
@@ -3701,7 +4238,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/valid-parenthesis-string/"
+        "link": "https://leetcode.com/problems/valid-parenthesis-string/",
+        "category": "Greedy"
       },
       {
         "probId": "#253",
@@ -3709,7 +4247,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/meeting-rooms-ii/"
+        "link": "https://leetcode.com/problems/meeting-rooms-ii/",
+        "category": "Greedy"
       }
     ]
   },
@@ -3719,17 +4258,20 @@ export const dsaData = [
       {
         "title": "L12. Candy | Slope Approach Intuition Based",
         "duration": "30:10",
-        "link": "https://www.youtube.com/watch?v=IIqVFvKE6RY"
+        "link": "https://www.youtube.com/watch?v=IIqVFvKE6RY",
+        "category": "Greedy"
       },
       {
         "title": "L1. Introduction to Stack and Queue | Implementation using Data Structures",
         "duration": "1:05:06",
-        "link": "https://www.youtube.com/watch?v=tqQ5fTamIN4"
+        "link": "https://www.youtube.com/watch?v=tqQ5fTamIN4",
+        "category": "Stack & Queue"
       },
       {
         "title": "L2. Check for Balanced Parentheses | Stack and Queue",
         "duration": "12:28",
-        "link": "https://www.youtube.com/watch?v=xwjS0iZhw4I"
+        "link": "https://www.youtube.com/watch?v=xwjS0iZhw4I",
+        "category": "Stack & Queue"
       }
     ],
     "problems": [
@@ -3739,7 +4281,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/candy/"
+        "link": "https://leetcode.com/problems/candy/",
+        "category": "Greedy"
       },
       {
         "probId": "#20",
@@ -3747,7 +4290,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/valid-parentheses/"
+        "link": "https://leetcode.com/problems/valid-parentheses/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#232",
@@ -3755,7 +4299,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/implement-queue-using-stacks/"
+        "link": "https://leetcode.com/problems/implement-queue-using-stacks/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#225",
@@ -3763,7 +4308,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/implement-stack-using-queues/"
+        "link": "https://leetcode.com/problems/implement-stack-using-queues/",
+        "category": "Stack & Queue"
       }
     ]
   },
@@ -3773,27 +4319,32 @@ export const dsaData = [
       {
         "title": "L3. Prefix, Infix, and Postfix Conversion | Stack and Queue Playlist",
         "duration": "50:47",
-        "link": "https://www.youtube.com/watch?v=4pIc9UBHJtk"
+        "link": "https://www.youtube.com/watch?v=4pIc9UBHJtk",
+        "category": "Stack & Queue"
       },
       {
         "title": "L4. Implement Min Stack | Stack and Queue Playlist",
         "duration": "20:55",
-        "link": "https://www.youtube.com/watch?v=NdDIaH91P0g"
+        "link": "https://www.youtube.com/watch?v=NdDIaH91P0g",
+        "category": "Stack & Queue"
       },
       {
         "title": "L5. Next Greater Element | Stack and Queue Playlist",
         "duration": "18:25",
-        "link": "https://www.youtube.com/watch?v=e7XQLtOQM3I"
+        "link": "https://www.youtube.com/watch?v=e7XQLtOQM3I",
+        "category": "Stack & Queue"
       },
       {
         "title": "L6. Next Greater Element - II | Stack and Queue Playlist",
         "duration": "15:41",
-        "link": "https://www.youtube.com/watch?v=7PrncD7v9YQ"
+        "link": "https://www.youtube.com/watch?v=7PrncD7v9YQ",
+        "category": "Stack & Queue"
       },
       {
         "title": "L7. Previous Smaller Element | Stack and Queue Playlist",
         "duration": "8:11",
-        "link": "https://www.youtube.com/watch?v=zMdbdGJNlh4"
+        "link": "https://www.youtube.com/watch?v=zMdbdGJNlh4",
+        "category": "Stack & Queue"
       }
     ],
     "problems": [
@@ -3803,7 +4354,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
+        "link": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#155",
@@ -3811,7 +4363,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/min-stack/"
+        "link": "https://leetcode.com/problems/min-stack/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#496",
@@ -3819,7 +4372,8 @@ export const dsaData = [
         "difficulty": "Easy",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/next-greater-element-i/"
+        "link": "https://leetcode.com/problems/next-greater-element-i/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#503",
@@ -3827,7 +4381,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/next-greater-element-ii/"
+        "link": "https://leetcode.com/problems/next-greater-element-ii/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#2104",
@@ -3835,7 +4390,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sum-of-subarray-ranges/"
+        "link": "https://leetcode.com/problems/sum-of-subarray-ranges/",
+        "category": "Stack & Queue"
       }
     ]
   },
@@ -3845,37 +4401,44 @@ export const dsaData = [
       {
         "title": "L8. Trapping Rainwater | 2 Approaches | Stack and Queue Playlist",
         "duration": "28:58",
-        "link": "https://www.youtube.com/watch?v=1_5VuquLbXg"
+        "link": "https://www.youtube.com/watch?v=1_5VuquLbXg",
+        "category": "Stack & Queue"
       },
       {
         "title": "L9. Sum of Subarray Minimum | Stack and Queue Playlist",
         "duration": "23:35",
-        "link": "https://www.youtube.com/watch?v=v0e8p9JCgRc"
+        "link": "https://www.youtube.com/watch?v=v0e8p9JCgRc",
+        "category": "Stack & Queue"
       },
       {
         "title": "L10. Sum of subarray ranges | Stack and Queue Playlist",
         "duration": "10:34",
-        "link": "https://www.youtube.com/watch?v=gIrMptNPf5M"
+        "link": "https://www.youtube.com/watch?v=gIrMptNPf5M",
+        "category": "Stack & Queue"
       },
       {
         "title": "L11. Aestroid Collisions | Stack and Queue Playlist",
         "duration": "17:28",
-        "link": "https://www.youtube.com/watch?v=_eYGqw_VDR4"
+        "link": "https://www.youtube.com/watch?v=_eYGqw_VDR4",
+        "category": "Stack & Queue"
       },
       {
         "title": "L12. Largest Rectangle in Histogram | Stack and Queue Playlist",
         "duration": "31:42",
-        "link": "https://www.youtube.com/watch?v=Bzat9vgD0fs"
+        "link": "https://www.youtube.com/watch?v=Bzat9vgD0fs",
+        "category": "Stack & Queue"
       },
       {
         "title": "L13. Maximal Rectangle | Stack and Queue Playlist",
         "duration": "12:12",
-        "link": "https://www.youtube.com/watch?v=ttVu6G7Ayik"
+        "link": "https://www.youtube.com/watch?v=ttVu6G7Ayik",
+        "category": "Stack & Queue"
       },
       {
         "title": "L14. Remove K Digits | Stack and Queue Playlist",
         "duration": "15:29",
-        "link": "https://www.youtube.com/watch?v=jmbuRzYPGrg"
+        "link": "https://www.youtube.com/watch?v=jmbuRzYPGrg",
+        "category": "Stack & Queue"
       }
     ],
     "problems": [
@@ -3885,7 +4448,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/trapping-rain-water/"
+        "link": "https://leetcode.com/problems/trapping-rain-water/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#907",
@@ -3893,7 +4457,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sum-of-subarray-minimums/"
+        "link": "https://leetcode.com/problems/sum-of-subarray-minimums/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#2104",
@@ -3901,7 +4466,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sum-of-subarray-ranges/"
+        "link": "https://leetcode.com/problems/sum-of-subarray-ranges/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#735",
@@ -3909,7 +4475,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/asteroid-collision/"
+        "link": "https://leetcode.com/problems/asteroid-collision/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#84",
@@ -3917,7 +4484,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#85",
@@ -3925,7 +4493,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/maximal-rectangle/"
+        "link": "https://leetcode.com/problems/maximal-rectangle/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#402",
@@ -3933,7 +4502,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/remove-k-digits/"
+        "link": "https://leetcode.com/problems/remove-k-digits/",
+        "category": "Stack & Queue"
       }
     ]
   },
@@ -3943,27 +4513,32 @@ export const dsaData = [
       {
         "title": "L15. Stock Span Problem | Stack and Queue Playlist",
         "duration": "19:21",
-        "link": "https://www.youtube.com/watch?v=eay-zoSRkVc"
+        "link": "https://www.youtube.com/watch?v=eay-zoSRkVc",
+        "category": "Stack & Queue"
       },
       {
         "title": "L16. Sliding Window Maximum | Stack and Queue Playlist",
         "duration": "19:58",
-        "link": "https://www.youtube.com/watch?v=NwBvene4Imo"
+        "link": "https://www.youtube.com/watch?v=NwBvene4Imo",
+        "category": "Stack & Queue"
       },
       {
         "title": "L17. The Celebrity Problem | Stack and Queue Playlist",
         "duration": "16:17",
-        "link": "https://www.youtube.com/watch?v=cEadsbTeze4"
+        "link": "https://www.youtube.com/watch?v=cEadsbTeze4",
+        "category": "Stack & Queue"
       },
       {
         "title": "L18. Implement LRU Cache",
         "duration": "24:56",
-        "link": "https://www.youtube.com/watch?v=z9bJUPxzFOw"
+        "link": "https://www.youtube.com/watch?v=z9bJUPxzFOw",
+        "category": "Stack & Queue"
       },
       {
         "title": "Implement LFU cache in C++/Java  | Leetcode(Hard)",
         "duration": "17:44",
-        "link": "https://www.youtube.com/watch?v=mzqHlAW7jeE"
+        "link": "https://www.youtube.com/watch?v=mzqHlAW7jeE",
+        "category": "Stack & Queue"
       }
     ],
     "problems": [
@@ -3973,7 +4548,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/online-stock-span/"
+        "link": "https://leetcode.com/problems/online-stock-span/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#239",
@@ -3981,7 +4557,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sliding-window-maximum/"
+        "link": "https://leetcode.com/problems/sliding-window-maximum/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#146",
@@ -3989,7 +4566,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/lru-cache/"
+        "link": "https://leetcode.com/problems/lru-cache/",
+        "category": "Stack & Queue"
       },
       {
         "probId": "#460",
@@ -3997,7 +4575,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/lfu-cache/"
+        "link": "https://leetcode.com/problems/lfu-cache/",
+        "category": "Stack & Queue"
       }
     ]
   },
@@ -4007,7 +4586,8 @@ export const dsaData = [
       {
         "title": " BUFFER / REVISION DAY – Catch up or revise weak topics",
         "duration": "–",
-        "link": ""
+        "link": "",
+        "category": "Revision"
       }
     ],
     "problems": [
@@ -4017,7 +4597,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/minimum-window-substring/"
+        "link": "https://leetcode.com/problems/minimum-window-substring/",
+        "category": "Revision"
       },
       {
         "probId": "#146",
@@ -4025,7 +4606,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/lru-cache/"
+        "link": "https://leetcode.com/problems/lru-cache/",
+        "category": "Revision"
       },
       {
         "probId": "#239",
@@ -4033,7 +4615,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/sliding-window-maximum/"
+        "link": "https://leetcode.com/problems/sliding-window-maximum/",
+        "category": "Revision"
       }
     ]
   },
@@ -4043,7 +4626,8 @@ export const dsaData = [
       {
         "title": " BUFFER / REVISION DAY – Catch up or revise weak topics",
         "duration": "–",
-        "link": ""
+        "link": "",
+        "category": "Revision"
       }
     ],
     "problems": [
@@ -4053,7 +4637,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/validate-binary-search-tree/"
+        "link": "https://leetcode.com/problems/validate-binary-search-tree/",
+        "category": "Revision"
       },
       {
         "probId": "#105",
@@ -4061,7 +4646,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+        "category": "Revision"
       },
       {
         "probId": "#124",
@@ -4069,7 +4655,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+        "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+        "category": "Revision"
       }
     ]
   },
@@ -4079,7 +4666,8 @@ export const dsaData = [
       {
         "title": " BUFFER / REVISION DAY – Catch up or revise weak topics",
         "duration": "–",
-        "link": ""
+        "link": "",
+        "category": "Revision"
       }
     ],
     "problems": [
@@ -4089,7 +4677,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/course-schedule/"
+        "link": "https://leetcode.com/problems/course-schedule/",
+        "category": "Revision"
       },
       {
         "probId": "#787",
@@ -4097,7 +4686,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+        "category": "Revision"
       },
       {
         "probId": "#1319",
@@ -4105,7 +4695,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/"
+        "link": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+        "category": "Revision"
       }
     ]
   },
@@ -4115,7 +4706,8 @@ export const dsaData = [
       {
         "title": " BUFFER / REVISION DAY – Catch up or revise weak topics",
         "duration": "–",
-        "link": ""
+        "link": "",
+        "category": "Revision"
       }
     ],
     "problems": [
@@ -4125,7 +4717,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/edit-distance/"
+        "link": "https://leetcode.com/problems/edit-distance/",
+        "category": "Revision"
       },
       {
         "probId": "#300",
@@ -4133,7 +4726,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/longest-increasing-subsequence/"
+        "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
+        "category": "Revision"
       },
       {
         "probId": "#322",
@@ -4141,7 +4735,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/coin-change/"
+        "link": "https://leetcode.com/problems/coin-change/",
+        "category": "Revision"
       }
     ]
   },
@@ -4151,7 +4746,8 @@ export const dsaData = [
       {
         "title": " BUFFER / REVISION DAY – Catch up or revise weak topics",
         "duration": "–",
-        "link": ""
+        "link": "",
+        "category": "Revision"
       }
     ],
     "problems": [
@@ -4161,7 +4757,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/"
+        "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+        "category": "Revision"
       },
       {
         "probId": "#138",
@@ -4169,7 +4766,8 @@ export const dsaData = [
         "difficulty": "Medium",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/copy-list-with-random-pointer/"
+        "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+        "category": "Revision"
       },
       {
         "probId": "#23",
@@ -4177,7 +4775,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/merge-k-sorted-lists/"
+        "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+        "category": "Revision"
       }
     ]
   },
@@ -4187,7 +4786,8 @@ export const dsaData = [
       {
         "title": " BUFFER / REVISION DAY – Catch up or revise weak topics",
         "duration": "–",
-        "link": ""
+        "link": "",
+        "category": "Revision"
       }
     ],
     "problems": [
@@ -4197,7 +4797,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+        "category": "Revision"
       },
       {
         "probId": "#42",
@@ -4205,7 +4806,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/trapping-rain-water/"
+        "link": "https://leetcode.com/problems/trapping-rain-water/",
+        "category": "Revision"
       },
       {
         "probId": "#4",
@@ -4213,7 +4815,8 @@ export const dsaData = [
         "difficulty": "Hard",
         "platform": "LeetCode",
         "approach": "",
-        "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
+        "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+        "category": "Revision"
       }
     ]
   }

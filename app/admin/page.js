@@ -29,8 +29,8 @@ export default function AdminPage() {
   }, [status, session, router]);
 
   const [whatsappLink, setWhatsappLink] = useState("");
-  const [basePrice, setBasePrice] = useState("799");
-  const [surveyDiscount, setSurveyDiscount] = useState("200");
+  const [basePrice, setBasePrice] = useState("599");
+  const [surveyDiscount, setSurveyDiscount] = useState("340");
   const [savingSettings, setSavingSettings] = useState(false);
 
   // Global campaign settings state
@@ -351,7 +351,7 @@ export default function AdminPage() {
                   type="number"
                   value={basePrice}
                   onChange={(e) => setBasePrice(e.target.value)}
-                  placeholder="e.g. 799"
+                  placeholder="e.g. 599"
                   required
                   min="0"
                   style={{
@@ -375,7 +375,7 @@ export default function AdminPage() {
                   type="number"
                   value={surveyDiscount}
                   onChange={(e) => setSurveyDiscount(e.target.value)}
-                  placeholder="e.g. 200"
+                  placeholder="e.g. 340"
                   required
                   min="0"
                   style={{
@@ -623,7 +623,7 @@ export default function AdminPage() {
               }}>
                 {(() => {
                   const coupon = newlyCreatedCoupon;
-                  const currentBase = Number(basePrice) || 799;
+                  const currentBase = Number(basePrice) || 599;
                   const discountText = coupon.discountType === "fixed"
                     ? `₹${coupon.discountValue} FLAT discount`
                     : `${coupon.discountValue}% discount`;
@@ -641,7 +641,7 @@ export default function AdminPage() {
               <button
                 onClick={() => {
                   const coupon = newlyCreatedCoupon;
-                  const currentBase = Number(basePrice) || 799;
+                  const currentBase = Number(basePrice) || 599;
                   const discountText = coupon.discountType === "fixed"
                     ? `₹${coupon.discountValue} FLAT discount`
                     : `${coupon.discountValue}% discount`;
@@ -682,7 +682,7 @@ export default function AdminPage() {
                 </thead>
                 <tbody>
                   {coupons.map((c) => {
-                    const currentBase = Number(basePrice) || 799;
+                    const currentBase = Number(basePrice) || 599;
                     const fp = c.discountType === "fixed"
                       ? Math.max(0, currentBase - c.discountValue)
                       : Math.max(0, Math.round(currentBase * (1 - c.discountValue / 100)));
@@ -728,11 +728,11 @@ export default function AdminPage() {
                                   ? `₹${c.discountValue} FLAT discount`
                                   : `${c.discountValue}% discount`;
                                 const finalPrice = c.discountType === "fixed"
-                                  ? Math.max(0, 799 - c.discountValue)
-                                  : Math.max(0, Math.round(799 * (1 - c.discountValue / 100)));
+                                  ? Math.max(0, 599 - c.discountValue)
+                                  : Math.max(0, Math.round(599 * (1 - c.discountValue / 100)));
                                 const priceText = finalPrice === 0 
                                   ? "FREE lifetime access" 
-                                  : `lifetime access for just *₹${finalPrice}* (originally ₹799)`;
+                                  : `lifetime access for just *₹${finalPrice}* (originally ₹599)`;
                                 const origin = typeof window !== "undefined" ? window.location.origin : "https://algopath.vercel.app";
                                 const shareMsg = `🚀 *AlgoPath Pro Lifetime Access Offer!* 🎯\n\nHey study group! Master Data Structures & Algorithms with interactive trackers, custom schedules, and progress sheets.\n\nUse coupon code *${c._id}* to get **${discountText}** and get ${priceText}! ✨\n\n👉 Join now: ${origin}\n\n*Limited to first ${c.maxUses || "few"} students. Consistent prep starts here!* 💻`;
                                 navigator.clipboard.writeText(shareMsg);
@@ -857,7 +857,7 @@ export default function AdminPage() {
                               <div style={{ color: "#34d399", fontWeight: "700", fontSize: "0.85rem" }}>₹{u.amountPaid}</div>
                               {u.couponCode && (
                                 <div style={{ fontSize: "0.7rem", color: "#a78bfa", marginTop: "0.1rem" }}>
-                                  🎟️ {u.couponCode} (-₹{u.discountAmount !== undefined ? u.discountAmount : Math.max(0, 799 - u.amountPaid)})
+                                  🎟️ {u.couponCode} (-₹{u.discountAmount !== undefined ? u.discountAmount : Math.max(0, 599 - u.amountPaid)})
                                 </div>
                               )}
                             </div>

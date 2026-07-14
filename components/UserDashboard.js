@@ -41,20 +41,299 @@ function getFocusDay(data, completions) {
   return data.length > 0 ? data[data.length - 1].day : MAX_DAY;
 }
 
+function getTopicForTitle(title, dayNum) {
+  const t = String(title || "").toLowerCase();
+  
+  if (
+    t.includes("dp ") || 
+    t.includes("dynamic programming") || 
+    t.includes("climbing stairs") || 
+    t.includes("frog jump") || 
+    t.includes("house robber") || 
+    t.includes("ninja's training") || 
+    t.includes("unique paths") || 
+    t.includes("cherry pickup") || 
+    t.includes("knapsack") || 
+    t.includes("rod cutting") || 
+    t.includes("longest common subsequence") || 
+    t.includes("lcs") || 
+    t.includes("supersequence") || 
+    t.includes("edit distance") || 
+    t.includes("wildcard matching") || 
+    t.includes("longest increasing subsequence") || 
+    t.includes("lis") || 
+    t.includes("longest string chain") || 
+    t.includes("longest bitonic subsequence") || 
+    t.includes("matrix chain multiplication") || 
+    t.includes("mcm") || 
+    t.includes("burst balloons") || 
+    t.includes("stick") || 
+    t.includes("maximal rectangle") || 
+    t.includes("square submatrices") || 
+    t.includes(" ninja")
+  ) {
+    return "Dynamic Programming";
+  }
+  
+  if (
+    t.includes("graph") || 
+    t.includes("graphs") || 
+    t.includes("provinces") || 
+    t.includes("islands") || 
+    t.includes("flood fill") || 
+    t.includes("rotten oranges") || 
+    t.includes("cycle in") || 
+    t.includes("enclaves") || 
+    t.includes("bipartite") || 
+    t.includes("topological sort") || 
+    t.includes("kahn") || 
+    t.includes("course schedule") || 
+    t.includes("alien dictionary") || 
+    t.includes("shortest path") || 
+    t.includes("word ladder") || 
+    t.includes("dijkstra") || 
+    t.includes("maze") || 
+    t.includes("flights") || 
+    t.includes("bellman") || 
+    t.includes("warshall") || 
+    t.includes("spanning tree") || 
+    t.includes("prim's") || 
+    t.includes("disjoint set") || 
+    t.includes("kruskal") || 
+    t.includes("dsu") || 
+    t.includes("bridges in") || 
+    t.includes("tarjan") || 
+    t.includes("articulation point") || 
+    t.includes("kosaraju") || 
+    t.includes("stones removed") || 
+    t.includes(" bfs") || 
+    t.includes(" dfs") || 
+    t.startsWith("bfs") || 
+    t.startsWith("dfs")
+  ) {
+    return "Graphs";
+  }
+
+  if (
+    t.includes("bst") || 
+    t.includes("binary search tree") || 
+    t.includes("tree") || 
+    t.includes("trees") || 
+    t.includes("preorder") || 
+    t.includes("inorder") || 
+    t.includes("postorder") || 
+    t.includes("traversal") || 
+    t.includes("identical") || 
+    t.includes("zig-zag") || 
+    t.includes("zigzag") || 
+    t.includes("boundary") || 
+    t.includes("vertical view") || 
+    t.includes("top view") || 
+    t.includes("bottom view") || 
+    t.includes("right side view") || 
+    t.includes("left side view") || 
+    t.includes("symmetrical") || 
+    t.includes("lowest common ancestor") || 
+    t.includes("lca") || 
+    t.includes(" burn ") || 
+    t.includes("serialize") || 
+    t.includes("morris") || 
+    t.includes("ceil in") || 
+    t.includes("floor in")
+  ) {
+    return "Trees & BST";
+  }
+
+  if (
+    t.includes("linkedlist") || 
+    t.includes("linked list") || 
+    t.includes("dll") || 
+    t.includes(" ll") || 
+    t.startsWith("ll") || 
+    t.includes("browser history")
+  ) {
+    return "Linked List";
+  }
+
+  if (
+    t.includes("stack") || 
+    t.includes("queue") || 
+    t.includes("parenthes") || 
+    t.includes("infix") || 
+    t.includes("postfix") || 
+    t.includes("prefix") || 
+    t.includes("greater element") || 
+    t.includes("smaller element") || 
+    t.includes("rainwater") || 
+    t.includes("trapping rain") || 
+    t.includes("histogram") || 
+    t.includes("stock span") || 
+    t.includes("celebrity problem") || 
+    t.includes("lru cache") || 
+    t.includes("lfu cache")
+  ) {
+    return "Stacks & Queues";
+  }
+
+  if (
+    t.includes("sliding window") || 
+    t.includes("2 pointers") || 
+    t.includes("two pointers") || 
+    t.includes("fruit") || 
+    t.includes("subarrays with k") || 
+    t.includes("window substring") || 
+    t.includes("obtain from cards")
+  ) {
+    return "Sliding Window & 2 Pointers";
+  }
+
+  if (
+    t.includes("greedy") || 
+    t.includes("sjf") || 
+    t.includes("assign cookies") || 
+    t.includes("lemonade change") || 
+    t.includes("jump game") || 
+    t.includes("job sequencing") || 
+    t.includes("meeting in") || 
+    t.includes("knapsack algorithm") || 
+    t.includes("candy")
+  ) {
+    return "Greedy Algorithms";
+  }
+
+  if (
+    t.includes("binary search") || 
+    t.includes("bs-") || 
+    t.includes("bs ") || 
+    t.startsWith("bs-") || 
+    t.includes("lower bound") || 
+    t.includes("upper bound") || 
+    t.includes("search insert") || 
+    t.includes("koko") || 
+    t.includes("aggressive") || 
+    t.includes("allocate books") || 
+    t.includes("peak element") || 
+    t.includes("sqrt") || 
+    t.includes("nth root") || 
+    t.includes("rotated")
+  ) {
+    return "Binary Search";
+  }
+
+  if (t.includes("recursion") || t.includes("fibonacci") || t.includes("pow(")) {
+    return "Recursion";
+  }
+
+  if (
+    t.includes("maths") || 
+    t.includes("divisors") || 
+    t.includes("prime") || 
+    t.includes("sieve") || 
+    t.includes("eratosthenes") || 
+    t.includes("exponentiation") || 
+    t.includes("euclidean")
+  ) {
+    return "Basic Maths";
+  }
+
+  if (t.includes("sorting") || t.includes("sort") || t.includes("merge") || t.includes("quick")) {
+    return "Sorting";
+  }
+
+  if (t.includes("hashing") || t.includes("anagram")) {
+    return "Hashing";
+  }
+
+  if (
+    t.includes("array") || 
+    t.includes("arrays") || 
+    t.includes("matrix") || 
+    t.includes("spiral") || 
+    t.includes("kadane") || 
+    t.includes("subarray") || 
+    t.includes("subarrays") || 
+    t.includes("rotate") || 
+    t.includes("pascal") || 
+    t.includes("3sum") || 
+    t.includes("4sum") || 
+    t.includes("xor") || 
+    t.includes("duplicate") || 
+    t.includes("inversion") || 
+    t.includes("reverse pairs") || 
+    t.includes("two sum") || 
+    t.includes("majority element") || 
+    t.includes("stock")
+  ) {
+    return "Arrays";
+  }
+
+  if (dayNum >= 1 && dayNum <= 3) return "Basics & STL";
+  if (dayNum >= 56 && dayNum <= 61) return "Buffer & Revision";
+
+  return "Basics & STL";
+}
+
 function countStats(data, completions) {
   let videoTotal = 0, videoCompleted = 0, problemTotal = 0, problemCompleted = 0;
+  let easyTotal = 0, easyCompleted = 0;
+  let mediumTotal = 0, mediumCompleted = 0;
+  let hardTotal = 0, hardCompleted = 0;
+  const topicStats = {};
+
   for (const { day, tasks, problems } of data) {
+    for (let i = 0; i < tasks.length; i++) {
+      const t = tasks[i];
+      const topic = t.category || getTopicForTitle(t.title, day);
+      if (!topicStats[topic]) {
+        topicStats[topic] = { total: 0, completed: 0 };
+      }
+      topicStats[topic].total++;
+      if (completions[taskKey(day, i)]) {
+        topicStats[topic].completed++;
+      }
+    }
+
     videoTotal += tasks.length;
     videoCompleted += tasks.filter((_, i) => completions[taskKey(day, i)]).length;
+    
     problemTotal += problems.length;
     problemCompleted += problems.filter((_, i) => completions[problemKey(day, i)]).length;
+
+    for (let i = 0; i < problems.length; i++) {
+      const p = problems[i];
+      const diff = String(p.difficulty || "Easy").trim().toLowerCase();
+      const isDone = !!completions[problemKey(day, i)];
+      
+      if (diff === "easy") {
+        easyTotal++;
+        if (isDone) easyCompleted++;
+      } else if (diff === "medium" || diff === "med") {
+        mediumTotal++;
+        if (isDone) mediumCompleted++;
+      } else if (diff === "hard") {
+        hardTotal++;
+        if (isDone) hardCompleted++;
+      } else {
+        easyTotal++;
+        if (isDone) easyCompleted++;
+      }
+    }
   }
   const total = videoTotal + problemTotal;
   const completed = videoCompleted + problemCompleted;
   const pct = total === 0 ? 0 : (completed / total) * 100;
   const videoPct = videoTotal === 0 ? 0 : (videoCompleted / videoTotal) * 100;
   const problemPct = problemTotal === 0 ? 0 : (problemCompleted / problemTotal) * 100;
-  return { total, completed, pct, videoTotal, videoCompleted, videoPct, problemTotal, problemCompleted, problemPct };
+  
+  return { 
+    total, completed, pct, 
+    videoTotal, videoCompleted, videoPct, 
+    problemTotal, problemCompleted, problemPct,
+    easyTotal, easyCompleted,
+    mediumTotal, mediumCompleted,
+    hardTotal, hardCompleted,
+    topicStats
+  };
 }
 
 function getStreak(completions) {
@@ -289,6 +568,8 @@ export function UserDashboard() {
   const [ready, setReady] = useState(false);
   const [schedule, setSchedule] = useState(null);
   const [showChangeSchedule, setShowChangeSchedule] = useState(false);
+  const [showProblemDetails, setShowProblemDetails] = useState(false);
+  const [showVideoDetails, setShowVideoDetails] = useState(false);
 
   useEffect(() => {
     setCompletions(readCompletions());
@@ -352,8 +633,44 @@ export function UserDashboard() {
   }, [planId, focusDay]);
 
   const calendarDays = useMemo(() => {
-    return Array.from({ length: totalCalendarDays }, (_, i) => i + 1);
-  }, [totalCalendarDays]);
+    const days = Array.from({ length: totalCalendarDays }, (_, i) => i + 1);
+    if (!planId) return days;
+
+    const isDayCompleted = (dayNum) => {
+      const calendarDay = getPlanDay(planId, dayNum);
+      if (!calendarDay) return false;
+      if (calendarDay.type === "rest") {
+        return dayNum < focusCalendarDay;
+      }
+      
+      let total = 0;
+      let done = 0;
+      if (calendarDay.tasks) {
+        total += calendarDay.tasks.length;
+      }
+      if (calendarDay.problems) {
+        total += calendarDay.problems.length;
+      }
+      
+      // Calculate completions
+      if (calendarDay.tasks) {
+        done += calendarDay.tasks.filter((t) => completions[taskKey(t.contentDay, t.originalIndex)]).length;
+      }
+      if (calendarDay.problems) {
+        done += calendarDay.problems.filter((p) => completions[problemKey(p.contentDay, p.originalIndex)]).length;
+      }
+
+      return total > 0 && done === total;
+    };
+
+    return [...days].sort((a, b) => {
+      const aDone = isDayCompleted(a);
+      const bDone = isDayCompleted(b);
+      if (aDone && !bDone) return 1;
+      if (!aDone && bDone) return -1;
+      return a - b;
+    });
+  }, [totalCalendarDays, planId, completions, focusCalendarDay]);
 
   const handleReset = useCallback(() => {
     if (
@@ -448,6 +765,33 @@ export function UserDashboard() {
       </div>
 
       {/* ── Videos & Problems ─────────────────────── */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.5rem", marginBottom: "1rem" }}>
+        <h3 style={{ fontSize: "1rem", fontWeight: "700", color: "#fff", margin: 0 }}>Videos &amp; Problems Progress</h3>
+        <button
+          onClick={() => {
+            const nextState = !(showVideoDetails && showProblemDetails);
+            setShowVideoDetails(nextState);
+            setShowProblemDetails(nextState);
+          }}
+          style={{
+            background: "rgba(139, 92, 246, 0.1)",
+            border: "1px solid rgba(139, 92, 246, 0.25)",
+            color: "#a78bfa",
+            fontSize: "0.75rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            padding: "0.35rem 0.75rem",
+            borderRadius: "0.5rem",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.25rem",
+            transition: "all 0.2s ease"
+          }}
+        >
+          {showVideoDetails && showProblemDetails ? "Hide All Details 📊" : "Show All Details 📊"}
+        </button>
+      </div>
+
       <div className="db-split-grid">
         <div className="db-card">
           <div className="db-split-header">
@@ -458,6 +802,35 @@ export function UserDashboard() {
             <p className="db-split-pct" style={{ color: "#38bdf8" }}>{Math.round(stats.videoPct)}%</p>
           </div>
           <ProgressBar value={stats.videoPct} />
+
+
+          {showVideoDetails && (
+            <div style={{ 
+              marginTop: "0.75rem", 
+              paddingTop: "0.75rem", 
+              borderTop: "1px solid rgba(255,255,255,0.06)", 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: "0.5rem",
+              fontSize: "0.8rem",
+              animation: "fadeIn 0.2s ease"
+            }}>
+              {Object.entries(stats.topicStats || {})
+                .map(([name, { total, completed }]) => {
+                  const pct = total === 0 ? 0 : Math.round((completed / total) * 100);
+                  return { name, pct };
+                })
+                .filter((t) => t.pct > 0)
+                .sort((a, b) => b.pct - a.pct)
+                .map((topic) => (
+                  <div key={topic.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ color: "#cbd5e1", fontWeight: "600" }}>{topic.name}</span>
+                    <span style={{ color: "#38bdf8", fontWeight: "700" }}>{topic.pct}% completed</span>
+                  </div>
+                ))
+              }
+            </div>
+          )}
         </div>
         <div className="db-card">
           <div className="db-split-header">
@@ -468,6 +841,45 @@ export function UserDashboard() {
             <p className="db-split-pct" style={{ color: "#a78bfa" }}>{Math.round(stats.problemPct)}%</p>
           </div>
           <ProgressBar value={stats.problemPct} />
+          
+
+          {showProblemDetails && (
+            <div style={{ 
+              marginTop: "0.75rem", 
+              paddingTop: "0.75rem", 
+              borderTop: "1px solid rgba(255,255,255,0.06)", 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: "0.4rem",
+              fontSize: "0.8rem",
+              animation: "fadeIn 0.2s ease"
+            }}>
+              {/* Easy Stats */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ color: "#10b981", fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }}></span>
+                  Easy
+                </span>
+                <span style={{ color: "#cbd5e1" }}>{stats.easyCompleted} / {stats.easyTotal} solved</span>
+              </div>
+              {/* Medium Stats */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ color: "#f59e0b", fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#f59e0b", display: "inline-block" }}></span>
+                  Medium
+                </span>
+                <span style={{ color: "#cbd5e1" }}>{stats.mediumCompleted} / {stats.mediumTotal} solved</span>
+              </div>
+              {/* Hard Stats */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ color: "#ef4444", fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#ef4444", display: "inline-block" }}></span>
+                  Hard
+                </span>
+                <span style={{ color: "#cbd5e1" }}>{stats.hardCompleted} / {stats.hardTotal} solved</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

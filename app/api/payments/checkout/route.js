@@ -18,7 +18,7 @@ export async function POST(request) {
   }
 
   let couponCode = null;
-  let basePrice = 799;
+  let basePrice = 599;
   let campaignActive = false;
   let campaignDiscountType = "percent";
   let campaignDiscountValue = 0;

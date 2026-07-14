@@ -67,8 +67,8 @@ export function LandingPage({ onPaymentRequired }) {
   const [modalOnlyTerms, setModalOnlyTerms] = useState(false);
   const [modalOnlyPrivacy, setModalOnlyPrivacy] = useState(false);
   const [whatsappLink, setWhatsappLink] = useState("");
-  const [basePrice, setBasePrice] = useState(799);
-  const [surveyDiscount, setSurveyDiscount] = useState(200);
+  const [basePrice, setBasePrice] = useState(599);
+  const [surveyDiscount, setSurveyDiscount] = useState(340);
 
   // Campaign states
   const [campaignActive, setCampaignActive] = useState(false);
